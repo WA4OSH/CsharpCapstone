@@ -1,0 +1,60 @@
+Get PlaylistTime and Genre
+
+Find GenreSongList of all songs of GenreID, sorted by time
+
+BestPlayList = <>
+BestTotalTime = 0
+For each outerSong in GenreSongList 
+   Playlist = <>
+   For each innerSong in GenreSongList from outersong
+       totalTime = 0
+       if ( totalTime + time(song) < PlaylistTime ) add song to playlist, totalTime += time(song)
+   if (BestTotalTime = 0 and totalTime > 0) or (totalTime >= BestTotalTime)
+       BestTotalTime = TotalTime
+       BestPlayList = Playlist
+
+
+Playlist time = 15 min
+Genre = XYZ
+
+GenreSongList <10,9,8,6,4,3,2>
+
+10,3,2 
+9,6
+8,6
+6,4,3,2 <---
+4,3,2
+4,3
+3
+
+
+GenreSongList <9,8,6,4,3,2,1>
+
+9,6
+8,6,1  
+6,4,3,2 <---
+4,3,2,1
+3,2,1
+2,1
+1
+
+
+GenreSongList <9,8,4,3,2,1>
+
+9,4,2 
+8,4,3 <---
+4,3,2,1
+3,2,1
+2,1
+1
+
+GenreSongList <15,9,8,4,3,2,1>
+
+15
+9,4,2
+8,4,3 <---
+4,3,2,1
+3,2,1
+2,1
+1
+
