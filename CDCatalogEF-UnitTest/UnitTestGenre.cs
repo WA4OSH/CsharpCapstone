@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Linq;
+using CDCatalogEF;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Linq;
-using System.Data;
 
-namespace CDCatalogEF
+namespace CDCatalogEF_UnitTest
 {
     /// <summary>
     /// UnitTestGenre creates a unique genre and adds it to the database.

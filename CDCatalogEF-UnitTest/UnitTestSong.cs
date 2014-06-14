@@ -1,11 +1,8 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
+﻿using System.Linq;
+using CDCatalogEF;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CDCatalogEF
+namespace CDCatalogEF_UnitTest
 {
     /// <summary>
     /// UnitTestSong creates a unique song with a exisiting genre and artist

@@ -1,11 +1,8 @@
-﻿using System;
-using System.Text;
-using System.Collections.Generic;
+﻿using System.Linq;
+using CDCatalogEF;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Linq;
-using System.Data;
 
-namespace CDCatalogEF
+namespace CDCatalogEF_UnitTest
 {
     /// <summary>
     /// UnitTestArtist creates a unique artist and adds it to the database.
@@ -20,7 +17,7 @@ namespace CDCatalogEF
         }
 
         [TestMethod]
-        public void TestArtistAdd()
+        public void TestArtist1Add()
         {
             using (var ctx = new CDCatalogEntities())
             {
@@ -37,7 +34,7 @@ namespace CDCatalogEF
         }
 
         [TestMethod]
-        public void TestArtistFetch()
+        public void TestArtist2Fetch()
         {
             using (var ctx = new CDCatalogEntities())
             {
@@ -50,7 +47,7 @@ namespace CDCatalogEF
         }
 
         [TestMethod]
-        public void TestArtistDelete()
+        public void TestArtist3Delete()
         {
             using (var ctx = new CDCatalogEntities())
             {
