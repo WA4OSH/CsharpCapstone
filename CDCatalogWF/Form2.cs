@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CDCatalogWF;
 
 namespace CDCatalogEF
 {
@@ -20,7 +21,7 @@ namespace CDCatalogEF
         private void btnAddArtist_Click(object sender, EventArgs e)
         {
             DialogResult dr = new DialogResult();
-            AddArtistWF frm = new AddArtistWF();
+            AddGenreWF frm = new AddGenreWF();
             dr = frm.ShowDialog();
             if (dr == DialogResult.OK)
                 MessageBox.Show("User clicked OK button");
@@ -38,5 +39,6 @@ namespace CDCatalogEF
             else if (dr == DialogResult.Cancel)
                 MessageBox.Show("User clicked Cancel button");
         }
+
     }
 }

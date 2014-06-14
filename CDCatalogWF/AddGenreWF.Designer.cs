@@ -1,4 +1,4 @@
-﻿namespace CDCatalogEF
+﻿namespace CDCatalogWF
 {
     partial class AddGenreWF
     {
@@ -95,7 +95,6 @@
             this.Controls.Add(this.buttonOK);
             this.Name = "AddGenre";
             this.Text = "AddGenre";
-            this.Load += new System.EventHandler(this.AddGenre_Load);
             ((System.ComponentModel.ISupportInitialize)(this.genrePictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

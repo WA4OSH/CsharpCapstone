@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CDCatalogDA;
 
 namespace CDCatalogWF
 {
@@ -30,7 +31,7 @@ namespace CDCatalogWF
         private void okButton_Click(object sender, EventArgs e)
         {
             this.Text = artistTxtBox.Text;
-            int artistId = CDCatalogEF.Artist.AddArtist(this.Text);
+            int artistId = Genre.AddArtist(this.Text);
             string msg = artistId.ToString();
             MessageBox.Show(msg);
         }

@@ -17,11 +17,6 @@ namespace CDCatalogWF
             InitializeComponent();
         }
 
-        private void AddGenre_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void genreTxtBox_TextChanged(object sender, EventArgs e)
         {
 

@@ -147,9 +147,9 @@
     <Content Include="images\track.gif" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CDCatalogEF-CRUD_Operations\CDCatalogEF-CRUD_Operations.csproj">
-      <Project>{5f1acc97-1fa8-4fad-8724-199f5b061256}</Project>
-      <Name>CDCatalogEF-CRUD_Operations</Name>
+    <ProjectReference Include="..\CDCatalogDA\CDCatalogDA.csproj">
+      <Project>{29351df5-7e4e-4520-8b67-ab1ef75e4c96}</Project>
+      <Name>CDCatalogDA</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -72,9 +72,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\CDCatalogEF\CDCatalogEF.csproj">
       <Project>{b5f7fec7-ac57-4725-8ac7-d38e3ee04e5b}</Project>
       <Name>CDCatalogEF</Name>
