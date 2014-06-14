@@ -1,0 +1,48 @@
+C# Programming
+Capstone Project Requirements
+
+Overview
+The Capstone is the culminating project for each of the C# certificate programs:   C# Programming Certificate, C# Web Development Certificate, and C# Application Development Certificate. Students must complete all required coursework before enrolling in the individual program’s Capstone project, since the project incorporates skills from all the required courses. The Capstone project must be successfully completed in the allotted amount of time before a certificate will be awarded.
+
+For each of the three individual Capstone projects, the student will develop an application that demonstrates the design and development skills learned in the certificate courses. Since the Capstone simulates the development of a real life project, it also serves as a sample for the student’s job portfolio. 
+The objectives of the Capstone project are to:
+Design an application to a given specification 
+Develop an application from the ground up utilizing the skills acquired from the C# curriculum 
+Identify potential design and development issues and work through to solutions 
+Present final product to instructor 
+
+Capstone Project Development Process
+Project Initiation Phase
+The first meeting of the Capstone project is a two-hour scheduled class with the instructor and up to six students. The purpose of this kick-off class includes: 
+A discussion of the project details and requirements. 
+Clarification about the purpose or expected outcome of the project including a review of the evaluation components of the project. 
+Establishing the project milestones that the student will use in the development of the project. 
+A review of the process that students will use during the project development stage to get feedback from the instructor. 
+A discussion of the last class, during which the instructor will evaluate the student’s project. 
+An outline of the process and steps that will be used to evaluate the student’s project. 
+An opportunity for the student to get started on the design of the Capstone project. This allows the student to validate their design decisions with the instructor before development works begins. 
+Project Development Phase
+After the initial two-hour class, there are no additional in-person meetings between the student and instructor until the project evaluation. Any follow-up communication with the instructor will occur via e-mail. As the student develops their project, they will check in with the instructor based on the milestones established in the initial kick-off class to make sure they are on track for completion. The student may contact the instructor as many times as necessary to ask clarifying questions regarding the project. They may also contact the instructor up to four times for direction or suggestions (see the notes below on this subject under “Important Considerations”).
+The project is expected to take from 30 to 40 hours of student time to complete, however completion time will depend on the student’s mastery of the material covered in the C# certificate classes.
+Project Evaluation Phase
+The second and final meeting between the student and instructor is the evaluation of the student’s Capstone project. It will occur in person 75 days after the initial kick-off class at the Bellevue College North Campus.
+If at that time the project is considered by the instructor to be complete, the student will have successfully passed the Capstone class. 
+
+If the student does not successfully complete the project, the instructor will review with the student the area(s) where the project did not meet expectations. The student will then have an additional 15 days to correct these problems and resubmit the project via e-mail. The 15 day grace period may not be extended for any reason, and only one resubmission is allowed; this will be considered the final opportunity to pass the project. The instructor will notify the student of the pass/fail status of the final submission via reply e-mail. If, after resubmitting the project the second time, the instructor believes that the work is not satisfactory, then the student will be considered to have failed the project, and the certificate will not be issued. The student’s only recourse is to re-enroll in and pay for the Capstone again. 
+
+If the student does not submit the project within 75 days, an additional 15 day grace period will be extended to the student only if the student submits an e-mail to the instructor before the end of the 75th day requesting an extension. However, if the student either does not submit the project by the end of the 15 day extension or does submit it to the instructor, but does not meet the minimum standards required for the project to pass, then the student will be considered as having failed the project, and the certificate will not be issued. A second resubmission of the project is not allowed, and an extension of the 15 day grace period will not be extended for any reason. The student’s only recourse is to re-enroll in and pay for the Capstone again. 
+
+If the student would like an earlier evaluation than 75 days after the first class, they must contact the instructor to see if an earlier date can be arranged. Such arrangements will be on a case-by-case basis and, if an early evaluation is agreed to, it may need to take place via e-mail rather than in a face-to-face meeting. If an early evaluation takes place and the student does not successfully complete the project, an additional 15 day extension, starting from the date that the instructor informs the student of the failing grade, will be extended to the student. If, after resubmitting the project the second time, the instructor believes that the work is not satisfactory, then the student will be considered to have failed the project, and the certificate will not be issued. The student’s only recourse is to re-enroll in and pay for the Capstone again. 
+
+Important Considerations Regarding the Capstone Project
+Once the student enrolls in the Capstone project, it is expected that they have successfully learned the material presented in the required and elective classes. Therefore, the instructor will not supplement the Capstone project with tutoring or instruction on previous coursework. Although we want to help students who are stuck, we also want to maintain the integrity of this Capstone project. Therefore, the instructor of the Capstone Project will only provide general guidance and suggestions (up to four times per student) for improvement of the student’s project. It is not an opportunity to have the instructor debug the student’s code or to receive specific code feedback. Example instructor responses are as follows: "If you want to see what files are in a directory, you could also try the Directory class," or "Investigate the errors that this function call can generate." Again, the purpose of an instructor answering students’ questions during the Capstone project development is to give direction, not solutions. It will also not involve extensive code review or execution of the program. 
+
+Each student may contact the instructor an unlimited number of times during the Capstone project development phase to ask questions and receive clarification on the project requirements. 
+
+Milestone checkpoints are designed to help the student stay on track through the stages of project development so they can complete their project on time. Milestone checkpoints are not code review, and the instructor will not spend time checking over the student’s work. The milestones have no bearing on the project evaluation. For example, a student may meet all milestones yet not pass the project. 
+
+The Capstone Project will not be evaluated in stages. The full project review is on the date of the second meeting which is scheduled for 75 days after the initial class. There is the possibility of an extension of 15 days as mentioned above. If a student wants an evaluation earlier than the 75 day evaluation, the student may contact the instructor to determine if an earlier evaluation is feasible. If so, the evaluation may be done via e-mail rather than in-person. 
+
+If a student fails the initial project evaluation and resubmits their project, the instructor will only evaluate those areas that failed the initial evaluation and verify that those areas now meet the project specifications. This is not an additional full-project evaluation. 
+
+A student who does not successfully pass the project may retake the Capstone project class in the future; however the full class charge will be assessed at that time. The student will be required to create a new project, and will not be able to rework their previous project. 
