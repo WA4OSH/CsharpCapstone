@@ -39,7 +39,7 @@ namespace CDCatalogDA
             return artistId;
         }
 
-        public static CDCatalogEF.Artist GetArtistByID(int artistId)
+        public static CDCatalogEF.Artist GetArtistById(int artistId)
         {
             var artist = new CDCatalogEF.Artist();
             try
@@ -56,7 +56,7 @@ namespace CDCatalogDA
             return artist;
         }
 
-        public static bool DeleteAtrist(int artistId)
+        public static bool DeleteAtristById(int artistId)
         {
             var artist = new CDCatalogEF.Artist();
 
