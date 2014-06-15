@@ -139,9 +139,9 @@ namespace CDCatalogEF_UnitTest
                 ctx.Songs.RemoveRange(list);
                 int count = ctx.SaveChanges();
                 Assert.IsTrue(count > 0, "No Record Deleted");
-            }
-            //Test clean-up (none)
 
+                //Test clean-up (none)
+            }
         }
     }
 }

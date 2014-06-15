@@ -21,7 +21,7 @@ namespace CDCatalogEF_UnitTest
         {
             using (var ctx = new CDCatalogEntities())
             {
-                //Test init
+                //Test init (none)
 
                 //Create a test artist
                 Artist a = new Artist();
@@ -98,7 +98,7 @@ namespace CDCatalogEF_UnitTest
                 int count = ctx.SaveChanges();
                 Assert.IsTrue(count > 0, "No Record Deleted");
 
-                //Test clean-up 
+                //Test clean-up (none)
             }
         }
     }

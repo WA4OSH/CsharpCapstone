@@ -99,7 +99,7 @@ namespace CDCatalogEF_UnitTest
                 int count = ctx.SaveChanges();
                 Assert.IsTrue(count > 0, "No Record Deleted");
 
-                //Test clean-up
+                //Test clean-up (none)
 
             }
         }
