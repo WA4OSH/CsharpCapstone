@@ -21,15 +21,28 @@ namespace CDCatalogEF_UnitTest
             //create a new context
             using (var ctx = new CDCatalogEntities())
             {
-                //create a test genre
+                //Test init
+
+                //Create a test genre
                 Genre g = new Genre();
                 g.GenreID = 0;  // auto incremented and set by add
                 g.GenreName = "Test Genre W6YderKT";
                 //add it to the context
                 ctx.Genres.Add(g);
-                //verify that .. records were changed
+                //verify that records were changed
                 int count = ctx.SaveChanges();
                 Assert.IsTrue(count > 0 && g.GenreID > 0, "No Records Changed");
+
+                //Test clean-up
+                if (count > 0)
+                {
+                    var list = ctx.Genres
+                        .Where(n => n.GenreName.ToLower().Equals("test genre w6yderkt"))
+                        .Where(n => n.GenreID > 0);
+
+                    ctx.Genres.RemoveRange(list);
+                    ctx.SaveChanges();
+                }
             }
         }
 
@@ -38,9 +51,28 @@ namespace CDCatalogEF_UnitTest
         {
             using (var ctx = new CDCatalogEntities())
             {
+                //Test init
+                Genre i = new Genre();
+                i.GenreID = 0;  // auto incremented and set by add
+                i.GenreName = "Test Genre W6YderKT";
+                //add it to the context and save to database
+                ctx.Genres.Add(i);
+                ctx.SaveChanges();
+
                 //Find the test genre in the database
                 Genre g = ctx.Genres.Where(n => n.GenreName.ToLower().Equals("test genre w6yderkt")).FirstOrDefault();
                 Assert.IsTrue(g != null, "No Record Found");
+
+                //Test clean-up
+                if (g != null)
+                {
+                    var list = ctx.Genres
+                        .Where(n => n.GenreName.ToLower().Equals("test genre w6yderkt"))
+                        .Where(n => n.GenreID > 0);
+
+                    ctx.Genres.RemoveRange(list);
+                    ctx.SaveChanges();
+                }
             }
         }
 
@@ -49,8 +81,16 @@ namespace CDCatalogEF_UnitTest
         {
             using (var ctx = new CDCatalogEntities())
             {
-                //find the list of "Test Genre"
-                //in case duplicates were added in the previous tests
+                //Test init
+                Genre g = new Genre();
+                g.GenreID = 0;  // auto incremented and set by add
+                g.GenreName = "Test Genre W6YderKT";
+                //add it to the context and save to database
+                ctx.Genres.Add(g);
+                ctx.SaveChanges();
+
+                //Find the list of "Test Genre"
+                //in case duplicates were added in the previous tests, delete them all
                 var list = ctx.Genres
                 .Where(n => n.GenreName.ToLower().Equals("test genre w6yderkt"))
                 .Where(n => n.GenreID > 1000);
@@ -58,6 +98,9 @@ namespace CDCatalogEF_UnitTest
                 ctx.Genres.RemoveRange(list);
                 int count = ctx.SaveChanges();
                 Assert.IsTrue(count > 0, "No Record Deleted");
+
+                //Test clean-up
+
             }
         }
     }
