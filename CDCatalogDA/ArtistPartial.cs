@@ -12,7 +12,7 @@ namespace CDCatalogDA
     {
         public static List<CDCatalogEF.Artist> GetAllArtists()
         {
-            using (var db = new CDCatalogEntities1())
+            using (var db = new CDCatalogEntities())
             {
                 try
                 {
@@ -38,7 +38,7 @@ namespace CDCatalogDA
             {
                 artist.ArtistName = artistName;
 
-                using (var db = new CDCatalogEntities1())
+                using (var db = new CDCatalogEntities())
                 {
                     db.Artists.Add(artist);
                     var resultCount = db.SaveChanges();
@@ -61,7 +61,7 @@ namespace CDCatalogDA
             var artist = new CDCatalogEF.Artist();
             try
             {
-                using (var db = new CDCatalogEntities1())
+                using (var db = new CDCatalogEntities())
                 {
                     artist = db.Artists.Where(a => a.ArtistID == artistId).FirstOrDefault();
                 }
@@ -81,7 +81,7 @@ namespace CDCatalogDA
         {
             try
             {
-                using (var db = new CDCatalogEntities1())
+                using (var db = new CDCatalogEntities())
                 {
                     CDCatalogEF.Artist artist = db.Artists.Where(n => n.Equals(artistId)).Single();
                     db.Artists.Remove(artist);

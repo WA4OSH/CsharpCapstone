@@ -59,14 +59,14 @@
     <Compile Include="SongPartial.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CDCatalogEF\CDCatalogEF.csproj">
-      <Project>{b5f7fec7-ac57-4725-8ac7-d38e3ee04e5b}</Project>
-      <Name>CDCatalogEF</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\CDCatalog\CDCatalogEF\CDCatalogEF.csproj">
+      <Project>{148de458-e6aa-4d1c-bb1a-653cf7e79e77}</Project>
+      <Name>CDCatalogEF</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

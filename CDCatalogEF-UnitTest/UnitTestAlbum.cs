@@ -14,7 +14,7 @@ namespace CDCatalogEF_UnitTest
         [TestMethod]
         public void TestAlbumAdd()
         {
-            using (var ctx = new CDCatalogEntities1())
+            using (var ctx = new CDCatalogEntities())
             {
                 //Test init (none)
 
@@ -50,7 +50,7 @@ namespace CDCatalogEF_UnitTest
         [TestMethod]
         public void TestAlbumFetch()
         {
-            using (var ctx = new CDCatalogEntities1())
+            using (var ctx = new CDCatalogEntities())
             {
                 //Test init
                 //Get an artist we know exists -- Kaskade
@@ -92,7 +92,7 @@ namespace CDCatalogEF_UnitTest
         [TestMethod]
         public void TestAlbumDelete()
         {
-            using (var ctx = new CDCatalogEntities1())
+            using (var ctx = new CDCatalogEntities())
             {
                 //Test init
                 Artist A = ctx.Artists.Where(n => n.ArtistName.ToLower().Equals("kaskade")).FirstOrDefault();

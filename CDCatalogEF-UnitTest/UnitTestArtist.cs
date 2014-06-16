@@ -19,7 +19,7 @@ namespace CDCatalogEF_UnitTest
         [TestMethod]
         public void TestArtistAdd()
         {
-            using (var ctx = new CDCatalogEntities1())
+            using (var ctx = new CDCatalogEntities())
             {
                 //Test init (none)
 
@@ -48,7 +48,7 @@ namespace CDCatalogEF_UnitTest
         [TestMethod]
         public void TestArtistFetch()
         {
-            using (var ctx = new CDCatalogEntities1())
+            using (var ctx = new CDCatalogEntities())
             {
                 //Test init
                 Artist i = new Artist();
@@ -79,7 +79,7 @@ namespace CDCatalogEF_UnitTest
         [TestMethod]
         public void TestArtistDelete()
         {
-            using (var ctx = new CDCatalogEntities1())
+            using (var ctx = new CDCatalogEntities())
             {
                 //Test init
                 Artist i = new Artist();

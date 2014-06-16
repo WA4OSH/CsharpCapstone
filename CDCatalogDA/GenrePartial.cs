@@ -12,7 +12,7 @@ namespace CDCatalogDA
     {
         public static List<CDCatalogEF.Genre> GetAllGenres()
         {
-            using (var db = new CDCatalogEntities1())
+            using (var db = new CDCatalogEntities())
             {
                 try
                 {
@@ -47,7 +47,7 @@ namespace CDCatalogDA
             {
                 genre.GenreName = genreName;
 
-                using (var db = new CDCatalogEntities1())
+                using (var db = new CDCatalogEntities())
                 {
                     db.Genres.Add(genre);
                     var resultCount = db.SaveChanges();
@@ -70,7 +70,7 @@ namespace CDCatalogDA
             var genre = new CDCatalogEF.Genre();
             try
             {
-                using (var db = new CDCatalogEntities1())
+                using (var db = new CDCatalogEntities())
                 {
                     genre = db.Genres.Where(a => a.GenreID == genreId).FirstOrDefault();
                 }
@@ -90,7 +90,7 @@ namespace CDCatalogDA
         {
             try
             {
-                using (var db = new CDCatalogEntities1())
+                using (var db = new CDCatalogEntities())
                 {
                     CDCatalogEF.Genre genre = db.Genres.Where(n => n.Equals(genreId)).Single();
                     db.Genres.Remove(genre);
