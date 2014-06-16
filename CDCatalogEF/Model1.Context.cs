@@ -13,10 +13,10 @@ namespace CDCatalogEF
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class CDCatalogEntities : DbContext
+    public partial class CDCatalogEntities1 : DbContext
     {
-        public CDCatalogEntities()
-            : base("name=CDCatalogEntities")
+        public CDCatalogEntities1()
+            : base("name=CDCatalogEntities1")
         {
         }
     

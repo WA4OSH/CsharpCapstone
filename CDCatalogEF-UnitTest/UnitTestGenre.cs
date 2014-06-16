@@ -19,7 +19,7 @@ namespace CDCatalogEF_UnitTest
         public void TestGenreAdd()
         {
             //create a new context
-            using (var ctx = new CDCatalogEntities())
+            using (var ctx = new CDCatalogEntities1())
             {
                 //Test init
 
@@ -49,7 +49,7 @@ namespace CDCatalogEF_UnitTest
         [TestMethod]
         public void TestGenreFetch()
         {
-            using (var ctx = new CDCatalogEntities())
+            using (var ctx = new CDCatalogEntities1())
             {
                 //Test init
                 Genre i = new Genre();
@@ -79,7 +79,7 @@ namespace CDCatalogEF_UnitTest
         [TestMethod]
         public void TestGenreDelete()
         {
-            using (var ctx = new CDCatalogEntities())
+            using (var ctx = new CDCatalogEntities1())
             {
                 //Test init
                 Genre g = new Genre();

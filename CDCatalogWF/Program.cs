@@ -18,7 +18,8 @@ namespace CDCatalogEF
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());  // new form2() while testing
+            Application.Run(new Form2());  // new form2() while testing
+                                           // new MainForm()
         }
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CDCatalogDA;
 
 namespace CDCatalogWF
 {
@@ -24,7 +25,10 @@ namespace CDCatalogWF
         
         private void buttonOK_Click(object sender, EventArgs e)
         {
-
+            this.Text = genreTxtBox.Text;
+            int genreId = Genre.AddGenre(this.Text);
+            string msg = "GenreID=" + genreId.ToString();
+            MessageBox.Show(msg);
         }
 
         private void cancelButton_Click(object sender, EventArgs e)

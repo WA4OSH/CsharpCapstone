@@ -12,7 +12,7 @@ namespace CDCatalogDA
     {
         public static List<CDCatalogEF.Song> GetSongsByTitle(string title)
         {
-            using (var db = new CDCatalogEntities())
+            using (var db = new CDCatalogEntities1())
             {
                 try
                 {
@@ -45,7 +45,7 @@ namespace CDCatalogDA
                 song.SongTrackLength = trackLength;
                 song.GenreID = genreId;
 
-                using (var db = new CDCatalogEntities())
+                using (var db = new CDCatalogEntities1())
                 {
                     db.Songs.Add(song);
                     var resultCount = db.SaveChanges();
@@ -67,7 +67,7 @@ namespace CDCatalogDA
         {
             try
             {
-                using (var db = new CDCatalogEntities())
+                using (var db = new CDCatalogEntities1())
                 {
                     CDCatalogEF.Song song = db.Songs.Where(n => n.Equals(songId)).Single();
                     db.Songs.Remove(song);

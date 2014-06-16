@@ -32,7 +32,7 @@ namespace CDCatalogWF
         {
             this.Text = artistTxtBox.Text;
             int artistId = Artist.AddArtist(this.Text);
-            string msg = artistId.ToString();
+            string msg = "ArtistID=" + artistId.ToString();
             MessageBox.Show(msg);
         }
 

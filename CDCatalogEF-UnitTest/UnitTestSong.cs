@@ -24,7 +24,7 @@ namespace CDCatalogEF_UnitTest
             //Test init (none)
 
             //Add a song to the database
-            using (var ctx = new CDCatalogEntities())
+            using (var ctx = new CDCatalogEntities1())
             {
                 //Get an artist we know exists -- Avicii
                 Artist A = ctx.Artists.Where(n => n.ArtistName.ToLower().Equals("avicii")).FirstOrDefault();
@@ -65,7 +65,7 @@ namespace CDCatalogEF_UnitTest
         [TestMethod]
         public void TestSongFetch()
         {
-            using (var ctx = new CDCatalogEntities())
+            using (var ctx = new CDCatalogEntities1())
             {
                 //Test init
                 //Get an artist we know exists -- Avicii
@@ -110,7 +110,7 @@ namespace CDCatalogEF_UnitTest
         public void TestSongDelete()
         {
        
-            using (var ctx = new CDCatalogEntities())
+            using (var ctx = new CDCatalogEntities1())
             {
                 //Test init
                 //Get an artist we know exists -- Avicii

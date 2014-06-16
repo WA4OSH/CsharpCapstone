@@ -21,7 +21,7 @@ namespace CDCatalogEF
         private void btnAddArtist_Click(object sender, EventArgs e)
         {
             DialogResult dr = new DialogResult();
-            AddGenreWF frm = new AddGenreWF();
+            AddArtistWF frm = new AddArtistWF();
             dr = frm.ShowDialog();
             if (dr == DialogResult.OK)
                 MessageBox.Show("User clicked OK button");
