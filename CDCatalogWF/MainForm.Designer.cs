@@ -31,36 +31,36 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.CDCatalogPictureBox = new System.Windows.Forms.PictureBox();
             this.viewGroupBox = new System.Windows.Forms.GroupBox();
-            this.albumRadioButton = new System.Windows.Forms.RadioButton();
             this.songRadioButton = new System.Windows.Forms.RadioButton();
+            this.albumRadioButton = new System.Windows.Forms.RadioButton();
             this.AlbumPanel = new System.Windows.Forms.Panel();
             this.songPanel = new System.Windows.Forms.Panel();
+            this.playlistPanel = new System.Windows.Forms.Panel();
+            this.albumGroupBox = new System.Windows.Forms.GroupBox();
+            this.albumDeleteButton = new System.Windows.Forms.Button();
+            this.albumUpdateButton = new System.Windows.Forms.Button();
+            this.addAlbumButton = new System.Windows.Forms.Button();
+            this.songGroupBox = new System.Windows.Forms.GroupBox();
+            this.deleteSongButton = new System.Windows.Forms.Button();
             this.addSongButton = new System.Windows.Forms.Button();
             this.updateSongButton = new System.Windows.Forms.Button();
-            this.deleteSongButton = new System.Windows.Forms.Button();
-            this.songGroupBox = new System.Windows.Forms.GroupBox();
-            this.albumGroupBox = new System.Windows.Forms.GroupBox();
-            this.addAlbumButton = new System.Windows.Forms.Button();
-            this.albumUpdateButton = new System.Windows.Forms.Button();
-            this.albumDeleteButton = new System.Windows.Forms.Button();
-            this.playlistPanel = new System.Windows.Forms.Panel();
             this.searchGroupBox = new System.Windows.Forms.GroupBox();
-            this.searchOKButton = new System.Windows.Forms.Button();
-            this.searchContinueButton1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.searchPictureBox = new System.Windows.Forms.PictureBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.searchContinueButton1 = new System.Windows.Forms.Button();
+            this.searchOKButton = new System.Windows.Forms.Button();
             this.playListGroupBox = new System.Windows.Forms.GroupBox();
-            this.playListPictureBox = new System.Windows.Forms.PictureBox();
-            this.playListOKButton = new System.Windows.Forms.Button();
-            this.playListCancelButton = new System.Windows.Forms.Button();
-            this.playListTimeTextBox = new System.Windows.Forms.TextBox();
             this.playListGenreListBox = new System.Windows.Forms.ListBox();
+            this.playListTimeTextBox = new System.Windows.Forms.TextBox();
+            this.playListCancelButton = new System.Windows.Forms.Button();
+            this.playListOKButton = new System.Windows.Forms.Button();
+            this.playListPictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.CDCatalogPictureBox)).BeginInit();
             this.viewGroupBox.SuspendLayout();
             this.AlbumPanel.SuspendLayout();
             this.songPanel.SuspendLayout();
-            this.songGroupBox.SuspendLayout();
             this.albumGroupBox.SuspendLayout();
+            this.songGroupBox.SuspendLayout();
             this.searchGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.searchPictureBox)).BeginInit();
             this.playListGroupBox.SuspendLayout();
@@ -87,18 +87,6 @@
             this.viewGroupBox.TabStop = false;
             this.viewGroupBox.Text = "View";
             // 
-            // albumRadioButton
-            // 
-            this.albumRadioButton.AutoSize = true;
-            this.albumRadioButton.Image = ((System.Drawing.Image)(resources.GetObject("albumRadioButton.Image")));
-            this.albumRadioButton.Location = new System.Drawing.Point(6, 19);
-            this.albumRadioButton.Name = "albumRadioButton";
-            this.albumRadioButton.Size = new System.Drawing.Size(77, 55);
-            this.albumRadioButton.TabIndex = 0;
-            this.albumRadioButton.TabStop = true;
-            this.albumRadioButton.Text = "Album";
-            this.albumRadioButton.UseVisualStyleBackColor = true;
-            // 
             // songRadioButton
             // 
             this.songRadioButton.AutoSize = true;
@@ -110,6 +98,18 @@
             this.songRadioButton.TabStop = true;
             this.songRadioButton.Text = "Song";
             this.songRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // albumRadioButton
+            // 
+            this.albumRadioButton.AutoSize = true;
+            this.albumRadioButton.Image = ((System.Drawing.Image)(resources.GetObject("albumRadioButton.Image")));
+            this.albumRadioButton.Location = new System.Drawing.Point(6, 19);
+            this.albumRadioButton.Name = "albumRadioButton";
+            this.albumRadioButton.Size = new System.Drawing.Size(77, 55);
+            this.albumRadioButton.TabIndex = 0;
+            this.albumRadioButton.TabStop = true;
+            this.albumRadioButton.Text = "Album";
+            this.albumRadioButton.UseVisualStyleBackColor = true;
             // 
             // AlbumPanel
             // 
@@ -128,6 +128,79 @@
             this.songPanel.Name = "songPanel";
             this.songPanel.Size = new System.Drawing.Size(881, 362);
             this.songPanel.TabIndex = 0;
+            // 
+            // playlistPanel
+            // 
+            this.playlistPanel.Location = new System.Drawing.Point(0, 1);
+            this.playlistPanel.Name = "playlistPanel";
+            this.playlistPanel.Size = new System.Drawing.Size(881, 360);
+            this.playlistPanel.TabIndex = 5;
+            this.playlistPanel.Visible = false;
+            // 
+            // albumGroupBox
+            // 
+            this.albumGroupBox.Controls.Add(this.albumDeleteButton);
+            this.albumGroupBox.Controls.Add(this.albumUpdateButton);
+            this.albumGroupBox.Controls.Add(this.addAlbumButton);
+            this.albumGroupBox.Location = new System.Drawing.Point(5, 5);
+            this.albumGroupBox.Name = "albumGroupBox";
+            this.albumGroupBox.Size = new System.Drawing.Size(251, 100);
+            this.albumGroupBox.TabIndex = 4;
+            this.albumGroupBox.TabStop = false;
+            this.albumGroupBox.Text = "Album";
+            // 
+            // albumDeleteButton
+            // 
+            this.albumDeleteButton.Image = ((System.Drawing.Image)(resources.GetObject("albumDeleteButton.Image")));
+            this.albumDeleteButton.Location = new System.Drawing.Point(169, 20);
+            this.albumDeleteButton.Name = "albumDeleteButton";
+            this.albumDeleteButton.Size = new System.Drawing.Size(75, 63);
+            this.albumDeleteButton.TabIndex = 2;
+            this.albumDeleteButton.Text = "Delete";
+            this.albumDeleteButton.UseVisualStyleBackColor = true;
+            // 
+            // albumUpdateButton
+            // 
+            this.albumUpdateButton.Image = ((System.Drawing.Image)(resources.GetObject("albumUpdateButton.Image")));
+            this.albumUpdateButton.Location = new System.Drawing.Point(88, 19);
+            this.albumUpdateButton.Name = "albumUpdateButton";
+            this.albumUpdateButton.Size = new System.Drawing.Size(75, 64);
+            this.albumUpdateButton.TabIndex = 1;
+            this.albumUpdateButton.Text = "Update";
+            this.albumUpdateButton.UseVisualStyleBackColor = true;
+            // 
+            // addAlbumButton
+            // 
+            this.addAlbumButton.Image = ((System.Drawing.Image)(resources.GetObject("addAlbumButton.Image")));
+            this.addAlbumButton.Location = new System.Drawing.Point(6, 19);
+            this.addAlbumButton.Name = "addAlbumButton";
+            this.addAlbumButton.Size = new System.Drawing.Size(75, 64);
+            this.addAlbumButton.TabIndex = 0;
+            this.addAlbumButton.Text = "Add";
+            this.addAlbumButton.UseVisualStyleBackColor = true;
+            // 
+            // songGroupBox
+            // 
+            this.songGroupBox.Controls.Add(this.deleteSongButton);
+            this.songGroupBox.Controls.Add(this.addSongButton);
+            this.songGroupBox.Controls.Add(this.updateSongButton);
+            this.songGroupBox.Location = new System.Drawing.Point(262, 5);
+            this.songGroupBox.Name = "songGroupBox";
+            this.songGroupBox.Size = new System.Drawing.Size(254, 100);
+            this.songGroupBox.TabIndex = 3;
+            this.songGroupBox.TabStop = false;
+            this.songGroupBox.Text = "Song";
+            // 
+            // deleteSongButton
+            // 
+            this.deleteSongButton.Image = ((System.Drawing.Image)(resources.GetObject("deleteSongButton.Image")));
+            this.deleteSongButton.Location = new System.Drawing.Point(169, 19);
+            this.deleteSongButton.Name = "deleteSongButton";
+            this.deleteSongButton.Size = new System.Drawing.Size(75, 64);
+            this.deleteSongButton.TabIndex = 2;
+            this.deleteSongButton.Text = "Delete";
+            this.deleteSongButton.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.deleteSongButton.UseVisualStyleBackColor = true;
             // 
             // addSongButton
             // 
@@ -151,79 +224,6 @@
             this.updateSongButton.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.updateSongButton.UseVisualStyleBackColor = true;
             // 
-            // deleteSongButton
-            // 
-            this.deleteSongButton.Image = ((System.Drawing.Image)(resources.GetObject("deleteSongButton.Image")));
-            this.deleteSongButton.Location = new System.Drawing.Point(169, 19);
-            this.deleteSongButton.Name = "deleteSongButton";
-            this.deleteSongButton.Size = new System.Drawing.Size(75, 64);
-            this.deleteSongButton.TabIndex = 2;
-            this.deleteSongButton.Text = "Delete";
-            this.deleteSongButton.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.deleteSongButton.UseVisualStyleBackColor = true;
-            // 
-            // songGroupBox
-            // 
-            this.songGroupBox.Controls.Add(this.deleteSongButton);
-            this.songGroupBox.Controls.Add(this.addSongButton);
-            this.songGroupBox.Controls.Add(this.updateSongButton);
-            this.songGroupBox.Location = new System.Drawing.Point(262, 5);
-            this.songGroupBox.Name = "songGroupBox";
-            this.songGroupBox.Size = new System.Drawing.Size(254, 100);
-            this.songGroupBox.TabIndex = 3;
-            this.songGroupBox.TabStop = false;
-            this.songGroupBox.Text = "Song";
-            // 
-            // albumGroupBox
-            // 
-            this.albumGroupBox.Controls.Add(this.albumDeleteButton);
-            this.albumGroupBox.Controls.Add(this.albumUpdateButton);
-            this.albumGroupBox.Controls.Add(this.addAlbumButton);
-            this.albumGroupBox.Location = new System.Drawing.Point(5, 5);
-            this.albumGroupBox.Name = "albumGroupBox";
-            this.albumGroupBox.Size = new System.Drawing.Size(251, 100);
-            this.albumGroupBox.TabIndex = 4;
-            this.albumGroupBox.TabStop = false;
-            this.albumGroupBox.Text = "Album";
-            // 
-            // addAlbumButton
-            // 
-            this.addAlbumButton.Image = ((System.Drawing.Image)(resources.GetObject("addAlbumButton.Image")));
-            this.addAlbumButton.Location = new System.Drawing.Point(6, 19);
-            this.addAlbumButton.Name = "addAlbumButton";
-            this.addAlbumButton.Size = new System.Drawing.Size(75, 64);
-            this.addAlbumButton.TabIndex = 0;
-            this.addAlbumButton.Text = "Add";
-            this.addAlbumButton.UseVisualStyleBackColor = true;
-            // 
-            // albumUpdateButton
-            // 
-            this.albumUpdateButton.Image = ((System.Drawing.Image)(resources.GetObject("albumUpdateButton.Image")));
-            this.albumUpdateButton.Location = new System.Drawing.Point(88, 19);
-            this.albumUpdateButton.Name = "albumUpdateButton";
-            this.albumUpdateButton.Size = new System.Drawing.Size(75, 64);
-            this.albumUpdateButton.TabIndex = 1;
-            this.albumUpdateButton.Text = "Update";
-            this.albumUpdateButton.UseVisualStyleBackColor = true;
-            // 
-            // albumDeleteButton
-            // 
-            this.albumDeleteButton.Image = ((System.Drawing.Image)(resources.GetObject("albumDeleteButton.Image")));
-            this.albumDeleteButton.Location = new System.Drawing.Point(169, 20);
-            this.albumDeleteButton.Name = "albumDeleteButton";
-            this.albumDeleteButton.Size = new System.Drawing.Size(75, 63);
-            this.albumDeleteButton.TabIndex = 2;
-            this.albumDeleteButton.Text = "Delete";
-            this.albumDeleteButton.UseVisualStyleBackColor = true;
-            // 
-            // playlistPanel
-            // 
-            this.playlistPanel.Location = new System.Drawing.Point(0, 1);
-            this.playlistPanel.Name = "playlistPanel";
-            this.playlistPanel.Size = new System.Drawing.Size(881, 360);
-            this.playlistPanel.TabIndex = 5;
-            this.playlistPanel.Visible = false;
-            // 
             // searchGroupBox
             // 
             this.searchGroupBox.Controls.Add(this.searchPictureBox);
@@ -237,14 +237,21 @@
             this.searchGroupBox.TabStop = false;
             this.searchGroupBox.Text = "Search";
             // 
-            // searchOKButton
+            // searchPictureBox
             // 
-            this.searchOKButton.Location = new System.Drawing.Point(67, 51);
-            this.searchOKButton.Name = "searchOKButton";
-            this.searchOKButton.Size = new System.Drawing.Size(75, 23);
-            this.searchOKButton.TabIndex = 0;
-            this.searchOKButton.Text = "OK";
-            this.searchOKButton.UseVisualStyleBackColor = true;
+            this.searchPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("searchPictureBox.Image")));
+            this.searchPictureBox.Location = new System.Drawing.Point(6, 20);
+            this.searchPictureBox.Name = "searchPictureBox";
+            this.searchPictureBox.Size = new System.Drawing.Size(55, 55);
+            this.searchPictureBox.TabIndex = 3;
+            this.searchPictureBox.TabStop = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(67, 20);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(156, 20);
+            this.textBox1.TabIndex = 2;
             // 
             // searchContinueButton1
             // 
@@ -255,21 +262,14 @@
             this.searchContinueButton1.Text = "Cancel";
             this.searchContinueButton1.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // searchOKButton
             // 
-            this.textBox1.Location = new System.Drawing.Point(67, 20);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(156, 20);
-            this.textBox1.TabIndex = 2;
-            // 
-            // searchPictureBox
-            // 
-            this.searchPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("searchPictureBox.Image")));
-            this.searchPictureBox.Location = new System.Drawing.Point(6, 20);
-            this.searchPictureBox.Name = "searchPictureBox";
-            this.searchPictureBox.Size = new System.Drawing.Size(55, 55);
-            this.searchPictureBox.TabIndex = 3;
-            this.searchPictureBox.TabStop = false;
+            this.searchOKButton.Location = new System.Drawing.Point(67, 51);
+            this.searchOKButton.Name = "searchOKButton";
+            this.searchOKButton.Size = new System.Drawing.Size(75, 23);
+            this.searchOKButton.TabIndex = 0;
+            this.searchOKButton.Text = "OK";
+            this.searchOKButton.UseVisualStyleBackColor = true;
             // 
             // playListGroupBox
             // 
@@ -285,23 +285,20 @@
             this.playListGroupBox.TabStop = false;
             this.playListGroupBox.Text = "Play List";
             // 
-            // playListPictureBox
+            // playListGenreListBox
             // 
-            this.playListPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("playListPictureBox.Image")));
-            this.playListPictureBox.Location = new System.Drawing.Point(7, 20);
-            this.playListPictureBox.Name = "playListPictureBox";
-            this.playListPictureBox.Size = new System.Drawing.Size(55, 55);
-            this.playListPictureBox.TabIndex = 0;
-            this.playListPictureBox.TabStop = false;
+            this.playListGenreListBox.FormattingEnabled = true;
+            this.playListGenreListBox.Location = new System.Drawing.Point(122, 21);
+            this.playListGenreListBox.Name = "playListGenreListBox";
+            this.playListGenreListBox.Size = new System.Drawing.Size(102, 17);
+            this.playListGenreListBox.TabIndex = 4;
             // 
-            // playListOKButton
+            // playListTimeTextBox
             // 
-            this.playListOKButton.Location = new System.Drawing.Point(68, 52);
-            this.playListOKButton.Name = "playListOKButton";
-            this.playListOKButton.Size = new System.Drawing.Size(75, 23);
-            this.playListOKButton.TabIndex = 1;
-            this.playListOKButton.Text = "OK";
-            this.playListOKButton.UseVisualStyleBackColor = true;
+            this.playListTimeTextBox.Location = new System.Drawing.Point(68, 20);
+            this.playListTimeTextBox.Name = "playListTimeTextBox";
+            this.playListTimeTextBox.Size = new System.Drawing.Size(48, 20);
+            this.playListTimeTextBox.TabIndex = 3;
             // 
             // playListCancelButton
             // 
@@ -312,20 +309,23 @@
             this.playListCancelButton.Text = "Cancel";
             this.playListCancelButton.UseVisualStyleBackColor = true;
             // 
-            // playListTimeTextBox
+            // playListOKButton
             // 
-            this.playListTimeTextBox.Location = new System.Drawing.Point(68, 20);
-            this.playListTimeTextBox.Name = "playListTimeTextBox";
-            this.playListTimeTextBox.Size = new System.Drawing.Size(48, 20);
-            this.playListTimeTextBox.TabIndex = 3;
+            this.playListOKButton.Location = new System.Drawing.Point(68, 52);
+            this.playListOKButton.Name = "playListOKButton";
+            this.playListOKButton.Size = new System.Drawing.Size(75, 23);
+            this.playListOKButton.TabIndex = 1;
+            this.playListOKButton.Text = "OK";
+            this.playListOKButton.UseVisualStyleBackColor = true;
             // 
-            // playListGenreListBox
+            // playListPictureBox
             // 
-            this.playListGenreListBox.FormattingEnabled = true;
-            this.playListGenreListBox.Location = new System.Drawing.Point(122, 21);
-            this.playListGenreListBox.Name = "playListGenreListBox";
-            this.playListGenreListBox.Size = new System.Drawing.Size(102, 17);
-            this.playListGenreListBox.TabIndex = 4;
+            this.playListPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("playListPictureBox.Image")));
+            this.playListPictureBox.Location = new System.Drawing.Point(7, 20);
+            this.playListPictureBox.Name = "playListPictureBox";
+            this.playListPictureBox.Size = new System.Drawing.Size(55, 55);
+            this.playListPictureBox.TabIndex = 0;
+            this.playListPictureBox.TabStop = false;
             // 
             // MainForm
             // 
@@ -339,13 +339,14 @@
             this.Controls.Add(this.CDCatalogPictureBox);
             this.Name = "MainForm";
             this.Text = "MainForm";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.CDCatalogPictureBox)).EndInit();
             this.viewGroupBox.ResumeLayout(false);
             this.viewGroupBox.PerformLayout();
             this.AlbumPanel.ResumeLayout(false);
             this.songPanel.ResumeLayout(false);
-            this.songGroupBox.ResumeLayout(false);
             this.albumGroupBox.ResumeLayout(false);
+            this.songGroupBox.ResumeLayout(false);
             this.searchGroupBox.ResumeLayout(false);
             this.searchGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.searchPictureBox)).EndInit();
