@@ -40,7 +40,7 @@ namespace CDCatalogEF_UnitTest
                 s.AlbumID = M.AlbumID;
                 s.GenreID = G.GenreID;
                 s.SongTrackNumber = 15;
-                s.SongTrackLength = 3.5;
+                s.SongTrackLength = 350;
                 s.SongRating = 3;
                 //add it to the database
                 ctx.Songs.Add(s);
@@ -82,7 +82,7 @@ namespace CDCatalogEF_UnitTest
                 i.AlbumID = M.AlbumID;
                 i.GenreID = G.GenreID;
                 i.SongTrackNumber = 15;
-                i.SongTrackLength = 3.5;
+                i.SongTrackLength = 300;
                 i.SongRating = 3;
                 //add it to the database
                 ctx.Songs.Add(i);
@@ -126,7 +126,7 @@ namespace CDCatalogEF_UnitTest
                 s.AlbumID = M.AlbumID;
                 s.GenreID = G.GenreID;
                 s.SongTrackNumber = 15;
-                s.SongTrackLength = 3.5;
+                s.SongTrackLength =350;
                 s.SongRating = 3;
                 //add it to the database
                 ctx.Songs.Add(s);

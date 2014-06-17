@@ -40,7 +40,7 @@ namespace CDCatalogDA
 
                 using (var db = new CDCatalogEntities())
                 {
-                    db.Artists.Add(artist);
+                    db.Artists.Add(artist);                  //faults here
                     var resultCount = db.SaveChanges();
                 }
             }
@@ -83,6 +83,7 @@ namespace CDCatalogDA
             {
                 using (var db = new CDCatalogEntities())
                 {
+                    // Find one artist
                     CDCatalogEF.Artist artist = db.Artists.Where(n => n.Equals(artistId)).Single();
                     db.Artists.Remove(artist);
                     return true;  //if there is an exception, this won't run
