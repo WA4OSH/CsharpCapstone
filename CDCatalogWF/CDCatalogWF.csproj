@@ -65,6 +65,16 @@
     <Compile Include="AddGenreWF.Designer.cs">
       <DependentUpon>AddGenreWF.cs</DependentUpon>
     </Compile>
+    <Compile Include="CDCatalogDataSet11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CDCatalogDataSet11.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CDCatalogDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CDCatalogDataSet3.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +110,28 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="CDCatalogDataSet11.xsc">
+      <DependentUpon>CDCatalogDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="CDCatalogDataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CDCatalogDataSet11.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CDCatalogDataSet11.xss">
+      <DependentUpon>CDCatalogDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="CDCatalogDataSet3.xsc">
+      <DependentUpon>CDCatalogDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="CDCatalogDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CDCatalogDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CDCatalogDataSet3.xss">
+      <DependentUpon>CDCatalogDataSet3.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
