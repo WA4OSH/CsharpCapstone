@@ -64,6 +64,7 @@
             // 
             // cancelButton
             // 
+            this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelButton.Location = new System.Drawing.Point(167, 44);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
@@ -82,8 +83,12 @@
             // 
             // ChangeGenreWF
             // 
+            this.AcceptButton = this.buttonOK;
+            this.AccessibleDescription = "Use this form to change the genre";
+            this.AccessibleName = "Change Genre";
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.cancelButton;
             this.ClientSize = new System.Drawing.Size(262, 82);
             this.Controls.Add(this.changeGenrePictureBox);
             this.Controls.Add(this.deleteGenreTextBox);

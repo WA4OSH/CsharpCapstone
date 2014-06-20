@@ -85,8 +85,12 @@
             // 
             // AddGenreWF
             // 
+            this.AcceptButton = this.buttonOK;
+            this.AccessibleDescription = "Use this form to add a genre";
+            this.AccessibleName = "Add Genre";
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.cancelButton;
             this.ClientSize = new System.Drawing.Size(269, 82);
             this.Controls.Add(this.genrePictureBox);
             this.Controls.Add(this.genreTxtBox);

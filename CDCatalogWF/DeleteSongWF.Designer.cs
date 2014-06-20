@@ -47,6 +47,7 @@
             // 
             // cancelButton
             // 
+            this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelButton.Location = new System.Drawing.Point(181, 48);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
@@ -72,8 +73,12 @@
             // 
             // DeleteSongWF
             // 
+            this.AcceptButton = this.OkButton;
+            this.AccessibleDescription = "Use this form to delete a song";
+            this.AccessibleName = "Delete Song";
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.cancelButton;
             this.ClientSize = new System.Drawing.Size(284, 83);
             this.Controls.Add(this.deleteSongTextBox);
             this.Controls.Add(this.cancelButton);

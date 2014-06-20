@@ -84,8 +84,12 @@
             // 
             // ChangeArtistWF
             // 
+            this.AcceptButton = this.okButton;
+            this.AccessibleDescription = "Use this form to change an artist";
+            this.AccessibleName = "Change Artist";
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.cancelButton;
             this.ClientSize = new System.Drawing.Size(257, 75);
             this.Controls.Add(this.changeArtistPictureBox);
             this.Controls.Add(this.cancelButton);

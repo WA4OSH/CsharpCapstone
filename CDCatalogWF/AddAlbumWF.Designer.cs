@@ -123,6 +123,7 @@
             this.addArtistButton.Size = new System.Drawing.Size(75, 23);
             this.addArtistButton.TabIndex = 8;
             this.addArtistButton.UseVisualStyleBackColor = true;
+            this.addArtistButton.Click += new System.EventHandler(this.addArtistButton_Click);
             // 
             // addGenreButton
             // 
@@ -132,6 +133,7 @@
             this.addGenreButton.Size = new System.Drawing.Size(75, 23);
             this.addGenreButton.TabIndex = 9;
             this.addGenreButton.UseVisualStyleBackColor = true;
+            this.addGenreButton.Click += new System.EventHandler(this.addGenreButton_Click);
             // 
             // ratingLabel
             // 
@@ -171,6 +173,7 @@
             // 
             // cancelButton
             // 
+            this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelButton.Location = new System.Drawing.Point(305, 171);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
@@ -180,8 +183,12 @@
             // 
             // AddAlbumWF
             // 
+            this.AcceptButton = this.OkButton;
+            this.AccessibleDescription = "Use this form to add an album";
+            this.AccessibleName = "Add Album";
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.cancelButton;
             this.ClientSize = new System.Drawing.Size(393, 206);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.OkButton);

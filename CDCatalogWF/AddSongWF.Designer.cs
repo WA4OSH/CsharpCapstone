@@ -39,11 +39,13 @@
             this.ratingLabel = new System.Windows.Forms.Label();
             this.ratingComboBox = new System.Windows.Forms.ComboBox();
             this.addGenreButton = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.songTrackLengthTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cancelButton = new System.Windows.Forms.Button();
             this.OkButton = new System.Windows.Forms.Button();
+            this.trackNumberLabel = new System.Windows.Forms.Label();
+            this.songTrackNumberTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,9 +54,10 @@
             this.artistLabel.AutoSize = true;
             this.artistLabel.Location = new System.Drawing.Point(93, 25);
             this.artistLabel.Name = "artistLabel";
-            this.artistLabel.Size = new System.Drawing.Size(30, 13);
+            this.artistLabel.Size = new System.Drawing.Size(59, 13);
             this.artistLabel.TabIndex = 1;
-            this.artistLabel.Text = "Artist";
+            this.artistLabel.Text = "Artist name";
+            this.artistLabel.Click += new System.EventHandler(this.artistLabel_Click);
             // 
             // artistComboBox
             // 
@@ -74,6 +77,7 @@
             this.addArtistButton.Size = new System.Drawing.Size(75, 23);
             this.addArtistButton.TabIndex = 9;
             this.addArtistButton.UseVisualStyleBackColor = true;
+            this.addArtistButton.Click += new System.EventHandler(this.addArtistButton_Click);
             // 
             // songNameTextBox
             // 
@@ -87,14 +91,14 @@
             this.songNameLabel.AutoSize = true;
             this.songNameLabel.Location = new System.Drawing.Point(93, 52);
             this.songNameLabel.Name = "songNameLabel";
-            this.songNameLabel.Size = new System.Drawing.Size(63, 13);
+            this.songNameLabel.Size = new System.Drawing.Size(51, 13);
             this.songNameLabel.TabIndex = 11;
-            this.songNameLabel.Text = "Song Name";
+            this.songNameLabel.Text = "Song title";
             // 
             // genreComboBox
             // 
             this.genreComboBox.FormattingEnabled = true;
-            this.genreComboBox.Location = new System.Drawing.Point(172, 102);
+            this.genreComboBox.Location = new System.Drawing.Point(172, 126);
             this.genreComboBox.Name = "genreComboBox";
             this.genreComboBox.Size = new System.Drawing.Size(151, 21);
             this.genreComboBox.TabIndex = 12;
@@ -102,7 +106,7 @@
             // genreLabel
             // 
             this.genreLabel.AutoSize = true;
-            this.genreLabel.Location = new System.Drawing.Point(93, 105);
+            this.genreLabel.Location = new System.Drawing.Point(93, 129);
             this.genreLabel.Name = "genreLabel";
             this.genreLabel.Size = new System.Drawing.Size(36, 13);
             this.genreLabel.TabIndex = 13;
@@ -111,17 +115,17 @@
             // ratingLabel
             // 
             this.ratingLabel.AutoSize = true;
-            this.ratingLabel.Location = new System.Drawing.Point(93, 134);
+            this.ratingLabel.Location = new System.Drawing.Point(93, 158);
             this.ratingLabel.Name = "ratingLabel";
-            this.ratingLabel.Size = new System.Drawing.Size(38, 13);
+            this.ratingLabel.Size = new System.Drawing.Size(61, 13);
             this.ratingLabel.TabIndex = 14;
-            this.ratingLabel.Text = "Rating";
+            this.ratingLabel.Text = "Song rating";
             // 
             // ratingComboBox
             // 
             this.ratingComboBox.AllowDrop = true;
             this.ratingComboBox.FormattingEnabled = true;
-            this.ratingComboBox.Location = new System.Drawing.Point(172, 131);
+            this.ratingComboBox.Location = new System.Drawing.Point(172, 155);
             this.ratingComboBox.Name = "ratingComboBox";
             this.ratingComboBox.Size = new System.Drawing.Size(151, 21);
             this.ratingComboBox.TabIndex = 15;
@@ -129,27 +133,28 @@
             // addGenreButton
             // 
             this.addGenreButton.Image = ((System.Drawing.Image)(resources.GetObject("addGenreButton.Image")));
-            this.addGenreButton.Location = new System.Drawing.Point(330, 100);
+            this.addGenreButton.Location = new System.Drawing.Point(330, 124);
             this.addGenreButton.Name = "addGenreButton";
             this.addGenreButton.Size = new System.Drawing.Size(75, 23);
             this.addGenreButton.TabIndex = 16;
             this.addGenreButton.UseVisualStyleBackColor = true;
+            this.addGenreButton.Click += new System.EventHandler(this.addGenreButton_Click);
             // 
-            // textBox1
+            // songTrackLengthTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(172, 76);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 17;
+            this.songTrackLengthTextBox.Location = new System.Drawing.Point(172, 100);
+            this.songTrackLengthTextBox.Name = "songTrackLengthTextBox";
+            this.songTrackLengthTextBox.Size = new System.Drawing.Size(100, 20);
+            this.songTrackLengthTextBox.TabIndex = 17;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(93, 79);
+            this.label1.Location = new System.Drawing.Point(93, 103);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 13);
+            this.label1.Size = new System.Drawing.Size(67, 13);
             this.label1.TabIndex = 18;
-            this.label1.Text = "Track Length";
+            this.label1.Text = "Track length";
             // 
             // pictureBox1
             // 
@@ -162,7 +167,8 @@
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(330, 179);
+            this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.cancelButton.Location = new System.Drawing.Point(330, 203);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 21;
@@ -171,23 +177,45 @@
             // 
             // OkButton
             // 
-            this.OkButton.Location = new System.Drawing.Point(248, 179);
+            this.OkButton.Location = new System.Drawing.Point(248, 203);
             this.OkButton.Name = "OkButton";
             this.OkButton.Size = new System.Drawing.Size(75, 23);
             this.OkButton.TabIndex = 20;
             this.OkButton.Text = "OK";
             this.OkButton.UseVisualStyleBackColor = true;
             // 
+            // trackNumberLabel
+            // 
+            this.trackNumberLabel.AutoSize = true;
+            this.trackNumberLabel.Location = new System.Drawing.Point(93, 78);
+            this.trackNumberLabel.Name = "trackNumberLabel";
+            this.trackNumberLabel.Size = new System.Drawing.Size(73, 13);
+            this.trackNumberLabel.TabIndex = 23;
+            this.trackNumberLabel.Text = "Track number";
+            // 
+            // songTrackNumberTextBox
+            // 
+            this.songTrackNumberTextBox.Location = new System.Drawing.Point(172, 75);
+            this.songTrackNumberTextBox.Name = "songTrackNumberTextBox";
+            this.songTrackNumberTextBox.Size = new System.Drawing.Size(100, 20);
+            this.songTrackNumberTextBox.TabIndex = 22;
+            // 
             // AddSongWF
             // 
+            this.AcceptButton = this.OkButton;
+            this.AccessibleDescription = "Use this form to add a song";
+            this.AccessibleName = "Add Song";
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(422, 212);
+            this.CancelButton = this.cancelButton;
+            this.ClientSize = new System.Drawing.Size(422, 256);
+            this.Controls.Add(this.trackNumberLabel);
+            this.Controls.Add(this.songTrackNumberTextBox);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.OkButton);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.songTrackLengthTextBox);
             this.Controls.Add(this.addGenreButton);
             this.Controls.Add(this.ratingComboBox);
             this.Controls.Add(this.ratingLabel);
@@ -218,10 +246,12 @@
         private System.Windows.Forms.Label ratingLabel;
         private System.Windows.Forms.ComboBox ratingComboBox;
         private System.Windows.Forms.Button addGenreButton;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox songTrackLengthTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button OkButton;
+        private System.Windows.Forms.Label trackNumberLabel;
+        private System.Windows.Forms.TextBox songTrackNumberTextBox;
     }
 }

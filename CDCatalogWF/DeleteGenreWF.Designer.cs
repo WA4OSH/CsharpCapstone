@@ -38,6 +38,7 @@
             // 
             // cancelButton
             // 
+            this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelButton.Location = new System.Drawing.Point(186, 48);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
@@ -72,8 +73,12 @@
             // 
             // DeleteGenreWF
             // 
+            this.AcceptButton = this.OkButton;
+            this.AccessibleDescription = "Use this form to delete a genre";
+            this.AccessibleName = "Delete Genre";
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.cancelButton;
             this.ClientSize = new System.Drawing.Size(284, 86);
             this.Controls.Add(this.deleteGenreTextBox);
             this.Controls.Add(this.deleteGenrePictureBox);
