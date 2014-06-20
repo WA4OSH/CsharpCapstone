@@ -53,6 +53,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddAlbumWF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddAlbumWF.Designer.cs">
+      <DependentUpon>AddAlbumWF.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddArtistWF.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +71,12 @@
     <Compile Include="AddGenreWF.Designer.cs">
       <DependentUpon>AddGenreWF.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddSongWF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddSongWF.Designer.cs">
+      <DependentUpon>AddSongWF.cs</DependentUpon>
+    </Compile>
     <Compile Include="CDCatalogDataSet11.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -74,6 +86,54 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CDCatalogDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ChangeAlbumWF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangeAlbumWF.Designer.cs">
+      <DependentUpon>ChangeAlbumWF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChangeArtistWF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangeArtistWF.Designer.cs">
+      <DependentUpon>ChangeArtistWF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChangeGenreWF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangeGenreWF.Designer.cs">
+      <DependentUpon>ChangeGenreWF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChangeSongWF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangeSongWF.Designer.cs">
+      <DependentUpon>ChangeSongWF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteAlbumWF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteAlbumWF.Designer.cs">
+      <DependentUpon>DeleteAlbumWF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteArtistWF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteArtistWF.Designer.cs">
+      <DependentUpon>DeleteArtistWF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteGenreWF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteGenreWF.Designer.cs">
+      <DependentUpon>DeleteGenreWF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteSongWF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteSongWF.Designer.cs">
+      <DependentUpon>DeleteSongWF.cs</DependentUpon>
     </Compile>
     <Compile Include="Form2.cs">
       <SubType>Form</SubType>
@@ -89,11 +149,41 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddAlbumWF.resx">
+      <DependentUpon>AddAlbumWF.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddArtistWF.resx">
       <DependentUpon>AddArtistWF.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddGenreWF.resx">
       <DependentUpon>AddGenreWF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddSongWF.resx">
+      <DependentUpon>AddSongWF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangeAlbumWF.resx">
+      <DependentUpon>ChangeAlbumWF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangeArtistWF.resx">
+      <DependentUpon>ChangeArtistWF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangeGenreWF.resx">
+      <DependentUpon>ChangeGenreWF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangeSongWF.resx">
+      <DependentUpon>ChangeSongWF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteAlbumWF.resx">
+      <DependentUpon>DeleteAlbumWF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteArtistWF.resx">
+      <DependentUpon>DeleteArtistWF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteGenreWF.resx">
+      <DependentUpon>DeleteGenreWF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteSongWF.resx">
+      <DependentUpon>DeleteSongWF.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>

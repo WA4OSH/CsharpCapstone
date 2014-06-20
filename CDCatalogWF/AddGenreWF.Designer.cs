@@ -83,7 +83,7 @@
             this.genrePictureBox.TabIndex = 4;
             this.genrePictureBox.TabStop = false;
             // 
-            // AddGenre
+            // AddGenreWF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -93,7 +93,7 @@
             this.Controls.Add(this.genreLabel);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.buttonOK);
-            this.Name = "AddGenre";
+            this.Name = "AddGenreWF";
             this.Text = "AddGenre";
             ((System.ComponentModel.ISupportInitialize)(this.genrePictureBox)).EndInit();
             this.ResumeLayout(false);
