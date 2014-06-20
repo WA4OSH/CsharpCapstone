@@ -13,6 +13,14 @@ namespace CDCatalogWF
 {
     public partial class AddGenreWF : Form
     {
+        private int _genreId;
+
+        public static int genreID
+        {
+            get { return _genreId; }
+            set { _genreId = 0; }
+        }
+ 
         public AddGenreWF()
         {
             InitializeComponent();
@@ -26,14 +34,14 @@ namespace CDCatalogWF
         private void buttonOK_Click(object sender, EventArgs e)
         {
             this.Text = genreTxtBox.Text;
-            int genreId = Genre.AddGenre(this.Text);
-            string msg = "GenreID=" + genreId.ToString();
+            _genreId = Genre.AddGenre(this.Text);
+            string msg = "GenreID=" + _genreId.ToString();
             MessageBox.Show(msg);
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
-
+            _genreId = 0;
         }
 
 
