@@ -13,7 +13,7 @@ namespace CDCatalogWF
 {
     public partial class AddGenreWF : Form
     {
-        private int _genreId;
+        private static int _genreId;
 
         public static int genreID
         {

@@ -35,10 +35,7 @@
             this.albumViewTableAdapter = new CDCatalogWF.CDCatalogDataSetTableAdapters.AlbumViewTableAdapter();
             this.songViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cDCatalogDataSet1 = new CDCatalogWF.CDCatalogDataSet1();
-            this.deleteAlbumButton = new System.Windows.Forms.Button();
-            this.changeAlbumButton = new System.Windows.Forms.Button();
             this.deleteSongButton = new System.Windows.Forms.Button();
-            this.addAlbumButton = new System.Windows.Forms.Button();
             this.changeSongButton = new System.Windows.Forms.Button();
             this.addSongButton = new System.Windows.Forms.Button();
             this.cdCatalogPictureBox = new System.Windows.Forms.PictureBox();
@@ -64,7 +61,6 @@
             this.genreAddButton = new System.Windows.Forms.Button();
             this.genreChangeButton = new System.Windows.Forms.Button();
             this.genreDeleteButton = new System.Windows.Forms.Button();
-            this.smallAlbumPanel = new System.Windows.Forms.Panel();
             this.albumDataGridView = new System.Windows.Forms.DataGridView();
             this.artistNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.albumTitleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -86,6 +82,31 @@
             this.artistIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.genreIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.songIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.genreGoupBox = new System.Windows.Forms.GroupBox();
+            this.addLabel = new System.Windows.Forms.Label();
+            this.deleteLabel = new System.Windows.Forms.Label();
+            this.editLabel = new System.Windows.Forms.Label();
+            this.artistGroupBox = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.songGroupBox = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.addAlbumButton = new System.Windows.Forms.Button();
+            this.deleteAlbumButton = new System.Windows.Forms.Button();
+            this.changeAlbumButton = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.albumGroupBox = new System.Windows.Forms.GroupBox();
+            this.searchComboBox = new System.Windows.Forms.ComboBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ratingComboBox = new System.Windows.Forms.ComboBox();
+            this.zeroThruFiveStarsLabel = new System.Windows.Forms.Label();
+            this.songOrAlbumRatingLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.albumViewBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cDCatalogDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.songViewBindingSource)).BeginInit();
@@ -96,9 +117,13 @@
             this.playListGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cDCatalogDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cDCatalogDataSetBindingSource1)).BeginInit();
-            this.smallAlbumPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.albumDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.songDataGridView)).BeginInit();
+            this.genreGoupBox.SuspendLayout();
+            this.artistGroupBox.SuspendLayout();
+            this.songGroupBox.SuspendLayout();
+            this.albumGroupBox.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // albumViewBindingSource
@@ -125,56 +150,20 @@
             this.cDCatalogDataSet1.DataSetName = "CDCatalogDataSet1";
             this.cDCatalogDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // deleteAlbumButton
-            // 
-            this.deleteAlbumButton.AccessibleDescription = "Delete Album Button";
-            this.deleteAlbumButton.Image = ((System.Drawing.Image)(resources.GetObject("deleteAlbumButton.Image")));
-            this.deleteAlbumButton.Location = new System.Drawing.Point(162, 0);
-            this.deleteAlbumButton.Name = "deleteAlbumButton";
-            this.deleteAlbumButton.Size = new System.Drawing.Size(75, 60);
-            this.deleteAlbumButton.TabIndex = 3;
-            this.deleteAlbumButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.deleteAlbumButton.UseVisualStyleBackColor = true;
-            this.deleteAlbumButton.Click += new System.EventHandler(this.DeleteAlbumButton_Click);
-            // 
-            // changeAlbumButton
-            // 
-            this.changeAlbumButton.AccessibleDescription = "Change Album Radio Button";
-            this.changeAlbumButton.Image = ((System.Drawing.Image)(resources.GetObject("changeAlbumButton.Image")));
-            this.changeAlbumButton.Location = new System.Drawing.Point(81, 0);
-            this.changeAlbumButton.Name = "changeAlbumButton";
-            this.changeAlbumButton.Size = new System.Drawing.Size(75, 60);
-            this.changeAlbumButton.TabIndex = 2;
-            this.changeAlbumButton.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.changeAlbumButton.UseVisualStyleBackColor = true;
-            this.changeAlbumButton.Click += new System.EventHandler(this.changeAlbumButton_Click);
-            // 
             // deleteSongButton
             // 
             this.deleteSongButton.Image = ((System.Drawing.Image)(resources.GetObject("deleteSongButton.Image")));
-            this.deleteSongButton.Location = new System.Drawing.Point(187, 108);
+            this.deleteSongButton.Location = new System.Drawing.Point(168, 36);
             this.deleteSongButton.Name = "deleteSongButton";
             this.deleteSongButton.Size = new System.Drawing.Size(75, 60);
             this.deleteSongButton.TabIndex = 2;
             this.deleteSongButton.UseVisualStyleBackColor = true;
             this.deleteSongButton.Click += new System.EventHandler(this.songDeleteButton_Click);
             // 
-            // addAlbumButton
-            // 
-            this.addAlbumButton.AccessibleDescription = "Add Album Radio Button";
-            this.addAlbumButton.Image = ((System.Drawing.Image)(resources.GetObject("addAlbumButton.Image")));
-            this.addAlbumButton.Location = new System.Drawing.Point(0, 0);
-            this.addAlbumButton.Name = "addAlbumButton";
-            this.addAlbumButton.Size = new System.Drawing.Size(75, 60);
-            this.addAlbumButton.TabIndex = 1;
-            this.addAlbumButton.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.addAlbumButton.UseVisualStyleBackColor = true;
-            this.addAlbumButton.Click += new System.EventHandler(this.addAlbumButton_Click);
-            // 
             // changeSongButton
             // 
             this.changeSongButton.Image = ((System.Drawing.Image)(resources.GetObject("changeSongButton.Image")));
-            this.changeSongButton.Location = new System.Drawing.Point(106, 108);
+            this.changeSongButton.Location = new System.Drawing.Point(87, 36);
             this.changeSongButton.Name = "changeSongButton";
             this.changeSongButton.Size = new System.Drawing.Size(75, 60);
             this.changeSongButton.TabIndex = 1;
@@ -184,7 +173,7 @@
             // addSongButton
             // 
             this.addSongButton.Image = ((System.Drawing.Image)(resources.GetObject("addSongButton.Image")));
-            this.addSongButton.Location = new System.Drawing.Point(25, 108);
+            this.addSongButton.Location = new System.Drawing.Point(9, 36);
             this.addSongButton.Name = "addSongButton";
             this.addSongButton.Size = new System.Drawing.Size(75, 60);
             this.addSongButton.TabIndex = 0;
@@ -196,7 +185,7 @@
             this.cdCatalogPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("cdCatalogPictureBox.Image")));
             this.cdCatalogPictureBox.Location = new System.Drawing.Point(25, 12);
             this.cdCatalogPictureBox.Name = "cdCatalogPictureBox";
-            this.cdCatalogPictureBox.Size = new System.Drawing.Size(237, 90);
+            this.cdCatalogPictureBox.Size = new System.Drawing.Size(250, 90);
             this.cdCatalogPictureBox.TabIndex = 2;
             this.cdCatalogPictureBox.TabStop = false;
             // 
@@ -204,9 +193,9 @@
             // 
             this.selectViewGroupBox.Controls.Add(this.songViewRadioButton);
             this.selectViewGroupBox.Controls.Add(this.albumViewButton);
-            this.selectViewGroupBox.Location = new System.Drawing.Point(268, 9);
+            this.selectViewGroupBox.Location = new System.Drawing.Point(284, 9);
             this.selectViewGroupBox.Name = "selectViewGroupBox";
-            this.selectViewGroupBox.Size = new System.Drawing.Size(184, 93);
+            this.selectViewGroupBox.Size = new System.Drawing.Size(176, 93);
             this.selectViewGroupBox.TabIndex = 3;
             this.selectViewGroupBox.TabStop = false;
             this.selectViewGroupBox.Text = "Select View";
@@ -242,12 +231,13 @@
             // 
             // searchGroupBox
             // 
+            this.searchGroupBox.Controls.Add(this.searchComboBox);
             this.searchGroupBox.Controls.Add(this.textBox1);
             this.searchGroupBox.Controls.Add(this.label1);
             this.searchGroupBox.Controls.Add(this.searchButton);
-            this.searchGroupBox.Location = new System.Drawing.Point(458, 9);
+            this.searchGroupBox.Location = new System.Drawing.Point(466, 9);
             this.searchGroupBox.Name = "searchGroupBox";
-            this.searchGroupBox.Size = new System.Drawing.Size(209, 93);
+            this.searchGroupBox.Size = new System.Drawing.Size(259, 93);
             this.searchGroupBox.TabIndex = 4;
             this.searchGroupBox.TabStop = false;
             this.searchGroupBox.Text = "Search in View";
@@ -256,7 +246,7 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(10, 39);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(112, 20);
+            this.textBox1.Size = new System.Drawing.Size(152, 20);
             this.textBox1.TabIndex = 2;
             // 
             // label1
@@ -272,7 +262,7 @@
             // 
             this.searchButton.AccessibleDescription = "Search Button";
             this.searchButton.Image = ((System.Drawing.Image)(resources.GetObject("searchButton.Image")));
-            this.searchButton.Location = new System.Drawing.Point(128, 18);
+            this.searchButton.Location = new System.Drawing.Point(168, 19);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(75, 65);
             this.searchButton.TabIndex = 0;
@@ -285,9 +275,9 @@
             this.playListGroupBox.Controls.Add(this.genreLabel);
             this.playListGroupBox.Controls.Add(this.comboBox1);
             this.playListGroupBox.Controls.Add(this.textBox3);
-            this.playListGroupBox.Location = new System.Drawing.Point(673, 9);
+            this.playListGroupBox.Location = new System.Drawing.Point(731, 9);
             this.playListGroupBox.Name = "playListGroupBox";
-            this.playListGroupBox.Size = new System.Drawing.Size(203, 93);
+            this.playListGroupBox.Size = new System.Drawing.Size(212, 93);
             this.playListGroupBox.TabIndex = 5;
             this.playListGroupBox.TabStop = false;
             this.playListGroupBox.Text = "Create Play List";
@@ -351,7 +341,7 @@
             // addArtistButton
             // 
             this.addArtistButton.Image = ((System.Drawing.Image)(resources.GetObject("addArtistButton.Image")));
-            this.addArtistButton.Location = new System.Drawing.Point(268, 108);
+            this.addArtistButton.Location = new System.Drawing.Point(6, 34);
             this.addArtistButton.Name = "addArtistButton";
             this.addArtistButton.Size = new System.Drawing.Size(75, 60);
             this.addArtistButton.TabIndex = 4;
@@ -361,7 +351,7 @@
             // changeArtistButton
             // 
             this.changeArtistButton.Image = ((System.Drawing.Image)(resources.GetObject("changeArtistButton.Image")));
-            this.changeArtistButton.Location = new System.Drawing.Point(349, 108);
+            this.changeArtistButton.Location = new System.Drawing.Point(87, 34);
             this.changeArtistButton.Name = "changeArtistButton";
             this.changeArtistButton.Size = new System.Drawing.Size(75, 60);
             this.changeArtistButton.TabIndex = 5;
@@ -371,7 +361,7 @@
             // deleteArtistButton
             // 
             this.deleteArtistButton.Image = ((System.Drawing.Image)(resources.GetObject("deleteArtistButton.Image")));
-            this.deleteArtistButton.Location = new System.Drawing.Point(430, 108);
+            this.deleteArtistButton.Location = new System.Drawing.Point(168, 34);
             this.deleteArtistButton.Name = "deleteArtistButton";
             this.deleteArtistButton.Size = new System.Drawing.Size(75, 60);
             this.deleteArtistButton.TabIndex = 6;
@@ -381,7 +371,7 @@
             // genreAddButton
             // 
             this.genreAddButton.Image = ((System.Drawing.Image)(resources.GetObject("genreAddButton.Image")));
-            this.genreAddButton.Location = new System.Drawing.Point(511, 108);
+            this.genreAddButton.Location = new System.Drawing.Point(6, 34);
             this.genreAddButton.Name = "genreAddButton";
             this.genreAddButton.Size = new System.Drawing.Size(75, 60);
             this.genreAddButton.TabIndex = 7;
@@ -391,7 +381,7 @@
             // genreChangeButton
             // 
             this.genreChangeButton.Image = ((System.Drawing.Image)(resources.GetObject("genreChangeButton.Image")));
-            this.genreChangeButton.Location = new System.Drawing.Point(592, 108);
+            this.genreChangeButton.Location = new System.Drawing.Point(87, 34);
             this.genreChangeButton.Name = "genreChangeButton";
             this.genreChangeButton.Size = new System.Drawing.Size(75, 60);
             this.genreChangeButton.TabIndex = 8;
@@ -401,23 +391,12 @@
             // genreDeleteButton
             // 
             this.genreDeleteButton.Image = ((System.Drawing.Image)(resources.GetObject("genreDeleteButton.Image")));
-            this.genreDeleteButton.Location = new System.Drawing.Point(673, 108);
+            this.genreDeleteButton.Location = new System.Drawing.Point(169, 34);
             this.genreDeleteButton.Name = "genreDeleteButton";
             this.genreDeleteButton.Size = new System.Drawing.Size(75, 60);
             this.genreDeleteButton.TabIndex = 9;
             this.genreDeleteButton.UseVisualStyleBackColor = true;
             this.genreDeleteButton.Click += new System.EventHandler(this.genreDeleteButton_Click);
-            // 
-            // smallAlbumPanel
-            // 
-            this.smallAlbumPanel.BackColor = System.Drawing.SystemColors.Control;
-            this.smallAlbumPanel.Controls.Add(this.changeAlbumButton);
-            this.smallAlbumPanel.Controls.Add(this.deleteAlbumButton);
-            this.smallAlbumPanel.Controls.Add(this.addAlbumButton);
-            this.smallAlbumPanel.Location = new System.Drawing.Point(25, 108);
-            this.smallAlbumPanel.Name = "smallAlbumPanel";
-            this.smallAlbumPanel.Size = new System.Drawing.Size(237, 62);
-            this.smallAlbumPanel.TabIndex = 10;
             // 
             // albumDataGridView
             // 
@@ -434,9 +413,9 @@
             this.albumIDDataGridViewTextBoxColumn,
             this.genreIDDataGridViewTextBoxColumn});
             this.albumDataGridView.DataSource = this.albumViewBindingSource;
-            this.albumDataGridView.Location = new System.Drawing.Point(25, 176);
+            this.albumDataGridView.Location = new System.Drawing.Point(25, 217);
             this.albumDataGridView.Name = "albumDataGridView";
-            this.albumDataGridView.Size = new System.Drawing.Size(851, 350);
+            this.albumDataGridView.Size = new System.Drawing.Size(918, 350);
             this.albumDataGridView.TabIndex = 0;
             // 
             // artistNameDataGridViewTextBoxColumn
@@ -505,9 +484,9 @@
             this.genreIDDataGridViewTextBoxColumn1,
             this.songIDDataGridViewTextBoxColumn});
             this.songDataGridView.DataSource = this.songViewBindingSource;
-            this.songDataGridView.Location = new System.Drawing.Point(25, 176);
+            this.songDataGridView.Location = new System.Drawing.Point(25, 217);
             this.songDataGridView.Name = "songDataGridView";
-            this.songDataGridView.Size = new System.Drawing.Size(851, 350);
+            this.songDataGridView.Size = new System.Drawing.Size(918, 350);
             this.songDataGridView.TabIndex = 4;
             // 
             // artistNameDataGridViewTextBoxColumn1
@@ -576,23 +555,278 @@
             this.songIDDataGridViewTextBoxColumn.HeaderText = "SongID";
             this.songIDDataGridViewTextBoxColumn.Name = "songIDDataGridViewTextBoxColumn";
             // 
+            // genreGoupBox
+            // 
+            this.genreGoupBox.Controls.Add(this.editLabel);
+            this.genreGoupBox.Controls.Add(this.deleteLabel);
+            this.genreGoupBox.Controls.Add(this.addLabel);
+            this.genreGoupBox.Controls.Add(this.genreAddButton);
+            this.genreGoupBox.Controls.Add(this.genreChangeButton);
+            this.genreGoupBox.Controls.Add(this.genreDeleteButton);
+            this.genreGoupBox.Location = new System.Drawing.Point(693, 108);
+            this.genreGoupBox.Name = "genreGoupBox";
+            this.genreGoupBox.Size = new System.Drawing.Size(250, 103);
+            this.genreGoupBox.TabIndex = 11;
+            this.genreGoupBox.TabStop = false;
+            this.genreGoupBox.Text = "Genre";
+            // 
+            // addLabel
+            // 
+            this.addLabel.AutoSize = true;
+            this.addLabel.Location = new System.Drawing.Point(6, 20);
+            this.addLabel.Name = "addLabel";
+            this.addLabel.Size = new System.Drawing.Size(26, 13);
+            this.addLabel.TabIndex = 12;
+            this.addLabel.Text = "Add";
+            // 
+            // deleteLabel
+            // 
+            this.deleteLabel.AutoSize = true;
+            this.deleteLabel.Location = new System.Drawing.Point(165, 20);
+            this.deleteLabel.Name = "deleteLabel";
+            this.deleteLabel.Size = new System.Drawing.Size(38, 13);
+            this.deleteLabel.TabIndex = 12;
+            this.deleteLabel.Text = "Delete";
+            // 
+            // editLabel
+            // 
+            this.editLabel.AutoSize = true;
+            this.editLabel.Location = new System.Drawing.Point(84, 20);
+            this.editLabel.Name = "editLabel";
+            this.editLabel.Size = new System.Drawing.Size(25, 13);
+            this.editLabel.TabIndex = 13;
+            this.editLabel.Text = "Edit";
+            // 
+            // artistGroupBox
+            // 
+            this.artistGroupBox.Controls.Add(this.label5);
+            this.artistGroupBox.Controls.Add(this.label4);
+            this.artistGroupBox.Controls.Add(this.label3);
+            this.artistGroupBox.Controls.Add(this.addArtistButton);
+            this.artistGroupBox.Controls.Add(this.changeArtistButton);
+            this.artistGroupBox.Controls.Add(this.deleteArtistButton);
+            this.artistGroupBox.Location = new System.Drawing.Point(436, 108);
+            this.artistGroupBox.Name = "artistGroupBox";
+            this.artistGroupBox.Size = new System.Drawing.Size(251, 103);
+            this.artistGroupBox.TabIndex = 13;
+            this.artistGroupBox.TabStop = false;
+            this.artistGroupBox.Text = resources.GetString("artistGroupBox.Text");
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 21);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(26, 13);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Add";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(86, 21);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(25, 13);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Edit";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(165, 21);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(38, 13);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Delete";
+            // 
+            // songGroupBox
+            // 
+            this.songGroupBox.Controls.Add(this.addSongButton);
+            this.songGroupBox.Controls.Add(this.label8);
+            this.songGroupBox.Controls.Add(this.changeSongButton);
+            this.songGroupBox.Controls.Add(this.label7);
+            this.songGroupBox.Controls.Add(this.label6);
+            this.songGroupBox.Controls.Add(this.deleteSongButton);
+            this.songGroupBox.Location = new System.Drawing.Point(25, 108);
+            this.songGroupBox.Name = "songGroupBox";
+            this.songGroupBox.Size = new System.Drawing.Size(250, 103);
+            this.songGroupBox.TabIndex = 14;
+            this.songGroupBox.TabStop = false;
+            this.songGroupBox.Text = "Song";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 20);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(26, 13);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "Add";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(84, 20);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(25, 13);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "Edit";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(165, 20);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(38, 13);
+            this.label8.TabIndex = 15;
+            this.label8.Text = "Delete";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(80, 92);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(26, 13);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Add";
+            // 
+            // addAlbumButton
+            // 
+            this.addAlbumButton.AccessibleDescription = "Add Album Radio Button";
+            this.addAlbumButton.Image = ((System.Drawing.Image)(resources.GetObject("addAlbumButton.Image")));
+            this.addAlbumButton.Location = new System.Drawing.Point(6, 34);
+            this.addAlbumButton.Name = "addAlbumButton";
+            this.addAlbumButton.Size = new System.Drawing.Size(75, 60);
+            this.addAlbumButton.TabIndex = 1;
+            this.addAlbumButton.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.addAlbumButton.UseVisualStyleBackColor = true;
+            this.addAlbumButton.Click += new System.EventHandler(this.addAlbumButton_Click);
+            // 
+            // deleteAlbumButton
+            // 
+            this.deleteAlbumButton.AccessibleDescription = "Delete Album Button";
+            this.deleteAlbumButton.Image = ((System.Drawing.Image)(resources.GetObject("deleteAlbumButton.Image")));
+            this.deleteAlbumButton.Location = new System.Drawing.Point(168, 34);
+            this.deleteAlbumButton.Name = "deleteAlbumButton";
+            this.deleteAlbumButton.Size = new System.Drawing.Size(75, 60);
+            this.deleteAlbumButton.TabIndex = 3;
+            this.deleteAlbumButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.deleteAlbumButton.UseVisualStyleBackColor = true;
+            this.deleteAlbumButton.Click += new System.EventHandler(this.DeleteAlbumButton_Click);
+            // 
+            // changeAlbumButton
+            // 
+            this.changeAlbumButton.AccessibleDescription = "Change Album Radio Button";
+            this.changeAlbumButton.Image = ((System.Drawing.Image)(resources.GetObject("changeAlbumButton.Image")));
+            this.changeAlbumButton.Location = new System.Drawing.Point(87, 34);
+            this.changeAlbumButton.Name = "changeAlbumButton";
+            this.changeAlbumButton.Size = new System.Drawing.Size(75, 60);
+            this.changeAlbumButton.TabIndex = 2;
+            this.changeAlbumButton.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.changeAlbumButton.UseVisualStyleBackColor = true;
+            this.changeAlbumButton.Click += new System.EventHandler(this.changeAlbumButton_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(84, 20);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(25, 13);
+            this.label9.TabIndex = 16;
+            this.label9.Text = "Edit";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(165, 20);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(38, 13);
+            this.label10.TabIndex = 17;
+            this.label10.Text = "Delete";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(6, 20);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(26, 13);
+            this.label11.TabIndex = 16;
+            this.label11.Text = "Add";
+            // 
+            // albumGroupBox
+            // 
+            this.albumGroupBox.Controls.Add(this.label11);
+            this.albumGroupBox.Controls.Add(this.label10);
+            this.albumGroupBox.Controls.Add(this.label9);
+            this.albumGroupBox.Controls.Add(this.changeAlbumButton);
+            this.albumGroupBox.Controls.Add(this.deleteAlbumButton);
+            this.albumGroupBox.Controls.Add(this.addAlbumButton);
+            this.albumGroupBox.Location = new System.Drawing.Point(25, 108);
+            this.albumGroupBox.Name = "albumGroupBox";
+            this.albumGroupBox.Size = new System.Drawing.Size(250, 103);
+            this.albumGroupBox.TabIndex = 0;
+            this.albumGroupBox.TabStop = false;
+            this.albumGroupBox.Text = "Album";
+            // 
+            // searchComboBox
+            // 
+            this.searchComboBox.FormattingEnabled = true;
+            this.searchComboBox.Location = new System.Drawing.Point(10, 66);
+            this.searchComboBox.Name = "searchComboBox";
+            this.searchComboBox.Size = new System.Drawing.Size(152, 21);
+            this.searchComboBox.TabIndex = 3;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.songOrAlbumRatingLabel);
+            this.groupBox1.Controls.Add(this.zeroThruFiveStarsLabel);
+            this.groupBox1.Controls.Add(this.ratingComboBox);
+            this.groupBox1.Location = new System.Drawing.Point(284, 108);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(146, 100);
+            this.groupBox1.TabIndex = 16;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Rating";
+            // 
+            // ratingComboBox
+            // 
+            this.ratingComboBox.FormattingEnabled = true;
+            this.ratingComboBox.Location = new System.Drawing.Point(6, 56);
+            this.ratingComboBox.Name = "ratingComboBox";
+            this.ratingComboBox.Size = new System.Drawing.Size(134, 21);
+            this.ratingComboBox.TabIndex = 0;
+            // 
+            // zeroThruFiveStarsLabel
+            // 
+            this.zeroThruFiveStarsLabel.AutoSize = true;
+            this.zeroThruFiveStarsLabel.Location = new System.Drawing.Point(5, 36);
+            this.zeroThruFiveStarsLabel.Name = "zeroThruFiveStarsLabel";
+            this.zeroThruFiveStarsLabel.Size = new System.Drawing.Size(82, 13);
+            this.zeroThruFiveStarsLabel.TabIndex = 1;
+            this.zeroThruFiveStarsLabel.Text = "Select 0-5 Stars";
+            // 
+            // songOrAlbumRatingLabel
+            // 
+            this.songOrAlbumRatingLabel.AutoSize = true;
+            this.songOrAlbumRatingLabel.Location = new System.Drawing.Point(6, 20);
+            this.songOrAlbumRatingLabel.Name = "songOrAlbumRatingLabel";
+            this.songOrAlbumRatingLabel.Size = new System.Drawing.Size(36, 13);
+            this.songOrAlbumRatingLabel.TabIndex = 18;
+            this.songOrAlbumRatingLabel.Text = "Album";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 538);
+            this.ClientSize = new System.Drawing.Size(969, 538);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.albumGroupBox);
+            this.Controls.Add(this.songGroupBox);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.artistGroupBox);
+            this.Controls.Add(this.genreGoupBox);
             this.Controls.Add(this.albumDataGridView);
-            this.Controls.Add(this.genreDeleteButton);
             this.Controls.Add(this.songDataGridView);
-            this.Controls.Add(this.smallAlbumPanel);
-            this.Controls.Add(this.deleteSongButton);
-            this.Controls.Add(this.addSongButton);
-            this.Controls.Add(this.changeSongButton);
-            this.Controls.Add(this.genreChangeButton);
-            this.Controls.Add(this.genreAddButton);
-            this.Controls.Add(this.deleteArtistButton);
-            this.Controls.Add(this.changeArtistButton);
-            this.Controls.Add(this.addArtistButton);
             this.Controls.Add(this.playListGroupBox);
             this.Controls.Add(this.searchGroupBox);
             this.Controls.Add(this.selectViewGroupBox);
@@ -613,10 +847,20 @@
             this.playListGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cDCatalogDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cDCatalogDataSetBindingSource1)).EndInit();
-            this.smallAlbumPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.albumDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.songDataGridView)).EndInit();
+            this.genreGoupBox.ResumeLayout(false);
+            this.genreGoupBox.PerformLayout();
+            this.artistGroupBox.ResumeLayout(false);
+            this.artistGroupBox.PerformLayout();
+            this.songGroupBox.ResumeLayout(false);
+            this.songGroupBox.PerformLayout();
+            this.albumGroupBox.ResumeLayout(false);
+            this.albumGroupBox.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -625,9 +869,6 @@
         private CDCatalogDataSet cDCatalogDataSet;
         private System.Windows.Forms.BindingSource albumViewBindingSource;
         private CDCatalogDataSetTableAdapters.AlbumViewTableAdapter albumViewTableAdapter;
-        private System.Windows.Forms.Button changeAlbumButton;
-        private System.Windows.Forms.Button addAlbumButton;
-        private System.Windows.Forms.Button deleteAlbumButton;
         private System.Windows.Forms.PictureBox cdCatalogPictureBox;
         private System.Windows.Forms.GroupBox selectViewGroupBox;
         private System.Windows.Forms.RadioButton songViewRadioButton;
@@ -650,7 +891,6 @@
         private CDCatalogDataSet1 cDCatalogDataSet1;
         private System.Windows.Forms.BindingSource songViewBindingSource;
         private CDCatalogDataSet1TableAdapters.SongViewTableAdapter songViewTableAdapter;
-        private System.Windows.Forms.Panel smallAlbumPanel;
         private System.Windows.Forms.Button genreDeleteButton;
         private System.Windows.Forms.Button addArtistButton;
         private System.Windows.Forms.Button changeArtistButton;
@@ -678,6 +918,31 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn artistIDDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn genreIDDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn songIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.GroupBox genreGoupBox;
+        private System.Windows.Forms.Label editLabel;
+        private System.Windows.Forms.Label deleteLabel;
+        private System.Windows.Forms.Label addLabel;
+        private System.Windows.Forms.GroupBox artistGroupBox;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.GroupBox songGroupBox;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button addAlbumButton;
+        private System.Windows.Forms.Button deleteAlbumButton;
+        private System.Windows.Forms.Button changeAlbumButton;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.GroupBox albumGroupBox;
+        private System.Windows.Forms.ComboBox searchComboBox;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label songOrAlbumRatingLabel;
+        private System.Windows.Forms.Label zeroThruFiveStarsLabel;
+        private System.Windows.Forms.ComboBox ratingComboBox;
 
 
     }

@@ -13,6 +13,15 @@ namespace CDCatalogWF
 {
     public partial class AddArtistWF : Form
     {
+        private static int _artistId;
+
+        public static int ArtistID
+        {
+            get { return _artistId; }
+            set { _artistId = 0; }
+        }
+ 
+   
         public AddArtistWF()
         {
             InitializeComponent();
@@ -31,16 +40,15 @@ namespace CDCatalogWF
         private void okButton_Click(object sender, EventArgs e)
         {
             this.Text = artistTxtBox.Text;
-            int artistId = Artist.AddArtist(this.Text);
-            string msg = "ArtistID=" + artistId.ToString();
+            _artistId = Artist.AddArtist(this.Text);
+            string msg = "ArtistID=" + _artistId.ToString();
             MessageBox.Show(msg);
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
-            
+            _artistId = 0;
         }
-
 
     }
 }

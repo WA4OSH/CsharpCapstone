@@ -13,8 +13,8 @@ namespace CDCatalogWF
 {
     public partial class AddAlbumWF : Form
     {
-        private int _artistID;
-        private int _genreID;
+        private static int _artistID;
+        private static int _genreID;
 
         public AddAlbumWF()
         {
@@ -50,7 +50,7 @@ namespace CDCatalogWF
             int albumYear = int.Parse(this.yearTextBox.Text);
             int artistId = _artistID;
             string albumTitle = this.albumTitleTextBox.Text;
-            //int albumRating = this.ratingComboBox;  //todo: change to int <- textbox
+            int albumRating = 5;                                //todo: change to int <- textbox
             int genreId = _genreID;
 
             //todo: validation

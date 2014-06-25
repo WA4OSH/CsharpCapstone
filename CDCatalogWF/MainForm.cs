@@ -33,8 +33,9 @@ namespace CDCatalogWF
             albumDataGridView.Visible = true;
             songDataGridView.Visible = false;
 
-            // SmallAlbumPanel hides song controls
-            smallAlbumPanel.Visible = true;  
+            // albumGroupBox hides songGroupBox
+            albumGroupBox.Visible = true;
+            songGroupBox.Visible = false;
         }
 
         private void albumViewButton_CheckedChanged(object sender, EventArgs e)
@@ -43,8 +44,9 @@ namespace CDCatalogWF
             albumDataGridView.Visible = true;
             songDataGridView.Visible = false;
 
-            // SmallAlbumPanel hides song controls
-            smallAlbumPanel.Visible = true;
+            // albumGroupBox hides songGroupBox
+            albumGroupBox.Visible = true;
+            songGroupBox.Visible = false;
         }
 
         private void songViewRadioButton_CheckedChanged(object sender, EventArgs e)
@@ -53,8 +55,9 @@ namespace CDCatalogWF
             albumDataGridView.Visible = false;
             songDataGridView.Visible = true;
 
-            // SmallAlbumPanel shows song controls
-            smallAlbumPanel.Visible = false; 
+            // AlbumGroupBox reveals songGroupBox
+            albumGroupBox.Visible = false;
+            songGroupBox.Visible = true;
         }
 
         private void addAlbumButton_Click(object sender, EventArgs e)
@@ -72,6 +75,7 @@ namespace CDCatalogWF
         {
             DialogResult dr = new DialogResult();
             ChangeAlbumWF frm = new ChangeAlbumWF();
+
             dr = frm.ShowDialog();
             if (dr == DialogResult.OK)
                 MessageBox.Show("User clicked OK button");
