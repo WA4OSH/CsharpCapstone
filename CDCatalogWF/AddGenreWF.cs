@@ -15,7 +15,7 @@ namespace CDCatalogWF
     {
         private static int _genreId;
 
-        public static int genreID
+        public static int GenreID   
         {
             get { return _genreId; }
             set { _genreId = 0; }

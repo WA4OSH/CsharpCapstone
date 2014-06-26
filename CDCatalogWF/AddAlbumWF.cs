@@ -21,11 +21,20 @@ namespace CDCatalogWF
             InitializeComponent();
         }
 
+        private void AddAlbumWF_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'cDCatalogDataSet3.Genre' table. You can move, or remove it, as needed.
+            this.genreTableAdapter.Fill(this.cDCatalogDataSet3.Genre);
+            // TODO: This line of code loads data into the 'cDCatalogDataSet2.Artist' table. You can move, or remove it, as needed.
+            this.artistTableAdapter.Fill(this.cDCatalogDataSet2.Artist);
+
+        }
+
         private void addArtistButton_Click(object sender, EventArgs e)
         {
             DialogResult dr = new DialogResult();
             AddArtistWF frm = new AddArtistWF();
-            //_artistID = AddArtistWF.artistID;  //todo: need to add property
+            _artistID = AddArtistWF.ArtistID; 
             dr = frm.ShowDialog();
             if (dr == DialogResult.OK)
                 MessageBox.Show("User clicked OK button");
@@ -37,7 +46,7 @@ namespace CDCatalogWF
         {
             DialogResult dr = new DialogResult();
             AddGenreWF frm = new AddGenreWF();
-            _genreID = AddGenreWF.genreID;
+            _genreID = AddGenreWF.GenreID;
             dr = frm.ShowDialog();
             if (dr == DialogResult.OK)
                 MessageBox.Show("User clicked OK button");
@@ -47,7 +56,7 @@ namespace CDCatalogWF
 
         private void OkButton_Click(object sender, EventArgs e)
         {
-            int albumYear = int.Parse(this.yearTextBox.Text);
+            int albumYear = int.Parse(this.yearTextBox.Text);   // todo: unhandled exception
             int artistId = _artistID;
             string albumTitle = this.albumTitleTextBox.Text;
             int albumRating = 5;                                //todo: change to int <- textbox
@@ -65,5 +74,7 @@ namespace CDCatalogWF
         {
 
         }
+
+
     }
 }

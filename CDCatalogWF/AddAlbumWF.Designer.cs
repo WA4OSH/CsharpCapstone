@@ -28,14 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddAlbumWF));
             this.artistLabel = new System.Windows.Forms.Label();
             this.artistComboBox = new System.Windows.Forms.ComboBox();
+            this.artistBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cDCatalogDataSet2 = new CDCatalogWF.CDCatalogDataSet2();
             this.albumTitleLabel = new System.Windows.Forms.Label();
             this.albumTitleTextBox = new System.Windows.Forms.TextBox();
             this.yearTextBox = new System.Windows.Forms.TextBox();
             this.albumYearLabel = new System.Windows.Forms.Label();
             this.genreComboBox = new System.Windows.Forms.ComboBox();
+            this.genreBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cDCatalogDataSet3 = new CDCatalogWF.CDCatalogDataSet3();
             this.genreLabel = new System.Windows.Forms.Label();
             this.addArtistButton = new System.Windows.Forms.Button();
             this.addGenreButton = new System.Windows.Forms.Button();
@@ -44,6 +49,12 @@
             this.addAlbumPictureBox = new System.Windows.Forms.PictureBox();
             this.OkButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
+            this.artistTableAdapter = new CDCatalogWF.CDCatalogDataSet2TableAdapters.ArtistTableAdapter();
+            this.genreTableAdapter = new CDCatalogWF.CDCatalogDataSet3TableAdapters.GenreTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.artistBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cDCatalogDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.genreBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cDCatalogDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addAlbumPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,12 +70,25 @@
             // artistComboBox
             // 
             this.artistComboBox.AllowDrop = true;
+            this.artistComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.artistBindingSource, "ArtistID", true));
+            this.artistComboBox.DataSource = this.artistBindingSource;
+            this.artistComboBox.DisplayMember = "ArtistName";
             this.artistComboBox.FormattingEnabled = true;
             this.artistComboBox.Location = new System.Drawing.Point(147, 16);
             this.artistComboBox.Name = "artistComboBox";
             this.artistComboBox.Size = new System.Drawing.Size(151, 21);
-            this.artistComboBox.Sorted = true;
             this.artistComboBox.TabIndex = 1;
+            this.artistComboBox.ValueMember = "ArtistID";
+            // 
+            // artistBindingSource
+            // 
+            this.artistBindingSource.DataMember = "Artist";
+            this.artistBindingSource.DataSource = this.cDCatalogDataSet2;
+            // 
+            // cDCatalogDataSet2
+            // 
+            this.cDCatalogDataSet2.DataSetName = "CDCatalogDataSet2";
+            this.cDCatalogDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // albumTitleLabel
             // 
@@ -100,11 +124,25 @@
             // 
             // genreComboBox
             // 
+            this.genreComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.genreBindingSource, "GenreID", true));
+            this.genreComboBox.DataSource = this.genreBindingSource;
+            this.genreComboBox.DisplayMember = "GenreName";
             this.genreComboBox.FormattingEnabled = true;
             this.genreComboBox.Location = new System.Drawing.Point(147, 98);
             this.genreComboBox.Name = "genreComboBox";
             this.genreComboBox.Size = new System.Drawing.Size(151, 21);
             this.genreComboBox.TabIndex = 6;
+            this.genreComboBox.ValueMember = "GenreID";
+            // 
+            // genreBindingSource
+            // 
+            this.genreBindingSource.DataMember = "Genre";
+            this.genreBindingSource.DataSource = this.cDCatalogDataSet3;
+            // 
+            // cDCatalogDataSet3
+            // 
+            this.cDCatalogDataSet3.DataSetName = "CDCatalogDataSet3";
+            this.cDCatalogDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // genreLabel
             // 
@@ -148,6 +186,13 @@
             // 
             this.ratingComboBox.AllowDrop = true;
             this.ratingComboBox.FormattingEnabled = true;
+            this.ratingComboBox.Items.AddRange(new object[] {
+            "not rated",
+            "*",
+            "* *",
+            "* * *",
+            "* * * *",
+            "* * * * *"});
             this.ratingComboBox.Location = new System.Drawing.Point(147, 124);
             this.ratingComboBox.Name = "ratingComboBox";
             this.ratingComboBox.Size = new System.Drawing.Size(151, 21);
@@ -183,6 +228,14 @@
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
+            // artistTableAdapter
+            // 
+            this.artistTableAdapter.ClearBeforeFill = true;
+            // 
+            // genreTableAdapter
+            // 
+            this.genreTableAdapter.ClearBeforeFill = true;
+            // 
             // AddAlbumWF
             // 
             this.AcceptButton = this.OkButton;
@@ -209,6 +262,11 @@
             this.Controls.Add(this.artistLabel);
             this.Name = "AddAlbumWF";
             this.Text = "AddAlbumWF";
+            this.Load += new System.EventHandler(this.AddAlbumWF_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.artistBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cDCatalogDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.genreBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cDCatalogDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addAlbumPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -232,5 +290,11 @@
         private System.Windows.Forms.PictureBox addAlbumPictureBox;
         private System.Windows.Forms.Button OkButton;
         private System.Windows.Forms.Button cancelButton;
+        private CDCatalogDataSet2 cDCatalogDataSet2;
+        private System.Windows.Forms.BindingSource artistBindingSource;
+        private CDCatalogDataSet2TableAdapters.ArtistTableAdapter artistTableAdapter;
+        private CDCatalogDataSet3 cDCatalogDataSet3;
+        private System.Windows.Forms.BindingSource genreBindingSource;
+        private CDCatalogDataSet3TableAdapters.GenreTableAdapter genreTableAdapter;
     }
 }

@@ -82,10 +82,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CDCatalogDataSet11.xsd</DependentUpon>
     </Compile>
+    <Compile Include="CDCatalogDataSet21.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CDCatalogDataSet21.xsd</DependentUpon>
+    </Compile>
     <Compile Include="CDCatalogDataSet3.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CDCatalogDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CDCatalogDataSet31.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CDCatalogDataSet31.xsd</DependentUpon>
     </Compile>
     <Compile Include="ChangeAlbumWF.cs">
       <SubType>Form</SubType>
@@ -211,6 +221,17 @@
     <None Include="CDCatalogDataSet11.xss">
       <DependentUpon>CDCatalogDataSet11.xsd</DependentUpon>
     </None>
+    <None Include="CDCatalogDataSet21.xsc">
+      <DependentUpon>CDCatalogDataSet21.xsd</DependentUpon>
+    </None>
+    <None Include="CDCatalogDataSet21.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CDCatalogDataSet21.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CDCatalogDataSet21.xss">
+      <DependentUpon>CDCatalogDataSet21.xsd</DependentUpon>
+    </None>
     <None Include="CDCatalogDataSet3.xsc">
       <DependentUpon>CDCatalogDataSet3.xsd</DependentUpon>
     </None>
@@ -221,6 +242,17 @@
     </None>
     <None Include="CDCatalogDataSet3.xss">
       <DependentUpon>CDCatalogDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="CDCatalogDataSet31.xsc">
+      <DependentUpon>CDCatalogDataSet31.xsd</DependentUpon>
+    </None>
+    <None Include="CDCatalogDataSet31.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CDCatalogDataSet31.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CDCatalogDataSet31.xss">
+      <DependentUpon>CDCatalogDataSet31.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

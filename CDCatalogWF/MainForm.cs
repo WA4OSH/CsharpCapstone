@@ -14,6 +14,13 @@ namespace CDCatalogWF
 {
     public partial class MainForm : Form
     {
+        private static int _gridViewState;  // 0=default(Album) 1=Album 2=Song
+
+        public static int gridViewState
+        {
+            get { return _gridViewState; }
+            set { _gridViewState = 0; }  //default
+        }
         public MainForm()
         {
             InitializeComponent();
@@ -28,6 +35,8 @@ namespace CDCatalogWF
 
             // the albumViewButton radiobutton is selected first
             albumViewButton.Checked = true;
+            _gridViewState = 1; //album
+            songOrAlbumRatingLabel.Text = "Album";
 
             // Show albumDataGridView as default
             albumDataGridView.Visible = true;
@@ -40,6 +49,10 @@ namespace CDCatalogWF
 
         private void albumViewButton_CheckedChanged(object sender, EventArgs e)
         {
+            // Set the current state
+            _gridViewState = 1; //album
+            songOrAlbumRatingLabel.Text = "Album";
+
             // Show songDataGridView
             albumDataGridView.Visible = true;
             songDataGridView.Visible = false;
@@ -51,6 +64,10 @@ namespace CDCatalogWF
 
         private void songViewRadioButton_CheckedChanged(object sender, EventArgs e)
         {
+            // Set the current state
+            _gridViewState = 2; //song
+            songOrAlbumRatingLabel.Text = "Song";
+
             // Show songDataGridView
             albumDataGridView.Visible = false;
             songDataGridView.Visible = true;
@@ -192,6 +209,42 @@ namespace CDCatalogWF
             else if (dr == DialogResult.Cancel)
                 MessageBox.Show("User clicked Cancel button");
         }
+
+        private void albumDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            MessageBox.Show("User clicked in AlbumDataGridView");
+        }
+
+        private void songDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            MessageBox.Show("User clicked in SongDataGridView");
+        }
+
+        private void ratingOkButton_Click(object sender, EventArgs e)
+        {
+            int selectedRating = ratingComboBox.SelectedIndex;
+            string msg = "rating =" + selectedRating.ToString();
+            MessageBox.Show(msg);
+            switch (_gridViewState)
+            {
+                case 0: //default (album)
+                case 1: //album
+                    //update album
+                    break;
+                case 2: //song
+                    //update song
+                    break;
+            }
+        }
+
+        private void ratingCancelButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+       
+
+
 
 
     }
