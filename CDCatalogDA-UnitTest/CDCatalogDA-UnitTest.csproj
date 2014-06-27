@@ -59,8 +59,11 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="UnitTestDAAlbum.cs" />
+    <Compile Include="UnitTestDAArtist.cs" />
     <Compile Include="UnitTestDAGenre.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnitTestDASong.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CDCatalogDA\CDCatalogDA.csproj">

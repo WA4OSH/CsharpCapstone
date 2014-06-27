@@ -57,7 +57,7 @@ namespace CDCatalogDA
                 // Pop-up a messagebox with the message
                 MessageBox.Show(str);
             }
-            var songId = album.ArtistID; //The song.ArtistID gets updated in the context as its saved
+            var songId = album.ArtistID; // The song.ArtistID gets updated in the context as its saved
             return artistId;
         }
 
@@ -69,7 +69,7 @@ namespace CDCatalogDA
                 {
                     CDCatalogEF.Song song = db.Songs.Where(n => n.Equals(albumId)).Single();
                     db.Songs.Remove(song);
-                    return true;  //if there is an exception, this won't run
+                    return true;  // if there is an exception, this won't run
                 }
             }
             catch (Exception ex)

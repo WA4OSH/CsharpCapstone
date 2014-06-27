@@ -21,6 +21,8 @@ namespace CDCatalogWF
             get { return _gridViewState; }
             set { _gridViewState = 0; }  //default
         }
+
+        
         public MainForm()
         {
             InitializeComponent();
@@ -184,6 +186,7 @@ namespace CDCatalogWF
             dr = frm.ShowDialog();
             if (dr == DialogResult.OK)
                 MessageBox.Show("User clicked OK button");
+    
             else if (dr == DialogResult.Cancel)
                 MessageBox.Show("User clicked Cancel button");
         }
@@ -223,16 +226,19 @@ namespace CDCatalogWF
         private void ratingOkButton_Click(object sender, EventArgs e)
         {
             int selectedRating = ratingComboBox.SelectedIndex;
-            string msg = "rating =" + selectedRating.ToString();
-            MessageBox.Show(msg);
+
             switch (_gridViewState)
             {
-                case 0: //default (album)
-                case 1: //album
-                    //update album
+                case 0: // default
+                case 1: // album
+                    // update album
+                    string msg = "update album rating =" + selectedRating.ToString();
+                    MessageBox.Show(msg);
                     break;
-                case 2: //song
-                    //update song
+                case 2: // song
+                    // update song
+                    msg = "update song rating =" + selectedRating.ToString();
+                    MessageBox.Show(msg);
                     break;
             }
         }

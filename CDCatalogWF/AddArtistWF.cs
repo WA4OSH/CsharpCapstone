@@ -20,7 +20,14 @@ namespace CDCatalogWF
             get { return _artistId; }
             set { _artistId = 0; }
         }
- 
+
+        private static string _artistName;
+
+        public static string ArtistName
+        {
+            get { return _artistName; }
+            set { _artistName = String.Empty; }
+        }
    
         public AddArtistWF()
         {
@@ -41,6 +48,7 @@ namespace CDCatalogWF
         {
             this.Text = artistTxtBox.Text;
             _artistId = Artist.AddArtist(this.Text);
+            _artistName = this.Text;
             string msg = "ArtistID=" + _artistId.ToString();
             MessageBox.Show(msg);
         }

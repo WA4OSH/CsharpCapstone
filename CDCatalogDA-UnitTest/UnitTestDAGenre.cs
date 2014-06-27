@@ -14,6 +14,9 @@ namespace CDCatalogDA_UnitTest
         //    CDCatalogDA.Genre.GetAllGenres();
         //)
 
+        /// <summary>
+        /// The test da genre add.
+        /// </summary>
         [TestMethod]
         public void TestDAGenreAdd()
         {

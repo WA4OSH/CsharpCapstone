@@ -73,6 +73,7 @@
             this.artistComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.artistBindingSource, "ArtistID", true));
             this.artistComboBox.DataSource = this.artistBindingSource;
             this.artistComboBox.DisplayMember = "ArtistName";
+            this.artistComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.artistComboBox.FormattingEnabled = true;
             this.artistComboBox.Location = new System.Drawing.Point(147, 16);
             this.artistComboBox.Name = "artistComboBox";
@@ -127,6 +128,7 @@
             this.genreComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.genreBindingSource, "GenreID", true));
             this.genreComboBox.DataSource = this.genreBindingSource;
             this.genreComboBox.DisplayMember = "GenreName";
+            this.genreComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.genreComboBox.FormattingEnabled = true;
             this.genreComboBox.Location = new System.Drawing.Point(147, 98);
             this.genreComboBox.Name = "genreComboBox";
@@ -185,6 +187,7 @@
             // ratingComboBox
             // 
             this.ratingComboBox.AllowDrop = true;
+            this.ratingComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ratingComboBox.FormattingEnabled = true;
             this.ratingComboBox.Items.AddRange(new object[] {
             "not rated",

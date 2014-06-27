@@ -74,16 +74,20 @@
             // 
             // artistComboBox
             // 
+            this.artistComboBox.AccessibleDescription = "This combo box allows the user to select from a list of artists names";
+            this.artistComboBox.AccessibleName = "Artist Combo Box";
             this.artistComboBox.AllowDrop = true;
             this.artistComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.artistBindingSource, "ArtistID", true));
             this.artistComboBox.DataSource = this.artistBindingSource;
             this.artistComboBox.DisplayMember = "ArtistName";
+            this.artistComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.artistComboBox.FormattingEnabled = true;
             this.artistComboBox.Location = new System.Drawing.Point(172, 22);
             this.artistComboBox.Name = "artistComboBox";
             this.artistComboBox.Size = new System.Drawing.Size(151, 21);
             this.artistComboBox.TabIndex = 2;
             this.artistComboBox.ValueMember = "ArtistID";
+            this.artistComboBox.SelectedIndexChanged += new System.EventHandler(this.artistComboBox_SelectedIndexChanged);
             // 
             // artistBindingSource
             // 
@@ -126,12 +130,14 @@
             this.genreComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.genreBindingSource, "GenreID", true));
             this.genreComboBox.DataSource = this.genreBindingSource;
             this.genreComboBox.DisplayMember = "GenreName";
+            this.genreComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.genreComboBox.FormattingEnabled = true;
             this.genreComboBox.Location = new System.Drawing.Point(172, 126);
             this.genreComboBox.Name = "genreComboBox";
             this.genreComboBox.Size = new System.Drawing.Size(151, 21);
             this.genreComboBox.TabIndex = 12;
             this.genreComboBox.ValueMember = "GenreID";
+            this.genreComboBox.SelectedIndexChanged += new System.EventHandler(this.genreComboBox_SelectedIndexChanged);
             // 
             // genreBindingSource
             // 
@@ -169,6 +175,7 @@
             // ratingComboBox
             // 
             this.ratingComboBox.AllowDrop = true;
+            this.ratingComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ratingComboBox.FormattingEnabled = true;
             this.ratingComboBox.Items.AddRange(new object[] {
             "unrated",
@@ -181,6 +188,7 @@
             this.ratingComboBox.Name = "ratingComboBox";
             this.ratingComboBox.Size = new System.Drawing.Size(151, 21);
             this.ratingComboBox.TabIndex = 15;
+            this.ratingComboBox.SelectedIndexChanged += new System.EventHandler(this.ratingComboBox_SelectedIndexChanged);
             // 
             // addGenreButton
             // 
