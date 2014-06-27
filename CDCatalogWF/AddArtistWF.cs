@@ -11,29 +11,20 @@ using CDCatalogDA;
 
 namespace CDCatalogWF
 {
+    /// <summary>
+    /// The add artist wf.
+    /// </summary>
     public partial class AddArtistWF : Form
     {
-        private static int _artistId;
-
-        public static int ArtistID
-        {
-            get { return _artistId; }
-            set { _artistId = 0; }
-        }
-
-        private static string _artistName;
-
-        public static string ArtistName
-        {
-            get { return _artistName; }
-            set { _artistName = String.Empty; }
-        }
-   
-        public AddArtistWF()
-        {
-            InitializeComponent();
-        }
-
+        /// <summary>
+        /// The add artist_ load.
+        /// </summary>
+        /// <param name="sender">
+        /// The sender.
+        /// </param>
+        /// <param name="e">
+        /// The e.
+        /// </param>
         private void AddArtist_Load(object sender, EventArgs e)
         {
 
@@ -44,18 +35,48 @@ namespace CDCatalogWF
 
         }
 
-        private void okButton_Click(object sender, EventArgs e)
+        /// <summary>
+        /// This method handles the "OK" button click on the AddArtist form.
+        /// </summary>
+        /// <param name="sender">
+        /// The sender.
+        /// </param>
+        /// <param name="e">
+        /// The e.
+        /// </param>
+        private void OkButtonClick(object sender, EventArgs e)
         {
-            this.Text = artistTxtBox.Text;
-            _artistId = Artist.AddArtist(this.Text);
-            _artistName = this.Text;
-            string msg = "ArtistID=" + _artistId.ToString();
-            MessageBox.Show(msg);
+            // Add the artist in the textbox, error checking will be done in AddArtist
+            int artistId = Artist.AddArtist(this.artistTxtBox.Text.Trim());
+
+            // Save the new genreID that was created in the tag
+            this.Tag = artistId;
+
+            // Display a deug message box
+            // string msg = "ArtistID=" + artistId.ToString();
+            // MessageBox.Show(msg);
+
+            // Close the genre pop-up form
+            this.Close();
         }
 
-        private void cancelButton_Click(object sender, EventArgs e)
+        /// <summary>
+        /// This method handles the "Cancel" button click on the AddArtist form.
+        /// </summary>
+        /// <param name="sender">
+        /// The sender.
+        /// </param>
+        /// <param name="e">
+        /// The e.
+        /// </param>
+        private void CancelButtonClick(object sender, EventArgs e)
         {
-            _artistId = 0;
+            // set the tag to zero, an invalid artistID
+            this.Tag = 0;
+
+            // Close the genre pop-up form
+            this.Close();
+
         }
 
     }

@@ -42,17 +42,23 @@ namespace CDCatalogWF
 
         private void addArtistButton_Click(object sender, EventArgs e)
         {
+            // When the add artist button is clicked, we create an add artist form
             DialogResult dr = new DialogResult();
             AddArtistWF frm = new AddArtistWF();
+
+            //When the user exits the add artist form...
             _artistID = AddArtistWF.ArtistID;
             _artistName = AddArtistWF.ArtistName;
             dr = frm.ShowDialog();
+
             if (dr == DialogResult.OK)
             {
-                MessageBox.Show(_artistName + "User clicked OK button");
+                MessageBox.Show("User clicked OK button. Artist Name = " + _artistName );
                 this.artistTableAdapter.Fill(this.cDCatalogDataSet2.Artist);
-                artistComboBox.FindStringExact("_artistName");
+                int index = artistComboBox.FindStringExact("Bob Roeder");
+                artistComboBox.SelectedIndex = index;
             }
+            // if the cancel button or the X was clicked on the add artist form...
             else if (dr == DialogResult.Cancel)
             {
                 MessageBox.Show("User clicked Cancel button");

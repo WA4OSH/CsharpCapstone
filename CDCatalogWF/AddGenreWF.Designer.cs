@@ -45,7 +45,7 @@
             this.buttonOK.TabIndex = 0;
             this.buttonOK.Text = "OK";
             this.buttonOK.UseVisualStyleBackColor = true;
-            this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
+            this.buttonOK.Click += new System.EventHandler(this.ButtonOkClick);
             // 
             // cancelButton
             // 
@@ -55,7 +55,7 @@
             this.cancelButton.TabIndex = 1;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
-            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
+            this.cancelButton.Click += new System.EventHandler(this.CancelButtonClick);
             // 
             // genreLabel
             // 

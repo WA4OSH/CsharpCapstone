@@ -11,41 +11,65 @@ using CDCatalogDA;
 
 namespace CDCatalogWF
 {
+    /// <summary>
+    /// The add genre Web Form
+    /// </summary>
     public partial class AddGenreWF : Form
     {
-        private static int _genreId;
-
-        public static int GenreID   
-        {
-            get { return _genreId; }
-            set { _genreId = 0; }
-        }
- 
+        /// <summary>
+        /// Initializes a new instance of the AddGenreWF class.
+        /// </summary>
         public AddGenreWF()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
 
         private void genreTxtBox_TextChanged(object sender, EventArgs e)
         {
 
         }
-        
-        private void buttonOK_Click(object sender, EventArgs e)
+
+        /// <summary>
+        /// This method handles the  "OK" button click
+        /// </summary>
+        /// <param name="sender">
+        /// The sender.
+        /// </param>
+        /// <param name="e">
+        /// The e.
+        /// </param>
+        private void ButtonOkClick(object sender, EventArgs e)
         {
-            this.Text = genreTxtBox.Text;
-            _genreId = Genre.AddGenre(this.Text);
-            string msg = "GenreID=" + _genreId.ToString();
-            MessageBox.Show(msg);
+            // Add the genre in the textbox
+            Genre genreId = Genre.AddGenre(this.genreTxtBox.Text.Trim());
+
+            // Save the new genreID that was created in the tag
+            this.Tag = genreId;
+
+            // Display a debug message box
+            // string msg = "GenreID=" + genreId.ToString();
+            // MessageBox.Show(msg);
+
+            // Close the genre pop-up form
+            this.Close();
         }
 
-        private void cancelButton_Click(object sender, EventArgs e)
+        /// <summary>
+        /// This method handles the  "Cancel" button click on the AddGenre form.
+        /// </summary>
+        /// <param name="sender">
+        /// The sender.
+        /// </param>
+        /// <param name="e">
+        /// The e.
+        /// </param>
+        private void CancelButtonClick(object sender, EventArgs e)
         {
-            _genreId = 0;
+            // set the tag to zero, an invalid genreID
+            this.Tag = 0;
+
+            // Close the genre pop-up form
+            this.Close();
         }
-
-
-
-
     }
 }

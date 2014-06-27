@@ -30,7 +30,7 @@ namespace CDCatalogDA
             return null;
         }
 
-        public static int AddGenre(string genreName)
+        public static Genre AddGenre(string genreName)
         {
 
             if (genreName == null)
