@@ -55,10 +55,10 @@
             this.artistTableAdapter = new CDCatalogWF.CDCatalogDataSet2TableAdapters.ArtistTableAdapter();
             this.genreTableAdapter = new CDCatalogWF.CDCatalogDataSet3TableAdapters.GenreTableAdapter();
             this.albumTitleComboBox = new System.Windows.Forms.ComboBox();
+            this.albumBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cDCatalogAlbum = new CDCatalogWF.CDCatalogAlbum();
             this.albumTitleLabel = new System.Windows.Forms.Label();
             this.addAlbumTitleButton = new System.Windows.Forms.Button();
-            this.cDCatalogAlbum = new CDCatalogWF.CDCatalogAlbum();
-            this.albumBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.albumTableAdapter = new CDCatalogWF.CDCatalogAlbumTableAdapters.AlbumTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.artistBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cDCatalogDataSet2)).BeginInit();
@@ -66,8 +66,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.cDCatalogDataSet3BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cDCatalogDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cDCatalogAlbum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.albumBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cDCatalogAlbum)).BeginInit();
             this.SuspendLayout();
             // 
             // artistLabel
@@ -291,6 +291,16 @@
             this.albumTitleComboBox.TabIndex = 24;
             this.albumTitleComboBox.ValueMember = "AlbumID";
             // 
+            // albumBindingSource
+            // 
+            this.albumBindingSource.DataMember = "Album";
+            this.albumBindingSource.DataSource = this.cDCatalogAlbum;
+            // 
+            // cDCatalogAlbum
+            // 
+            this.cDCatalogAlbum.DataSetName = "CDCatalogAlbum";
+            this.cDCatalogAlbum.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // albumTitleLabel
             // 
             this.albumTitleLabel.AutoSize = true;
@@ -309,16 +319,6 @@
             this.addAlbumTitleButton.TabIndex = 26;
             this.addAlbumTitleButton.UseVisualStyleBackColor = true;
             this.addAlbumTitleButton.Click += new System.EventHandler(this.addAlbumTitleButton_Click);
-            // 
-            // cDCatalogAlbum
-            // 
-            this.cDCatalogAlbum.DataSetName = "CDCatalogAlbum";
-            this.cDCatalogAlbum.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // albumBindingSource
-            // 
-            this.albumBindingSource.DataMember = "Album";
-            this.albumBindingSource.DataSource = this.cDCatalogAlbum;
             // 
             // albumTableAdapter
             // 
@@ -362,8 +362,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.cDCatalogDataSet3BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cDCatalogDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cDCatalogAlbum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.albumBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cDCatalogAlbum)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
