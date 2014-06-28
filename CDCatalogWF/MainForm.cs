@@ -79,10 +79,11 @@ namespace CDCatalogWF
             songGroupBox.Visible = true;
         }
 
-        private void addAlbumButton_Click(object sender, EventArgs e)
+        private void albumAddButton_Click(object sender, EventArgs e)
         {
-            DialogResult dr = new DialogResult();
             AddAlbumWF frm = new AddAlbumWF();
+            DialogResult dr = new DialogResult();
+
             dr = frm.ShowDialog();
             if (dr == DialogResult.OK)
                 MessageBox.Show("User clicked OK button");
@@ -90,10 +91,10 @@ namespace CDCatalogWF
                 MessageBox.Show("User clicked Cancel button");
         }
 
-        private void changeAlbumButton_Click(object sender, EventArgs e)
+        private void albumChangeButton_Click(object sender, EventArgs e)
         {
-            DialogResult dr = new DialogResult();
             ChangeAlbumWF frm = new ChangeAlbumWF();
+            DialogResult dr = new DialogResult();
 
             dr = frm.ShowDialog();
             if (dr == DialogResult.OK)
@@ -102,10 +103,11 @@ namespace CDCatalogWF
                 MessageBox.Show("User clicked Cancel button");
         }
 
-        private void DeleteAlbumButton_Click(object sender, EventArgs e)
+        private void albumDeleteButton_Click(object sender, EventArgs e)
         {
-            DialogResult dr = new DialogResult();
             DeleteAlbumWF frm = new DeleteAlbumWF();
+            DialogResult dr = new DialogResult();
+            
             dr = frm.ShowDialog();
             if (dr == DialogResult.OK)
                 MessageBox.Show("User clicked OK button");
@@ -113,10 +115,11 @@ namespace CDCatalogWF
                 MessageBox.Show("User clicked Cancel button");
         }
 
-        private void addSongButton_Click(object sender, EventArgs e)
+        private void songAddButton_Click(object sender, EventArgs e)
         {
-            DialogResult dr = new DialogResult();
             AddSongWF frm = new AddSongWF();
+            DialogResult dr = new DialogResult();
+
             dr = frm.ShowDialog();
             if (dr == DialogResult.OK)
                 MessageBox.Show("User clicked OK button");
@@ -124,10 +127,11 @@ namespace CDCatalogWF
                 MessageBox.Show("User clicked Cancel button");
         }
 
-        private void songEditButton_Click(object sender, EventArgs e)
+        private void songChangeButton_Click(object sender, EventArgs e)
         {
-            DialogResult dr = new DialogResult();
             ChangeSongWF frm = new ChangeSongWF();
+            DialogResult dr = new DialogResult();
+            
             dr = frm.ShowDialog();
             if (dr == DialogResult.OK)
                 MessageBox.Show("User clicked OK button");
@@ -137,8 +141,9 @@ namespace CDCatalogWF
 
         private void songDeleteButton_Click(object sender, EventArgs e)
         {
-            DialogResult dr = new DialogResult();
             DeleteSongWF frm = new DeleteSongWF();
+            DialogResult dr = new DialogResult();
+            
             dr = frm.ShowDialog();
             if (dr == DialogResult.OK)
                 MessageBox.Show("User clicked OK button");
@@ -150,6 +155,7 @@ namespace CDCatalogWF
         {
             DialogResult dr = new DialogResult();
             AddArtistWF frm = new AddArtistWF();
+            
             dr = frm.ShowDialog();
             if (dr == DialogResult.OK)
                 MessageBox.Show("User clicked OK button");
@@ -159,8 +165,9 @@ namespace CDCatalogWF
 
         private void artistChangeButton_Click(object sender, EventArgs e)
         {
-            DialogResult dr = new DialogResult();
             ChangeArtistWF frm = new ChangeArtistWF();
+            DialogResult dr = new DialogResult();
+            
             dr = frm.ShowDialog();
             if (dr == DialogResult.OK)
                 MessageBox.Show("User clicked OK button");
@@ -170,8 +177,9 @@ namespace CDCatalogWF
 
         private void artistDeleteButton_Click(object sender, EventArgs e)
         {
-            DialogResult dr = new DialogResult();
             DeleteArtistWF frm = new DeleteArtistWF();
+            DialogResult dr = new DialogResult();
+            
             dr = frm.ShowDialog();
             if (dr == DialogResult.OK)
                 MessageBox.Show("User clicked OK button");
@@ -181,8 +189,9 @@ namespace CDCatalogWF
 
         private void GenreAddButton_Click(object sender, EventArgs e)
         {
-            DialogResult dr = new DialogResult();
             AddGenreWF frm = new AddGenreWF();
+            DialogResult dr = new DialogResult();
+            
             dr = frm.ShowDialog();
             if (dr == DialogResult.OK)
                 MessageBox.Show("User clicked OK button");
@@ -193,8 +202,9 @@ namespace CDCatalogWF
 
         private void genreChangeButton_Click(object sender, EventArgs e)
         {
-            DialogResult dr = new DialogResult();
             ChangeGenreWF frm = new ChangeGenreWF();
+            DialogResult dr = new DialogResult();
+            
             dr = frm.ShowDialog();
             if (dr == DialogResult.OK)
                 MessageBox.Show("User clicked OK button");
@@ -204,8 +214,9 @@ namespace CDCatalogWF
 
         private void genreDeleteButton_Click(object sender, EventArgs e)
         {
-            DialogResult dr = new DialogResult();
             DeleteGenreWF frm = new DeleteGenreWF();
+            DialogResult dr = new DialogResult();
+            
             dr = frm.ShowDialog();
             if (dr == DialogResult.OK)
                 MessageBox.Show("User clicked OK button");
@@ -247,11 +258,5 @@ namespace CDCatalogWF
         {
 
         }
-
-       
-
-
-
-
     }
 }

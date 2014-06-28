@@ -120,6 +120,12 @@
   <metadata name="artistBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>174, 17</value>
   </metadata>
+  <metadata name="artistBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>174, 17</value>
+  </metadata>
+  <metadata name="cDCatalogDataSet2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <metadata name="cDCatalogDataSet2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
@@ -127,7 +133,7 @@
   <data name="addArtistButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAIAAAAmdTLBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr8AAA6/ATgFUyQAAAB5SURBVDhPY/iPDTz+8oJ7pZXSRh8IArKBIlA5VDCqHxsY
+        YQUAAAAJcEhZcwAADr4AAA6+AepCscAAAAB5SURBVDhPY/iPDTz+8oJ7pZXSRh8IArKBIlA5VDCqHxsY
         aP0ffn5G0w8UgcqhAoaSc/1oqPz8hOxTbZJrXeD6gWygCFAcTSUQMYitdcZEyJrhRqCpgSAGNHWkIort
         R/MPEJHmf2g4ogISwh9Ko4KBTj+j+onT//8/AJ900cE1k3KZAAAAAElFTkSuQmCC
 </value>
@@ -135,8 +141,17 @@
   <metadata name="genreBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 56</value>
   </metadata>
+  <metadata name="genreBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 56</value>
+  </metadata>
   <metadata name="cDCatalogDataSet3BindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>641, 17</value>
+  </metadata>
+  <metadata name="cDCatalogDataSet3BindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>641, 17</value>
+  </metadata>
+  <metadata name="cDCatalogDataSet3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>484, 17</value>
   </metadata>
   <metadata name="cDCatalogDataSet3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>484, 17</value>
@@ -144,7 +159,7 @@
   <data name="addGenreButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAIAAAAmdTLBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr8AAA6/ATgFUyQAAAB5SURBVDhPY/iPDTz+8oJ7pZXSRh8IArKBIlA5VDCqHxsY
+        YQUAAAAJcEhZcwAADr4AAA6+AepCscAAAAB5SURBVDhPY/iPDTz+8oJ7pZXSRh8IArKBIlA5VDCqHxsY
         aP0ffn5G0w8UgcqhAoaSc/1oqPz8hOxTbZJrXeD6gWygCFAcTSUQMYitdcZEyJrhRqCpgSAGNHWkIort
         R/MPEJHmf2g4ogISwh9Ko4KBTj+j+onT//8/AJ900cE1k3KZAAAAAElFTkSuQmCC
 </value>
@@ -196,5 +211,31 @@
   </metadata>
   <metadata name="genreTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>179, 56</value>
+  </metadata>
+  <metadata name="albumBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>479, 56</value>
+  </metadata>
+  <data name="addAlbumTitleButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAIAAAAmdTLBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADr0AAA69AUf7kK0AAAB5SURBVDhPY/iPDTz+8oJ7pZXSRh8IArKBIlA5VDCqHxsY
+        aP0ffn5G0w8UgcqhAoaSc/1oqPz8hOxTbZJrXeD6gWygCFAcTSUQMYitdcZEyJrhRqCpgSAGNHWkIort
+        R/MPEJHmf2g4ogISwh9Ko4KBTj+j+onT//8/AJ900cE1k3KZAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <metadata name="cDCatalogAlbum.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>335, 56</value>
+  </metadata>
+  <metadata name="albumBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>479, 56</value>
+  </metadata>
+  <metadata name="cDCatalogAlbum.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>335, 56</value>
+  </metadata>
+  <metadata name="albumTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>644, 56</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>151</value>
   </metadata>
 </root>

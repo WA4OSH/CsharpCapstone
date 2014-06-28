@@ -30,7 +30,7 @@ namespace CDCatalogDA
             return null;
         }
 
-        public static Genre AddGenre(string genreName)
+        public static CDCatalogEF.Genre AddGenre(string genreName)
         {
 
             if (genreName == null)
@@ -40,7 +40,7 @@ namespace CDCatalogDA
 
                 // Pop-up a messagebox with the message
                 MessageBox.Show(str);
-                return 0;
+                return null;
             }
             var genre = new CDCatalogEF.Genre();
             try
@@ -61,8 +61,7 @@ namespace CDCatalogDA
                 // Pop-up a messagebox with the message
                 MessageBox.Show(str);
             }
-            var genreId = genre.GenreID;
-            return genreId;
+            return genre;
         }
 
         public static CDCatalogEF.Genre GetGenreById(int genreId)

@@ -12,6 +12,9 @@ namespace CDCatalogWF
 {
     using CDCatalogDA;
 
+    using Artist = CDCatalogEF.Artist;
+    using Genre = CDCatalogEF.Genre;
+
     public partial class AddSongWF : Form
     {
         // These variables hold the ArtistID and GenreID while the data for
@@ -28,11 +31,14 @@ namespace CDCatalogWF
 
         private void AddSongWF_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'cDCatalogAlbum.Album' table. You can move, or remove it, as needed.
+            this.albumTableAdapter.Fill(this.cDCatalogAlbum.Album);
             // TODO: This line of code loads data into the 'cDCatalogDataSet3.Genre' table. You can move, or remove it, as needed.
             this.genreTableAdapter.Fill(this.cDCatalogDataSet3.Genre);
             // TODO: This line of code loads data into the 'cDCatalogDataSet2.Artist' table. You can move, or remove it, as needed.
             this.artistTableAdapter.Fill(this.cDCatalogDataSet2.Artist);
 
+            ratingComboBox.SelectedIndex = 0;  //default is unrated
         }
 
         private void artistLabel_Click(object sender, EventArgs e)
@@ -42,23 +48,25 @@ namespace CDCatalogWF
 
         private void addArtistButton_Click(object sender, EventArgs e)
         {
-            // When the add artist button is clicked, we create an add artist form
-            DialogResult dr = new DialogResult();
+            // The user clicked the addArtistButton on the AddArtist form.
+            // this creates an AddArtist pop-up.
             AddArtistWF frm = new AddArtistWF();
+            DialogResult dr = frm.ShowDialog(this);
 
-            //When the user exits the add artist form...
-            _artistID = AddArtistWF.ArtistID;
-            _artistName = AddArtistWF.ArtistName;
-            dr = frm.ShowDialog();
-
+            // If the user clicked the OK button on the AddArtist pop-up
             if (dr == DialogResult.OK)
             {
-                MessageBox.Show("User clicked OK button. Artist Name = " + _artistName );
+                // MessageBox.Show("User clicked OK button. Artist Name = " + _artistName );
+                // Get the newly created genre object
+                CDCatalogEF.Artist artist = (Artist)this.addArtistButton.Tag;
+
+                // Refresh the combo box with the artist that was just added
                 this.artistTableAdapter.Fill(this.cDCatalogDataSet2.Artist);
-                int index = artistComboBox.FindStringExact("Bob Roeder");
+
+                int index = artistComboBox.FindStringExact(artist.ArtistName);  // unhandled exception ArtistName = null
                 artistComboBox.SelectedIndex = index;
             }
-            // if the cancel button or the X was clicked on the add artist form...
+            // if the Cancel button or the X was clicked on the AddArtist pop-up...
             else if (dr == DialogResult.Cancel)
             {
                 MessageBox.Show("User clicked Cancel button");
@@ -67,16 +75,26 @@ namespace CDCatalogWF
 
         private void addGenreButton_Click(object sender, EventArgs e)
         {
-            DialogResult dr = new DialogResult();
+            // The user clicked the addGenreButton on the AddSong form.
+            // this creates an AddGenre pop-up.
             AddGenreWF frm = new AddGenreWF();
-            _genreID = AddGenreWF.GenreID;
-            dr = frm.ShowDialog();
+            DialogResult dr = frm.ShowDialog(this);
+            
+            // If the user clicked the OK button on the AddGenre pop-up
             if (dr == DialogResult.OK)
             {
-                MessageBox.Show("User clicked OK button");
+                // MessageBox.Show("User clicked OK button");
+                // Get the newly created genre object
+                CDCatalogEF.Genre genre = (Genre)this.addGenreButton.Tag;
+
+                // Show updated list in the combo box
                 this.genreTableAdapter.Fill(this.cDCatalogDataSet3.Genre);
 
+                //Show the selected item
+                this.genreComboBox.SelectedIndex = this.genreComboBox.FindString(genre.GenreName);
+
             }
+            // if the Cancel button or the X was clicked on the AddGenre pop-up...
             else if (dr == DialogResult.Cancel)
             {
                 MessageBox.Show("User clicked Cancel button");
@@ -87,36 +105,46 @@ namespace CDCatalogWF
         {
             string msg = "ComboBox text = " +  artistComboBox.Text;
             MessageBox.Show(msg);
+            int index = artistComboBox.FindStringExact(artistComboBox.Text);
+            artistComboBox.SelectedIndex = index;
             // 
             // _artistID = int.Parse(artistComboBox.ValueMember);  // unhandled exception
+        }
+
+        private void addAlbumTitleButton_Click(object sender, EventArgs e)
+        {
+            string msg = "ComboBox text = " + albumTitleComboBox.Text;
+            MessageBox.Show(msg);
         }
 
         private void genreComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             string msg = "ComboBox text = " + genreComboBox.Text;
             MessageBox.Show(msg);
-            // _genreID = int.Parse(genreComboBox.ValueMember);  // unhandled exception
         }
 
         private void ratingComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            string msg = "ComboBox text = " + ratingComboBox.Text;
+            MessageBox.Show(msg);
         }
 
         private void OkButton_Click(object sender, EventArgs e)
         {
+            // The user clicked on the AddSong OK button.
             string title = this.songNameTextBox.Text;
-            int artistId = _artistID;
-            int albumId = 0;  // where do we get this?
-            int trackNumber = 0;
-            // int.TryParse(this.songTrackNumberTextBox.ToString(), out trackNumber);  // unhandled exception
-            int songRating = ratingComboBox.SelectedIndex;
-            int trackLength = 0;  // seconds
-
-            // int.Parse(this.songTrackLengthTextBox.ToString(), trackLength);
-
-            int genreId = _genreID;
-
+            int artistId;
+            int.TryParse(artistComboBox.SelectedValue.ToString(), out artistId);
+            int albumId;
+            int.TryParse(albumTitleComboBox.SelectedValue.ToString(), out albumId);
+            int trackNumber;
+            int.TryParse(songTrackNumberTextBox.Text, out trackNumber);
+            int songRating = ratingComboBox.SelectedIndex;  //the index corresponds to 0-5
+            int trackLength;  // seconds
+            int.TryParse(songTrackLengthTextBox.Text, out trackLength);
+            int genreId;
+            int.TryParse(genreComboBox.SelectedValue.ToString(), out genreId);
+            
             //todo: validation
 
             int SongId = Song.AddSong(title, artistId, albumId, trackNumber, songRating, trackLength, genreId);
@@ -128,5 +156,7 @@ namespace CDCatalogWF
         {
 
         }
+
+
     }
 }

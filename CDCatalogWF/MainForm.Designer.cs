@@ -171,7 +171,7 @@
             this.editSongButton.Size = new System.Drawing.Size(75, 60);
             this.editSongButton.TabIndex = 1;
             this.editSongButton.UseVisualStyleBackColor = true;
-            this.editSongButton.Click += new System.EventHandler(this.songEditButton_Click);
+            this.editSongButton.Click += new System.EventHandler(this.songChangeButton_Click);
             // 
             // addSongButton
             // 
@@ -181,7 +181,7 @@
             this.addSongButton.Size = new System.Drawing.Size(75, 60);
             this.addSongButton.TabIndex = 0;
             this.addSongButton.UseVisualStyleBackColor = true;
-            this.addSongButton.Click += new System.EventHandler(this.addSongButton_Click);
+            this.addSongButton.Click += new System.EventHandler(this.songAddButton_Click);
             // 
             // cdCatalogPictureBox
             // 
@@ -715,7 +715,7 @@
             this.addAlbumButton.TabIndex = 1;
             this.addAlbumButton.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.addAlbumButton.UseVisualStyleBackColor = true;
-            this.addAlbumButton.Click += new System.EventHandler(this.addAlbumButton_Click);
+            this.addAlbumButton.Click += new System.EventHandler(this.albumAddButton_Click);
             // 
             // deleteAlbumButton
             // 
@@ -727,7 +727,7 @@
             this.deleteAlbumButton.TabIndex = 3;
             this.deleteAlbumButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.deleteAlbumButton.UseVisualStyleBackColor = true;
-            this.deleteAlbumButton.Click += new System.EventHandler(this.DeleteAlbumButton_Click);
+            this.deleteAlbumButton.Click += new System.EventHandler(this.albumDeleteButton_Click);
             // 
             // editAlbumButton
             // 
@@ -739,7 +739,7 @@
             this.editAlbumButton.TabIndex = 2;
             this.editAlbumButton.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.editAlbumButton.UseVisualStyleBackColor = true;
-            this.editAlbumButton.Click += new System.EventHandler(this.changeAlbumButton_Click);
+            this.editAlbumButton.Click += new System.EventHandler(this.albumChangeButton_Click);
             // 
             // label9
             // 

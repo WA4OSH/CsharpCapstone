@@ -34,7 +34,7 @@ namespace CDCatalogWF
         {
             DialogResult dr = new DialogResult();
             AddArtistWF frm = new AddArtistWF();
-            _artistID = AddArtistWF.ArtistID; 
+            
             dr = frm.ShowDialog();
             if (dr == DialogResult.OK)
                 MessageBox.Show("User clicked OK button");
@@ -46,7 +46,7 @@ namespace CDCatalogWF
         {
             DialogResult dr = new DialogResult();
             AddGenreWF frm = new AddGenreWF();
-            _genreID = AddGenreWF.GenreID;
+            
             dr = frm.ShowDialog();
             if (dr == DialogResult.OK)
                 MessageBox.Show("User clicked OK button");

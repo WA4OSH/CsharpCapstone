@@ -77,6 +77,11 @@
     <Compile Include="AddSongWF.Designer.cs">
       <DependentUpon>AddSongWF.cs</DependentUpon>
     </Compile>
+    <Compile Include="CDCatalogAlbum.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CDCatalogAlbum.xsd</DependentUpon>
+    </Compile>
     <Compile Include="CDCatalogDataSet11.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -210,6 +215,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="CDCatalogAlbum.xsc">
+      <DependentUpon>CDCatalogAlbum.xsd</DependentUpon>
+    </None>
+    <None Include="CDCatalogAlbum.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CDCatalogAlbum.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CDCatalogAlbum.xss">
+      <DependentUpon>CDCatalogAlbum.xsd</DependentUpon>
+    </None>
     <None Include="CDCatalogDataSet11.xsc">
       <DependentUpon>CDCatalogDataSet11.xsd</DependentUpon>
     </None>
@@ -302,6 +318,10 @@
     <Content Include="images\track.gif" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\CDCatalog\CDCatalogEF\CDCatalogEF.csproj">
+      <Project>{148DE458-E6AA-4D1C-BB1A-653CF7E79E77}</Project>
+      <Name>CDCatalogEF</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CDCatalogDA\CDCatalogDA.csproj">
       <Project>{29351df5-7e4e-4520-8b67-ab1ef75e4c96}</Project>
       <Name>CDCatalogDA</Name>

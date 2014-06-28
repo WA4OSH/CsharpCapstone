@@ -17,6 +17,14 @@ namespace CDCatalogWF
     public partial class AddArtistWF : Form
     {
         /// <summary>
+        /// Initializes a new instance of the AddGenreWF class.
+        /// </summary>
+        public AddArtistWF()
+        {
+            this.InitializeComponent();
+        }
+
+        /// <summary>
         /// The add artist_ load.
         /// </summary>
         /// <param name="sender">
@@ -78,6 +86,5 @@ namespace CDCatalogWF
             this.Close();
 
         }
-
     }
 }

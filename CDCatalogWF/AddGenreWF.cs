@@ -41,10 +41,10 @@ namespace CDCatalogWF
         private void ButtonOkClick(object sender, EventArgs e)
         {
             // Add the genre in the textbox
-            Genre genreId = Genre.AddGenre(this.genreTxtBox.Text.Trim());
+            CDCatalogEF.Genre genre = CDCatalogDA.Genre.AddGenre(this.genreTxtBox.Text.Trim());
 
-            // Save the new genreID that was created in the tag
-            this.Tag = genreId;
+            // Save the new genre that was created as the tag object
+            this.Tag = genre;
 
             // Display a debug message box
             // string msg = "GenreID=" + genreId.ToString();

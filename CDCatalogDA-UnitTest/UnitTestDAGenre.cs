@@ -20,7 +20,7 @@ namespace CDCatalogDA_UnitTest
         [TestMethod]
         public void TestDAGenreAdd()
         {
-            CDCatalogDA.Genre.AddGenre("xyzzx");
+            CDCatalogEF.Genre genre = CDCatalogDA.Genre.AddGenre("xyzzx");
             
 
         }
