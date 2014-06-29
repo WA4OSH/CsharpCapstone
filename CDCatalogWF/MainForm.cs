@@ -14,15 +14,18 @@ namespace CDCatalogWF
 {
     public partial class MainForm : Form
     {
+        private enum gridViewSt { Album, Song };
+
         private static int _gridViewState;  // 0=default(Album) 1=Album 2=Song
 
         public static int gridViewState
         {
             get { return _gridViewState; }
-            set { _gridViewState = 0; }  //default
+            set { _gridViewState = (int)gridViewSt.Album; } 
         }
 
-        
+        private enum searchSt { Album, Song, Genre };
+
         public MainForm()
         {
             InitializeComponent();
@@ -36,7 +39,8 @@ namespace CDCatalogWF
 
             // the albumViewButton radiobutton is selected first
             albumViewButton.Checked = true;
-            _gridViewState = 1; //album
+            _gridViewState = (int)gridViewSt.Album;
+            searchComboBox.SelectedIndex = (int)gridViewSt.Album; 
             songOrAlbumRatingLabel.Text = "Album";
 
             // Show albumDataGridView as default
@@ -51,8 +55,9 @@ namespace CDCatalogWF
         private void albumViewButton_CheckedChanged(object sender, EventArgs e)
         {
             // Set the current state
-            _gridViewState = 1; //album
+            _gridViewState = (int)gridViewSt.Album;
             songOrAlbumRatingLabel.Text = "Album";
+            searchComboBox.SelectedIndex = (int)gridViewSt.Album;
 
             // Show songDataGridView
             albumDataGridView.Visible = true;
@@ -66,8 +71,9 @@ namespace CDCatalogWF
         private void songViewRadioButton_CheckedChanged(object sender, EventArgs e)
         {
             // Set the current state
-            _gridViewState = 2; //song
+            _gridViewState = (int)gridViewSt.Song;
             songOrAlbumRatingLabel.Text = "Song";
+            searchComboBox.SelectedIndex = (int)gridViewSt.Song;
 
             // Show songDataGridView
             albumDataGridView.Visible = false;
@@ -90,118 +96,122 @@ namespace CDCatalogWF
             if (dr == DialogResult.OK)
             {
                 // The user clicked the OK button
-                MessageBox.Show("User clicked OK button");
+                MessageBox.Show("Main: AddAlbum: User clicked OK button");
                 // Refresh the datagrid
                 this.albumViewTableAdapter.Fill(this.cDCatalogDataSet.AlbumView);
-                this.Close();
             }
             else if (dr == DialogResult.Cancel)
             {
                 // The user clicked the Cancel button
-                MessageBox.Show("User clicked Cancel button");
-                this.Close();
+                MessageBox.Show("Main: AddAlbum: User clicked Cancel button");
             }
         }
 
         private void ChangeAlbumButton_Click(object sender, EventArgs e)
         {
-            ChangeAlbumWF frm = new ChangeAlbumWF();
+            // In the main form, the user clicked the ChangeAlbum button
+            // this causes an ChangeAlbum form to pop-up
             DialogResult dr = new DialogResult();
+            ChangeAlbumWF frm = new ChangeAlbumWF();
 
+            // After the ChangeAlbum form has been closed, determine why
             dr = frm.ShowDialog();
             if (dr == DialogResult.OK)
             {
-                MessageBox.Show("User clicked OK button");
+                MessageBox.Show("Main: ChangeAlbum: User clicked OK button");
                 // Refresh the datagrid
                 this.albumViewTableAdapter.Fill(this.cDCatalogDataSet.AlbumView);
-                this.Close();
             }
             else
             if (dr == DialogResult.Cancel)
             {
-                MessageBox.Show("User clicked Cancel button");
-                this.Close();
+                MessageBox.Show("Main: ChangeAlbum: User clicked Cancel button");
             }
         }
 
         private void DeleteAlbumButton_Click(object sender, EventArgs e)
         {
-            DeleteAlbumWF frm = new DeleteAlbumWF();
+            // In the main form, the user clicked the DeleteAlbum button
+            // this causes an DeleteAlbum form to pop-up
             DialogResult dr = new DialogResult();
-            
+            DeleteAlbumWF frm = new DeleteAlbumWF();
+
+            // After the DeleteAlbum form has been closed, determine why
             dr = frm.ShowDialog();
             if (dr == DialogResult.OK)
             {
-                MessageBox.Show("User clicked OK button");
+                MessageBox.Show("Main: DeleteAlbum: User clicked OK button");
                 // Refresh the datagrid
                 this.albumViewTableAdapter.Fill(this.cDCatalogDataSet.AlbumView);
-                this.Close();
             }
             else
             if (dr == DialogResult.Cancel)
             {
-                MessageBox.Show("User clicked Cancel button");
-                this.Close();
+                MessageBox.Show("Main: DeleteAlbum: User clicked Cancel button");
             }
                 
         }
 
         private void AddSongButton_Click(object sender, EventArgs e)
         {
-            AddSongWF frm = new AddSongWF();
-            DialogResult dr = new DialogResult();
+            bool repeat = true;
+            while (repeat)
+            {
+                DialogResult dr = new DialogResult();
+                AddSongWF frm = new AddSongWF();
 
-            dr = frm.ShowDialog();
-            if (dr == DialogResult.OK)
-            {
-                MessageBox.Show("User clicked OK button");
-                this.songViewTableAdapter.Fill(this.cDCatalogDataSet1.SongView);
-                this.Close();
+                dr = frm.ShowDialog();
+                if (dr == DialogResult.Yes)
+                {
+                    MessageBox.Show("Main: AddSong: User clicked YES button");
+                    this.songViewTableAdapter.Fill(this.cDCatalogDataSet1.SongView);
+                    repeat = true;
+                }
+                if (dr == DialogResult.OK)
+                {
+                    MessageBox.Show("Main: AddSong: User clicked OK button");
+                    this.songViewTableAdapter.Fill(this.cDCatalogDataSet1.SongView);
+                    repeat = false;
+                }
+                else if (dr == DialogResult.Cancel)
+                {
+                    MessageBox.Show("Main: AddSong: User clicked Cancel button");
+                    repeat = false;
+                }
             }
-                
-            else if (dr == DialogResult.Cancel)
-            {
-                MessageBox.Show("User clicked Cancel button");
-                this.Close();
-            }
-            
         }
 
         private void ChangeSongButton_Click(object sender, EventArgs e)
         {
-            ChangeSongWF frm = new ChangeSongWF();
             DialogResult dr = new DialogResult();
+            ChangeSongWF frm = new ChangeSongWF();
             
             dr = frm.ShowDialog();
             if (dr == DialogResult.OK)
             {
-                MessageBox.Show("User clicked OK button");
+                MessageBox.Show("Main: ChangeSong: User clicked OK button");
                 this.songViewTableAdapter.Fill(this.cDCatalogDataSet1.SongView);
-                this.Close();
             }
             else if (dr == DialogResult.Cancel)
             {
-                MessageBox.Show("User clicked Cancel button");
-                this.Close();
+                MessageBox.Show("Main: ChangeSong: User clicked Cancel button");
             }
         }
 
         private void DeleteSongButton_Click(object sender, EventArgs e)
         {
-            DeleteSongWF frm = new DeleteSongWF();
             DialogResult dr = new DialogResult();
+            DeleteSongWF frm = new DeleteSongWF();
             
             dr = frm.ShowDialog();
             if (dr == DialogResult.OK)
             {
-                MessageBox.Show("User clicked OK button");
+                MessageBox.Show("Main: DeleteSong: User clicked OK button");
                 this.songViewTableAdapter.Fill(this.cDCatalogDataSet1.SongView);
-                this.Close();
             }
             else if (dr == DialogResult.Cancel)
             {
-                MessageBox.Show("User clicked Cancel button");
-                this.Close();
+                MessageBox.Show("Main: DeleteSong: User clicked Cancel button");
             }
         }
 
@@ -213,103 +223,91 @@ namespace CDCatalogWF
             dr = frm.ShowDialog();
             if (dr == DialogResult.OK)
             {
-                MessageBox.Show("User clicked OK button");
-                this.Close();
+                MessageBox.Show("Main: AddArtist User clicked OK button");
             }
             else if (dr == DialogResult.Cancel)
             {
-                MessageBox.Show("User clicked Cancel button");
-                this.Close();
+                MessageBox.Show("Main: AddArtist User clicked Cancel button");
             }
         }
 
         private void ChangeArtistButton_Click(object sender, EventArgs e)
         {
-            ChangeArtistWF frm = new ChangeArtistWF();
             DialogResult dr = new DialogResult();
-
+            ChangeArtistWF frm = new ChangeArtistWF();
+            
             dr = frm.ShowDialog();
             if (dr == DialogResult.OK)
             {
-                MessageBox.Show("User clicked OK button");
-                this.Close();
+                MessageBox.Show("Main: ChangeArtist User clicked OK button");
             }
             else if (dr == DialogResult.Cancel)
             {
-                MessageBox.Show("User clicked Cancel button");
-                this.Close();
+                MessageBox.Show("Main: ChangeArtist User clicked Cancel button");
             }
         }
 
         private void DeleteArtistButton_Click(object sender, EventArgs e)
         {
-            DeleteArtistWF frm = new DeleteArtistWF();
             DialogResult dr = new DialogResult();
-
+            DeleteArtistWF frm = new DeleteArtistWF();
+            
             dr = frm.ShowDialog();
             if (dr == DialogResult.OK)
             {
-                MessageBox.Show("User clicked OK button");
-                this.Close();
+                MessageBox.Show("Main: DeleteArtist User clicked OK button");
             }
             else if (dr == DialogResult.Cancel)
             {
-                MessageBox.Show("User clicked Cancel button");
-                this.Close();
+                MessageBox.Show("Main: DeleteArtist User clicked Cancel button");
             }
         }
 
         private void AddGenreButton_Click(object sender, EventArgs e)
         {
-            AddGenreWF frm = new AddGenreWF();
             DialogResult dr = new DialogResult();
-
+            AddGenreWF frm = new AddGenreWF();
+            
             dr = frm.ShowDialog();
             if (dr == DialogResult.OK)
             {
-                MessageBox.Show("User clicked OK button");
-                this.Close();
+                MessageBox.Show("Main: AddGenre User clicked OK button");
             }
             else if (dr == DialogResult.Cancel)
             {
-                MessageBox.Show("User clicked Cancel button");
-                this.Close();
+                MessageBox.Show("Main: AddGenre User clicked Cancel button");
             }
         }
 
         private void ChangeGenreButton_Click(object sender, EventArgs e)
         {
+            DialogResult dr = new DialogResult(); 
             ChangeGenreWF frm = new ChangeGenreWF();
-            DialogResult dr = new DialogResult();
-
+            
             dr = frm.ShowDialog();
             if (dr == DialogResult.OK)
             {
-                MessageBox.Show("User clicked OK button");
-                this.Close();
+                MessageBox.Show("Main: ChangeGenre User clicked OK button");
             }
             else if (dr == DialogResult.Cancel)
             {
-                MessageBox.Show("User clicked Cancel button");
-                this.Close();
+                MessageBox.Show("Main: ChangeGenre User clicked Cancel button");
             }
         }
 
         private void DeleteGenreButton_Click(object sender, EventArgs e)
         {
-            DeleteGenreWF frm = new DeleteGenreWF();
             DialogResult dr = new DialogResult();
+            DeleteGenreWF frm = new DeleteGenreWF();
             
             dr = frm.ShowDialog();
             if (dr == DialogResult.OK)
             {
-                MessageBox.Show("User clicked OK button");
-                this.Close();
+                MessageBox.Show("Main: DeleteGenre User clicked OK button");
             }
             else if (dr == DialogResult.Cancel)
             {
-                MessageBox.Show("User clicked Cancel button");
-                this.Close();
+                MessageBox.Show("Main: DeleteGenre User clicked Cancel button");
             }
         }
 
@@ -329,13 +327,12 @@ namespace CDCatalogWF
 
             switch (_gridViewState)
             {
-                case 0: // default
-                case 1: // album
+                case (int)gridViewSt.Album:
                     // update album
                     string msg = "update album rating =" + selectedRating.ToString();
                     MessageBox.Show(msg);
                     break;
-                case 2: // song
+                case (int)gridViewSt.Song:
                     // update song
                     msg = "update song rating =" + selectedRating.ToString();
                     MessageBox.Show(msg);
@@ -347,5 +344,31 @@ namespace CDCatalogWF
         {
 
         }
+
+        private void searchComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int selectedSearchType = searchComboBox.SelectedIndex;
+            MessageBox.Show("search type = " + selectedSearchType.ToString());
+        }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            // The user has clicked the search button
+
+            string searchValueText = searchValueTextBox.Text.ToLower();
+
+            switch (searchComboBox.SelectedIndex)
+            {
+                case (int)searchSt.Album:
+                    break;
+                case (int)searchSt.Song:
+                    break;
+                case (int)searchSt.Genre:
+                    break;
+
+            }
+        }
+
+
     }
 }

@@ -65,11 +65,14 @@ namespace CDCatalogWF
 
                 int index = artistComboBox.FindStringExact(artist.ArtistName);  // unhandled exception ArtistName = null
                 artistComboBox.SelectedIndex = index;
+
+                this.Close();
             }
             // if the Cancel button or the X was clicked on the AddArtist pop-up...
             else if (dr == DialogResult.Cancel)
             {
                 MessageBox.Show("User clicked Cancel button");
+                this.Close();
             }
         }
 
@@ -93,11 +96,14 @@ namespace CDCatalogWF
                 //Show the selected item
                 this.genreComboBox.SelectedIndex = this.genreComboBox.FindString(genre.GenreName);
 
+                this.Close();
+
             }
             // if the Cancel button or the X was clicked on the AddGenre pop-up...
             else if (dr == DialogResult.Cancel)
             {
                 MessageBox.Show("User clicked Cancel button");
+                this.Close();
             }
         }
 
@@ -150,11 +156,38 @@ namespace CDCatalogWF
             int SongId = Song.AddSong(title, artistId, albumId, trackNumber, songRating, trackLength, genreId);
             string msg = "SongID=" + SongId.ToString();
             MessageBox.Show(msg);
+
+            this.Close();
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
 
+        private void addSongAnotherButton_Click(object sender, EventArgs e)
+        {
+            // The user clicked on the AddSong Another Song button.
+            this.DialogResult = DialogResult.Yes; // This passes Yes back
+
+            string title = this.songNameTextBox.Text;
+            int artistId;
+            int.TryParse(artistComboBox.SelectedValue.ToString(), out artistId);
+            int albumId;
+            int.TryParse(albumTitleComboBox.SelectedValue.ToString(), out albumId);
+            int trackNumber;
+            int.TryParse(songTrackNumberTextBox.Text, out trackNumber);
+            int songRating = ratingComboBox.SelectedIndex;  //the index corresponds to 0-5
+            int trackLength;  // seconds
+            int.TryParse(songTrackLengthTextBox.Text, out trackLength);
+            int genreId;
+            int.TryParse(genreComboBox.SelectedValue.ToString(), out genreId);
+
+            //todo: validation
+
+            int SongId = Song.AddSong(title, artistId, albumId, trackNumber, songRating, trackLength, genreId);
+            string msg = "SongID=" + SongId.ToString();
+            MessageBox.Show(msg);
         }
 
 

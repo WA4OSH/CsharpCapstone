@@ -43,8 +43,9 @@
             this.songViewRadioButton = new System.Windows.Forms.RadioButton();
             this.albumViewButton = new System.Windows.Forms.RadioButton();
             this.searchGroupBox = new System.Windows.Forms.GroupBox();
+            this.searchLabel = new System.Windows.Forms.Label();
             this.searchComboBox = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.searchValueTextBox = new System.Windows.Forms.TextBox();
             this.searchValueLabel = new System.Windows.Forms.Label();
             this.searchButton = new System.Windows.Forms.Button();
             this.playListGroupBox = new System.Windows.Forms.GroupBox();
@@ -108,7 +109,6 @@
             this.songOrAlbumRatingLabel = new System.Windows.Forms.Label();
             this.zeroThruFiveStarsLabel = new System.Windows.Forms.Label();
             this.ratingComboBox = new System.Windows.Forms.ComboBox();
-            this.searchLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.albumViewBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cDCatalogDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.songViewBindingSource)).BeginInit();
@@ -234,7 +234,7 @@
             // 
             this.searchGroupBox.Controls.Add(this.searchLabel);
             this.searchGroupBox.Controls.Add(this.searchComboBox);
-            this.searchGroupBox.Controls.Add(this.textBox1);
+            this.searchGroupBox.Controls.Add(this.searchValueTextBox);
             this.searchGroupBox.Controls.Add(this.searchValueLabel);
             this.searchGroupBox.Controls.Add(this.searchButton);
             this.searchGroupBox.Location = new System.Drawing.Point(436, 9);
@@ -244,24 +244,35 @@
             this.searchGroupBox.TabStop = false;
             this.searchGroupBox.Text = "Search";
             // 
+            // searchLabel
+            // 
+            this.searchLabel.AutoSize = true;
+            this.searchLabel.Location = new System.Drawing.Point(8, 68);
+            this.searchLabel.Name = "searchLabel";
+            this.searchLabel.Size = new System.Drawing.Size(49, 13);
+            this.searchLabel.TabIndex = 7;
+            this.searchLabel.Text = "Category";
+            // 
             // searchComboBox
             // 
+            this.searchComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.searchComboBox.FormattingEnabled = true;
             this.searchComboBox.Items.AddRange(new object[] {
-            "Songs",
             "Albums",
+            "Songs",
             "Genre"});
             this.searchComboBox.Location = new System.Drawing.Point(63, 63);
             this.searchComboBox.Name = "searchComboBox";
             this.searchComboBox.Size = new System.Drawing.Size(139, 21);
             this.searchComboBox.TabIndex = 3;
+            this.searchComboBox.SelectedIndexChanged += new System.EventHandler(this.searchComboBox_SelectedIndexChanged);
             // 
-            // textBox1
+            // searchValueTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(10, 39);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(192, 20);
-            this.textBox1.TabIndex = 2;
+            this.searchValueTextBox.Location = new System.Drawing.Point(10, 39);
+            this.searchValueTextBox.Name = "searchValueTextBox";
+            this.searchValueTextBox.Size = new System.Drawing.Size(192, 20);
+            this.searchValueTextBox.TabIndex = 2;
             // 
             // searchValueLabel
             // 
@@ -281,6 +292,7 @@
             this.searchButton.Size = new System.Drawing.Size(75, 65);
             this.searchButton.TabIndex = 0;
             this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // playListGroupBox
             // 
@@ -368,7 +380,7 @@
             this.addArtistButton.Size = new System.Drawing.Size(75, 60);
             this.addArtistButton.TabIndex = 4;
             this.addArtistButton.UseVisualStyleBackColor = true;
-            this.addArtistButton.Click += new System.EventHandler(this.artistAddButton_Click);
+            this.addArtistButton.Click += new System.EventHandler(this.AddArtistButton_Click);
             // 
             // editArtistButton
             // 
@@ -388,7 +400,7 @@
             this.deleteArtistButton.Size = new System.Drawing.Size(75, 60);
             this.deleteArtistButton.TabIndex = 6;
             this.deleteArtistButton.UseVisualStyleBackColor = true;
-            this.deleteArtistButton.Click += new System.EventHandler(this.artistDeleteButton_Click);
+            this.deleteArtistButton.Click += new System.EventHandler(this.DeleteArtistButton_Click);
             // 
             // addGenreButton
             // 
@@ -839,15 +851,6 @@
             this.ratingComboBox.Size = new System.Drawing.Size(60, 21);
             this.ratingComboBox.TabIndex = 0;
             // 
-            // searchLabel
-            // 
-            this.searchLabel.AutoSize = true;
-            this.searchLabel.Location = new System.Drawing.Point(8, 68);
-            this.searchLabel.Name = "searchLabel";
-            this.searchLabel.Size = new System.Drawing.Size(49, 13);
-            this.searchLabel.TabIndex = 7;
-            this.searchLabel.Text = "Category";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -908,7 +911,7 @@
         private System.Windows.Forms.RadioButton albumViewButton;
         private System.Windows.Forms.GroupBox searchGroupBox;
         private System.Windows.Forms.GroupBox playListGroupBox;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox searchValueTextBox;
         private System.Windows.Forms.Label searchValueLabel;
         private System.Windows.Forms.Button searchButton;
         private System.Windows.Forms.TextBox textBox3;

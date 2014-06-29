@@ -7,10 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CDCatalogDA;
 
 namespace CDCatalogWF
 {
+    using CDCatalogEF;
+
+    using Album = CDCatalogDA.Album;
+    using Artist = CDCatalogDA.Artist;
+
     public partial class AddAlbumWF : Form
     {
         private static int _artistID;
@@ -31,27 +35,40 @@ namespace CDCatalogWF
             ratingComboBox.SelectedIndex = 0; //unrated
         }
 
-        private void addArtistButton_Click(object sender, EventArgs e)
+        private void AddArtistButton_Click(object sender, EventArgs e)
         {
             // In the AddAlbum form, the user clicked the AddArtist button
             // this opens the AddArtist pop-up
             DialogResult dr = new DialogResult();
             AddArtistWF frm = new AddArtistWF();
             
-            // When the AddArtist pop-is closed, determine why.
+            // When the AddArtist pop-is closed, determie why.
             dr = frm.ShowDialog();
             if (dr == DialogResult.OK)
             {
                 // Acknowledge the change 
-                MessageBox.Show("User clicked OK button");  // todo: artistName added
+                MessageBox.Show("AddArtist: User clicked OK button");
+
+                // Get the newly created genre object
+                CDCatalogEF.Artist artist = (CDCatalogEF.Artist)this.addArtistButton.Tag;
+
+                // Refresh the combo box with the artist that was just added
+                this.artistTableAdapter.Fill(this.cDCatalogDataSet2.Artist);
+
+                int index = artistComboBox.FindStringExact(artist.ArtistName);  //Exception here
+                artistComboBox.SelectedIndex = index;
+
+                this.Close();
+
             }
             else if (dr == DialogResult.Cancel)
             {
-                MessageBox.Show("User clicked Cancel button");
+                MessageBox.Show("AddArtist: User clicked Cancel button");
+                this.Close();
             }
         }
 
-        private void addGenreButton_Click(object sender, EventArgs e)
+        private void AddGenreButton_Click(object sender, EventArgs e)
         {
             // In the AddAlbum form, the user clicked the AddGenre button
             // this opens the AddGenre pop-up
@@ -62,18 +79,29 @@ namespace CDCatalogWF
             dr = frm.ShowDialog();
             if (dr == DialogResult.OK)
             {
-                // Acknowledge the change
-                MessageBox.Show("User clicked OK button"); // todo: genreName added
+                // MessageBox.Show("User clicked OK button");
+                // Get the newly created genre object
+                CDCatalogEF.Genre genre = (Genre)this.addGenreButton.Tag;
+
+                // Show updated list in the combo box
+                this.genreTableAdapter.Fill(this.cDCatalogDataSet3.Genre);
+
+                //Show the selected item
+                this.genreComboBox.SelectedIndex = this.genreComboBox.FindString(genre.GenreName);
+
+                this.Close();
             }
             else if (dr == DialogResult.Cancel)
             {
-                MessageBox.Show("User clicked Cancel button");
+                MessageBox.Show("AddGenre: User clicked Cancel button");
+                this.Close();
             }
         }
 
         private void OkButton_Click(object sender, EventArgs e)
         {
             // The user clicked on the AddAlbum OK button
+            
             int albumYear;
             int.TryParse(this.yearTextBox.Text, out albumYear);  
             int artistId;
@@ -85,16 +113,39 @@ namespace CDCatalogWF
 
             //todo: validation
 
-
             int AlbumId = Album.AddAlbum(albumYear, artistId, albumTitle, albumRating, genreId);
             string msg = "AlbumID=" + AlbumId.ToString();
             MessageBox.Show(msg);
+
+            if (AlbumId > 0)
+            {
+                // This creates an AddSong pop-up.
+                AddSongWF frm = new AddSongWF();
+                DialogResult dr = frm.ShowDialog(this);
+
+                // If the user clicked the OK button on the AddSong pop-up
+                if (dr == DialogResult.Yes)
+                {
+                    MessageBox.Show("AddAlbum: AddSong - User clicked Yes button");
+                }
+                else if (dr == DialogResult.OK)
+                {
+                    MessageBox.Show("AddAlbum: AddSong - User clicked OK button");
+                    this.Close();
+                }
+                // if the Cancel button or the X was clicked on the AddSong pop-up...
+                else if (dr == DialogResult.Cancel)
+                {
+                    MessageBox.Show("AddAlbum: AddSong - User clicked Cancel button");
+                    this.Close();
+                }
+            }
 
             // Close the AddAlbum form
             this.Close();
         }
 
-        private void cancelButton_Click(object sender, EventArgs e)
+        private void CancelButton_Click(object sender, EventArgs e)
         {
             // Close the AddAlbum form
             this.Close();

@@ -60,6 +60,7 @@
             this.albumTitleLabel = new System.Windows.Forms.Label();
             this.addAlbumTitleButton = new System.Windows.Forms.Button();
             this.albumTableAdapter = new CDCatalogWF.CDCatalogAlbumTableAdapters.AlbumTableAdapter();
+            this.addSongAnotherButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.artistBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cDCatalogDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.genreBindingSource)).BeginInit();
@@ -119,7 +120,7 @@
             // 
             // songNameTextBox
             // 
-            this.songNameTextBox.Location = new System.Drawing.Point(172, 49);
+            this.songNameTextBox.Location = new System.Drawing.Point(172, 76);
             this.songNameTextBox.Name = "songNameTextBox";
             this.songNameTextBox.Size = new System.Drawing.Size(151, 20);
             this.songNameTextBox.TabIndex = 10;
@@ -127,7 +128,7 @@
             // songNameLabel
             // 
             this.songNameLabel.AutoSize = true;
-            this.songNameLabel.Location = new System.Drawing.Point(93, 52);
+            this.songNameLabel.Location = new System.Drawing.Point(93, 79);
             this.songNameLabel.Name = "songNameLabel";
             this.songNameLabel.Size = new System.Drawing.Size(51, 13);
             this.songNameLabel.TabIndex = 11;
@@ -140,7 +141,7 @@
             this.genreComboBox.DisplayMember = "GenreName";
             this.genreComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.genreComboBox.FormattingEnabled = true;
-            this.genreComboBox.Location = new System.Drawing.Point(172, 157);
+            this.genreComboBox.Location = new System.Drawing.Point(172, 154);
             this.genreComboBox.Name = "genreComboBox";
             this.genreComboBox.Size = new System.Drawing.Size(151, 21);
             this.genreComboBox.TabIndex = 12;
@@ -165,7 +166,7 @@
             // genreLabel
             // 
             this.genreLabel.AutoSize = true;
-            this.genreLabel.Location = new System.Drawing.Point(93, 160);
+            this.genreLabel.Location = new System.Drawing.Point(93, 157);
             this.genreLabel.Name = "genreLabel";
             this.genreLabel.Size = new System.Drawing.Size(36, 13);
             this.genreLabel.TabIndex = 13;
@@ -174,7 +175,7 @@
             // ratingLabel
             // 
             this.ratingLabel.AutoSize = true;
-            this.ratingLabel.Location = new System.Drawing.Point(93, 187);
+            this.ratingLabel.Location = new System.Drawing.Point(93, 184);
             this.ratingLabel.Name = "ratingLabel";
             this.ratingLabel.Size = new System.Drawing.Size(61, 13);
             this.ratingLabel.TabIndex = 14;
@@ -192,7 +193,7 @@
             "* * * ",
             "* * * * ",
             "* * * * *"});
-            this.ratingComboBox.Location = new System.Drawing.Point(172, 184);
+            this.ratingComboBox.Location = new System.Drawing.Point(172, 181);
             this.ratingComboBox.Name = "ratingComboBox";
             this.ratingComboBox.Size = new System.Drawing.Size(151, 21);
             this.ratingComboBox.TabIndex = 15;
@@ -201,7 +202,7 @@
             // addGenreButton
             // 
             this.addGenreButton.Image = ((System.Drawing.Image)(resources.GetObject("addGenreButton.Image")));
-            this.addGenreButton.Location = new System.Drawing.Point(330, 155);
+            this.addGenreButton.Location = new System.Drawing.Point(330, 152);
             this.addGenreButton.Name = "addGenreButton";
             this.addGenreButton.Size = new System.Drawing.Size(75, 23);
             this.addGenreButton.TabIndex = 16;
@@ -210,7 +211,7 @@
             // 
             // songTrackLengthTextBox
             // 
-            this.songTrackLengthTextBox.Location = new System.Drawing.Point(172, 131);
+            this.songTrackLengthTextBox.Location = new System.Drawing.Point(172, 128);
             this.songTrackLengthTextBox.Name = "songTrackLengthTextBox";
             this.songTrackLengthTextBox.Size = new System.Drawing.Size(100, 20);
             this.songTrackLengthTextBox.TabIndex = 17;
@@ -218,7 +219,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(93, 134);
+            this.label1.Location = new System.Drawing.Point(93, 131);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 13);
             this.label1.TabIndex = 18;
@@ -236,7 +237,7 @@
             // cancelButton
             // 
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancelButton.Location = new System.Drawing.Point(330, 232);
+            this.cancelButton.Location = new System.Drawing.Point(330, 208);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 21;
@@ -246,9 +247,9 @@
             // 
             // OkButton
             // 
-            this.OkButton.Location = new System.Drawing.Point(248, 232);
+            this.OkButton.Location = new System.Drawing.Point(253, 208);
             this.OkButton.Name = "OkButton";
-            this.OkButton.Size = new System.Drawing.Size(75, 23);
+            this.OkButton.Size = new System.Drawing.Size(70, 23);
             this.OkButton.TabIndex = 20;
             this.OkButton.Text = "OK";
             this.OkButton.UseVisualStyleBackColor = true;
@@ -257,7 +258,7 @@
             // trackNumberLabel
             // 
             this.trackNumberLabel.AutoSize = true;
-            this.trackNumberLabel.Location = new System.Drawing.Point(93, 108);
+            this.trackNumberLabel.Location = new System.Drawing.Point(93, 105);
             this.trackNumberLabel.Name = "trackNumberLabel";
             this.trackNumberLabel.Size = new System.Drawing.Size(73, 13);
             this.trackNumberLabel.TabIndex = 23;
@@ -265,7 +266,7 @@
             // 
             // songTrackNumberTextBox
             // 
-            this.songTrackNumberTextBox.Location = new System.Drawing.Point(172, 105);
+            this.songTrackNumberTextBox.Location = new System.Drawing.Point(172, 102);
             this.songTrackNumberTextBox.Name = "songTrackNumberTextBox";
             this.songTrackNumberTextBox.Size = new System.Drawing.Size(100, 20);
             this.songTrackNumberTextBox.TabIndex = 22;
@@ -285,7 +286,7 @@
             this.albumTitleComboBox.DisplayMember = "AlbumTitle";
             this.albumTitleComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.albumTitleComboBox.FormattingEnabled = true;
-            this.albumTitleComboBox.Location = new System.Drawing.Point(172, 76);
+            this.albumTitleComboBox.Location = new System.Drawing.Point(172, 49);
             this.albumTitleComboBox.Name = "albumTitleComboBox";
             this.albumTitleComboBox.Size = new System.Drawing.Size(151, 21);
             this.albumTitleComboBox.TabIndex = 24;
@@ -304,7 +305,7 @@
             // albumTitleLabel
             // 
             this.albumTitleLabel.AutoSize = true;
-            this.albumTitleLabel.Location = new System.Drawing.Point(93, 84);
+            this.albumTitleLabel.Location = new System.Drawing.Point(93, 57);
             this.albumTitleLabel.Name = "albumTitleLabel";
             this.albumTitleLabel.Size = new System.Drawing.Size(59, 13);
             this.albumTitleLabel.TabIndex = 25;
@@ -313,7 +314,7 @@
             // addAlbumTitleButton
             // 
             this.addAlbumTitleButton.Image = ((System.Drawing.Image)(resources.GetObject("addAlbumTitleButton.Image")));
-            this.addAlbumTitleButton.Location = new System.Drawing.Point(329, 74);
+            this.addAlbumTitleButton.Location = new System.Drawing.Point(329, 47);
             this.addAlbumTitleButton.Name = "addAlbumTitleButton";
             this.addAlbumTitleButton.Size = new System.Drawing.Size(75, 23);
             this.addAlbumTitleButton.TabIndex = 26;
@@ -324,6 +325,16 @@
             // 
             this.albumTableAdapter.ClearBeforeFill = true;
             // 
+            // addSongAnotherButton
+            // 
+            this.addSongAnotherButton.Location = new System.Drawing.Point(172, 208);
+            this.addSongAnotherButton.Name = "addSongAnotherButton";
+            this.addSongAnotherButton.Size = new System.Drawing.Size(75, 23);
+            this.addSongAnotherButton.TabIndex = 27;
+            this.addSongAnotherButton.Text = "Add Another";
+            this.addSongAnotherButton.UseVisualStyleBackColor = true;
+            this.addSongAnotherButton.Click += new System.EventHandler(this.addSongAnotherButton_Click);
+            // 
             // AddSongWF
             // 
             this.AcceptButton = this.OkButton;
@@ -332,7 +343,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.cancelButton;
-            this.ClientSize = new System.Drawing.Size(422, 278);
+            this.ClientSize = new System.Drawing.Size(422, 248);
+            this.Controls.Add(this.addSongAnotherButton);
             this.Controls.Add(this.addAlbumTitleButton);
             this.Controls.Add(this.albumTitleLabel);
             this.Controls.Add(this.albumTitleComboBox);
@@ -401,5 +413,6 @@
         private CDCatalogAlbum cDCatalogAlbum;
         private System.Windows.Forms.BindingSource albumBindingSource;
         private CDCatalogAlbumTableAdapters.AlbumTableAdapter albumTableAdapter;
+        private System.Windows.Forms.Button addSongAnotherButton;
     }
 }

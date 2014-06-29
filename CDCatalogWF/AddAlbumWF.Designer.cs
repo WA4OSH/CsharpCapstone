@@ -51,6 +51,7 @@
             this.cancelButton = new System.Windows.Forms.Button();
             this.artistTableAdapter = new CDCatalogWF.CDCatalogDataSet2TableAdapters.ArtistTableAdapter();
             this.genreTableAdapter = new CDCatalogWF.CDCatalogDataSet3TableAdapters.GenreTableAdapter();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.artistBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cDCatalogDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.genreBindingSource)).BeginInit();
@@ -163,7 +164,7 @@
             this.addArtistButton.Size = new System.Drawing.Size(75, 23);
             this.addArtistButton.TabIndex = 8;
             this.addArtistButton.UseVisualStyleBackColor = true;
-            this.addArtistButton.Click += new System.EventHandler(this.addArtistButton_Click);
+            this.addArtistButton.Click += new System.EventHandler(this.AddArtistButton_Click);
             // 
             // addGenreButton
             // 
@@ -173,7 +174,7 @@
             this.addGenreButton.Size = new System.Drawing.Size(75, 23);
             this.addGenreButton.TabIndex = 9;
             this.addGenreButton.UseVisualStyleBackColor = true;
-            this.addGenreButton.Click += new System.EventHandler(this.addGenreButton_Click);
+            this.addGenreButton.Click += new System.EventHandler(this.AddGenreButton_Click);
             // 
             // ratingLabel
             // 
@@ -229,7 +230,7 @@
             this.cancelButton.TabIndex = 14;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
-            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
+            this.cancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // artistTableAdapter
             // 
@@ -238,6 +239,15 @@
             // genreTableAdapter
             // 
             this.genreTableAdapter.ClearBeforeFill = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(353, 25);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(8, 8);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // AddAlbumWF
             // 
@@ -248,6 +258,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.cancelButton;
             this.ClientSize = new System.Drawing.Size(393, 206);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.OkButton);
             this.Controls.Add(this.addAlbumPictureBox);
@@ -299,5 +310,6 @@
         private CDCatalogDataSet3 cDCatalogDataSet3;
         private System.Windows.Forms.BindingSource genreBindingSource;
         private CDCatalogDataSet3TableAdapters.GenreTableAdapter genreTableAdapter;
+        private System.Windows.Forms.Button button1;
     }
 }
