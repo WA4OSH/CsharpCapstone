@@ -119,25 +119,32 @@ namespace CDCatalogWF
 
             if (AlbumId > 0)
             {
-                // This creates an AddSong pop-up.
-                AddSongWF frm = new AddSongWF();
-                DialogResult dr = frm.ShowDialog(this);
+                bool repeat = true;
+                while (repeat)
+                {
+                    // This creates an AddSong pop-up.
+                    AddSongWF frm = new AddSongWF();
+                    DialogResult dr = frm.ShowDialog(this);
 
-                // If the user clicked the OK button on the AddSong pop-up
-                if (dr == DialogResult.Yes)
-                {
-                    MessageBox.Show("AddAlbum: AddSong - User clicked Yes button");
-                }
-                else if (dr == DialogResult.OK)
-                {
-                    MessageBox.Show("AddAlbum: AddSong - User clicked OK button");
-                    this.Close();
-                }
-                // if the Cancel button or the X was clicked on the AddSong pop-up...
-                else if (dr == DialogResult.Cancel)
-                {
-                    MessageBox.Show("AddAlbum: AddSong - User clicked Cancel button");
-                    this.Close();
+                    // If the user clicked the OK button on the AddSong pop-up
+                    if (dr == DialogResult.Yes)
+                    {
+                        MessageBox.Show("AddAlbum: AddSong - User clicked Yes button");
+                        repeat = true;
+                    }
+                    else if (dr == DialogResult.OK)
+                    {
+                        MessageBox.Show("AddAlbum: AddSong - User clicked OK button");
+                        this.Close();
+                        repeat = false;
+                    }
+                        // if the Cancel button or the X was clicked on the AddSong pop-up...
+                    else if (dr == DialogResult.Cancel)
+                    {
+                        MessageBox.Show("AddAlbum: AddSong - User clicked Cancel button");
+                        this.Close();
+                        repeat = false;
+                    }
                 }
             }
 

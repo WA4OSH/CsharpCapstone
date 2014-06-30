@@ -191,7 +191,7 @@
             this.ratingComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ratingComboBox.FormattingEnabled = true;
             this.ratingComboBox.Items.AddRange(new object[] {
-            "not rated",
+            "unrated",
             "*",
             "* *",
             "* * *",

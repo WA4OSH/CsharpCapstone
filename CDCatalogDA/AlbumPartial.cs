@@ -61,6 +61,38 @@ namespace CDCatalogDA
             return artistId;
         }
 
+        public static bool ChangeAlbum(int albumId, int albumYear, int artistId, string albumTitle, int albumRating, int genreId)
+        {
+            var album = new CDCatalogEF.Album();
+
+            try
+            {
+                album.AlbumID = albumId;
+                album.AlbumYear = albumYear;
+                album.ArtistID = artistId;
+                album.AlbumTitle = albumTitle;
+                album.AlbumRating = albumRating;
+                album.GenreID = genreId;
+
+                using (var db = new CDCatalogEntities())
+                {
+                    db.Albums.Change(album);
+                    var resultCount = db.SaveChanges();
+                }
+                return true;  // if there is an exception, this won't run
+            }
+            catch (Exception ex)
+            {
+                // Define a new top-level error message.
+                string str = "Changing the Album failed. " + ex.Message;
+
+                // Pop-up a messagebox with the message
+                MessageBox.Show(str);
+            }
+            var songId = album.ArtistID; // The song.ArtistID gets updated in the context as its saved
+            return true;
+        }
+        
         public static bool DeleteSongById(int albumId)
         {
             try

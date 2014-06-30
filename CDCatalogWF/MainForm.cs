@@ -12,6 +12,9 @@ using CDCatalogDA;
 
 namespace CDCatalogWF
 {
+    using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
+    using System.Threading;
+
     public partial class MainForm : Form
     {
         private enum gridViewSt { Album, Song };
@@ -25,6 +28,10 @@ namespace CDCatalogWF
         }
 
         private enum searchSt { Album, Song, Genre };
+
+        private static DataGridViewRow albumRow;
+
+        private static DataGridViewRow songRow;
 
         public MainForm()
         {
@@ -313,12 +320,18 @@ namespace CDCatalogWF
 
         private void albumDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            MessageBox.Show("User clicked in AlbumDataGridView");
+            if (e.RowIndex > 0)
+            {
+                albumRow = albumDataGridView.Rows[e.RowIndex];
+            }
         }
 
         private void songDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            MessageBox.Show("User clicked in SongDataGridView");
+            if (e.RowIndex > 0)
+            {
+                songRow = songDataGridView.Rows[e.RowIndex];
+            }
         }
 
         private void ratingOkButton_Click(object sender, EventArgs e)
@@ -329,11 +342,51 @@ namespace CDCatalogWF
             {
                 case (int)gridViewSt.Album:
                     // update album
+                    int albumId;
+                    int.TryParse(albumRow.Cells["AlbumID"].Value.ToString(), out albumId);
+                    int albumYear;
+                    int.TryParse(albumRow.Cells["AlbumYear"].Value.ToString(), out albumYear);  
+                    int artistId;
+                    int.TryParse(albumRow.Cells["ArtistID"].Value.ToString(), out artistId);
+                    string albumTitle = albumRow.Cells["AlbumTitle"].Value.ToString();
+                    int albumRating = selectedRating;
+                    int genreId;
+                    int.TryParse(albumRow.Cells["GenreID"].Value.ToString(), out genreId);
+
+                    int res = Album.ChangeAlbum(albumId, albumYear, artistId, albumTitle, albumRating, genreId);
+
                     string msg = "update album rating =" + selectedRating.ToString();
                     MessageBox.Show(msg);
                     break;
                 case (int)gridViewSt.Song:
                     // update song
+                    int songId;
+                    int.TryParse(songRow.Cells["SongID"].Value.ToString(), out songId);
+                    string title = songRow.Cells["SongTitle"].Value.ToString();
+                    int artistId;
+                    int.TryParse(songRow.Cells["ArtistID"].Value.ToString(), out artistId);
+                    int albumId;
+                    int.TryParse(songRow.Cells["AlbumID"].Value.ToString(), out albumId);
+                    int trackNumber;
+                    int.TryParse(songRow.Cells["SongTrackNumber"].Value.ToString(), out trackNumber);
+                    int songRating = selectedRating;  //the index corresponds to 0-5
+                    int trackLength;  // seconds
+                    int.TryParse(songRow.Cells["SongTrackLength"].Value.ToString(), out trackLength);
+                    int genreId;
+                    int.TryParse(songRow.Cells["GenreID"].Value.ToString(), out genreId);
+
+                    //todo: validation
+
+                    int res = Song.ChangeSong(songId, title, artistId, albumId, trackNumber, songRating, trackLength, genreId);
+                    string msg = "SongID=" + SongId.ToString();
+
+
+
+
+
+
+
+
                     msg = "update song rating =" + selectedRating.ToString();
                     MessageBox.Show(msg);
                     break;
