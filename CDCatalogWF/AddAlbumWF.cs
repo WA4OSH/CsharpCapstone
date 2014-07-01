@@ -111,7 +111,7 @@ namespace CDCatalogWF
             int genreId;
             int.TryParse(genreComboBox.SelectedValue.ToString(), out genreId);
 
-            //todo: validation
+            // todo: validation
 
             int AlbumId = Album.AddAlbum(albumYear, artistId, albumTitle, albumRating, genreId);
             string msg = "AlbumID=" + AlbumId.ToString();

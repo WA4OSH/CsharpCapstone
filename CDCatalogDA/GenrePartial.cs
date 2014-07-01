@@ -1,15 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using CDCatalogEF;
-
-namespace CDCatalogDA
+﻿namespace CDCatalogDA
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    using System.Windows.Forms;
+    using CDCatalogEF;
+
+    /// <summary>
+    /// 
+    /// </summary>
     public partial class Genre
     {
+
         public static List<CDCatalogEF.Genre> GetAllGenres()
         {
             using (var db = new CDCatalogEntities())

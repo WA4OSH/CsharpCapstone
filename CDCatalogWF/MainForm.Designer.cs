@@ -67,12 +67,13 @@
             this.albumDataGridView = new System.Windows.Forms.DataGridView();
             this.artistNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.albumTitleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.albumYearDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AlbumYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.genreNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.albumRatingDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AlbumRating = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.artistIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.albumIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.genreIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.albumViewBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.songDataGridView = new System.Windows.Forms.DataGridView();
             this.artistNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.songTitleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -121,6 +122,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cDCatalogDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cDCatalogDataSetBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.albumDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.albumViewBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.songDataGridView)).BeginInit();
             this.genreGoupBox.SuspendLayout();
             this.artistGroupBox.SuspendLayout();
@@ -440,16 +442,16 @@
             this.albumDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.artistNameDataGridViewTextBoxColumn,
             this.albumTitleDataGridViewTextBoxColumn,
-            this.albumYearDataGridViewTextBoxColumn,
+            this.AlbumYear,
             this.genreNameDataGridViewTextBoxColumn,
-            this.albumRatingDataGridViewTextBoxColumn,
+            this.AlbumRating,
             this.artistIDDataGridViewTextBoxColumn,
             this.albumIDDataGridViewTextBoxColumn,
             this.genreIDDataGridViewTextBoxColumn});
-            this.albumDataGridView.DataSource = this.albumViewBindingSource;
+            this.albumDataGridView.DataSource = this.albumViewBindingSource1;
             this.albumDataGridView.Location = new System.Drawing.Point(25, 217);
             this.albumDataGridView.Name = "albumDataGridView";
-            this.albumDataGridView.Size = new System.Drawing.Size(918, 350);
+            this.albumDataGridView.Size = new System.Drawing.Size(844, 350);
             this.albumDataGridView.TabIndex = 0;
             this.albumDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.albumDataGridView_CellContentClick);
             // 
@@ -465,11 +467,11 @@
             this.albumTitleDataGridViewTextBoxColumn.HeaderText = "AlbumTitle";
             this.albumTitleDataGridViewTextBoxColumn.Name = "albumTitleDataGridViewTextBoxColumn";
             // 
-            // albumYearDataGridViewTextBoxColumn
+            // AlbumYear
             // 
-            this.albumYearDataGridViewTextBoxColumn.DataPropertyName = "AlbumYear";
-            this.albumYearDataGridViewTextBoxColumn.HeaderText = "AlbumYear";
-            this.albumYearDataGridViewTextBoxColumn.Name = "albumYearDataGridViewTextBoxColumn";
+            this.AlbumYear.DataPropertyName = "AlbumYear";
+            this.AlbumYear.HeaderText = "AlbumYear";
+            this.AlbumYear.Name = "AlbumYear";
             // 
             // genreNameDataGridViewTextBoxColumn
             // 
@@ -477,11 +479,11 @@
             this.genreNameDataGridViewTextBoxColumn.HeaderText = "GenreName";
             this.genreNameDataGridViewTextBoxColumn.Name = "genreNameDataGridViewTextBoxColumn";
             // 
-            // albumRatingDataGridViewTextBoxColumn
+            // AlbumRating
             // 
-            this.albumRatingDataGridViewTextBoxColumn.DataPropertyName = "AlbumRating";
-            this.albumRatingDataGridViewTextBoxColumn.HeaderText = "AlbumRating";
-            this.albumRatingDataGridViewTextBoxColumn.Name = "albumRatingDataGridViewTextBoxColumn";
+            this.AlbumRating.DataPropertyName = "AlbumRating";
+            this.AlbumRating.HeaderText = "AlbumRating";
+            this.AlbumRating.Name = "AlbumRating";
             // 
             // artistIDDataGridViewTextBoxColumn
             // 
@@ -501,6 +503,11 @@
             this.genreIDDataGridViewTextBoxColumn.HeaderText = "GenreID";
             this.genreIDDataGridViewTextBoxColumn.Name = "genreIDDataGridViewTextBoxColumn";
             // 
+            // albumViewBindingSource1
+            // 
+            this.albumViewBindingSource1.DataMember = "AlbumView";
+            this.albumViewBindingSource1.DataSource = this.cDCatalogDataSetBindingSource;
+            // 
             // songDataGridView
             // 
             this.songDataGridView.AutoGenerateColumns = false;
@@ -518,7 +525,7 @@
             this.artistIDDataGridViewTextBoxColumn1,
             this.genreIDDataGridViewTextBoxColumn1,
             this.songIDDataGridViewTextBoxColumn});
-            this.songDataGridView.DataSource = this.songViewBindingSource;
+            this.songDataGridView.DataSource = this.songViewBindingSource1;
             this.songDataGridView.Location = new System.Drawing.Point(25, 217);
             this.songDataGridView.Name = "songDataGridView";
             this.songDataGridView.Size = new System.Drawing.Size(918, 350);
@@ -885,6 +892,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cDCatalogDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cDCatalogDataSetBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.albumDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.albumViewBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.songDataGridView)).EndInit();
             this.genreGoupBox.ResumeLayout(false);
             this.genreGoupBox.PerformLayout();
@@ -934,14 +942,6 @@
         private System.Windows.Forms.Button addGenreButton;
         private System.Windows.Forms.Button editGenreButton;
         private System.Windows.Forms.DataGridView albumDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn artistNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn albumTitleDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn albumYearDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn genreNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn albumRatingDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn artistIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn albumIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn genreIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridView songDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn artistNameDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn songTitleDataGridViewTextBoxColumn;
@@ -981,6 +981,15 @@
         private System.Windows.Forms.Button ratingOkButton;
         private System.Windows.Forms.BindingSource songViewBindingSource1;
         private System.Windows.Forms.Label searchLabel;
+        private System.Windows.Forms.BindingSource albumViewBindingSource1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn artistNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn albumTitleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AlbumYear;
+        private System.Windows.Forms.DataGridViewTextBoxColumn genreNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AlbumRating;
+        private System.Windows.Forms.DataGridViewTextBoxColumn artistIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn albumIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn genreIDDataGridViewTextBoxColumn;
 
 
     }

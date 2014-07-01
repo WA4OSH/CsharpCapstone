@@ -988,7 +988,7 @@
   <data name="addGenreButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAD8AAAA3CAYAAAC7DJKyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsEAAA7BAbiRa+0AAAp8SURBVGhD7VkNUFTXFV6Qf1BBE6Mxaa2JjYQmGo1Oi7Wt
+        YQUAAAAJcEhZcwAADr0AAA69AUf7kK0AAAp8SURBVGhD7VkNUFTXFV6Qf1BBE6Mxaa2JjYQmGo1Oi7Wt
         mlHjGK1pnFin40ycZjq202Q6baKZ2tp2OrZJrbVjm0Qx8QcVcNk/VkBFETAtCYtg/KEGtSpGBQGRPxeQ
         3dNzzr13WeChu+4ur53mYy7vvXPvu+9+55x77rl3DfA/iitttRCflQrjbQs9hZ5J7iuCR94tyyBBd/Ju
         txv50p+4pxu+DgL0I+8Dv1CrQBfyyrLOpmYoXLYcjEMfgnRDFGTEJkF+6iyo2r6D60MN3SxfW+6ALQYD
@@ -1039,7 +1039,7 @@
   <data name="editGenreButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAD8AAAA3CAYAAAC7DJKyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr8AAA6/ATgFUyQAAAu3SURBVGhD7VkLUJTXFV6QN6igxmiMbeqj0djEV3RarG00
+        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAu3SURBVGhD7VkLUJTXFV6QN6igxmiMbeqj0djEV3RarG00
         HTU20WriaJ3UqY6Zjp02mU4niZnY2jgd21hr7Jik8ZFERQVd2GVZWVQQARM1riKCUoMvxCfIQ14uILun
         55x777Is/+Iu7IZ22o+5/P/ee//73++cc8859/46+C9EaUMDvJyXBwOSkx9aqB/114L/yDtkCTB2XLkC
         I9LSNIl6KtSfnnNHt8g7HA7kS3/inm74GiAQAS1yWuW5rCwoa2zkQvdU5y6ArpH3gp+/RUCm64vGf2O1
@@ -1095,7 +1095,7 @@
   <data name="deleteGenreButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAD8AAAA3CAYAAAC7DJKyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr8AAA6/ATgFUyQAAAsKSURBVGhD7VkLUJTXFV6QNyjgKxq1NSY2GptoNDot1rYa
+        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAsKSURBVGhD7VkLUJTXFV6QNyjgKxq1NSY2GptoNDot1rYa
         R40TtaaxWid1qmOmY2eaTKeTaKa2tp2ObVJr7JgXahIVFXDZFyugogiYxsRVfFODUhWfyEteLiC7p+ec
         e++yLIvuv+y66bQf8+///+c+/vudc+6551508N+K1FSA5GQAHVLw9aL61E4CJQGCU14PA0TAGzlfL6kA
         fPIfTqcT+dKfeKYHvgcT5eXaLe55UXvsB5/8gA/8gqaC6dO9E9J6YT/4qw3Ksva6eihYtBj0vR+BNF0U
@@ -1145,6 +1145,15 @@
         wQh7UQmNtXVSEloEn7z0gVAGtu7wEMh/ffF/8v+bAPgP/gWteH8Bsu0AAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="AlbumYear.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="AlbumRating.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="albumViewBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 95</value>
+  </metadata>
   <data name="artistGroupBox.Text" xml:space="preserve">
     <value>Artist                                                                                                                                                                                                                                                                                                                                                                                                                                          </value>
   </data>
