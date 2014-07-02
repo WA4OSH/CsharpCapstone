@@ -576,24 +576,34 @@
                     this.albumDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
                     try
                     {
-                        // loop through all AlbumView table rows
+                        // loop through all AlbumView table rows except for the last (it's full of nulls)
+                        var count = this.albumDataGridView.RowCount;
                         foreach (DataGridViewRow row in this.albumDataGridView.Rows)
                         {
-                            // Search in ArtistName, AlbumTitle, and GenreName
+                            // Search in ArtistName, AlbumTitle, and GenreName columns for searchValueText
 
-                            if (row.Cells[0].Value.Equals(string.Empty) || row.Cells[0].Value.Equals(null) ||
-                                row.Cells[1].Value.Equals(string.Empty) || row.Cells[1].Value.Equals(null) ||
-                                row.Cells[3].Value.Equals(string.Empty) || row.Cells[3].Value.Equals(null))
+                            if (--count > 0)
                             {
-                                row.Selected = false;
-                            }
+                                // if the row contains bad data, move on to the next row
+                                if ((row == null) || (row.Cells[0] == null) || 
+                                   (row.Cells[1] == null) || (row.Cells[3] == null))
+                                {
+                                    continue;
+                                }
+                                if (row.Cells[0].Value.Equals(string.Empty) || row.Cells[0].Value.Equals(null)
+                                    || row.Cells[1].Value.Equals(string.Empty) || row.Cells[1].Value.Equals(null)
+                                    || row.Cells[3].Value.Equals(string.Empty) || row.Cells[3].Value.Equals(null))
+                                {
+                                    continue;
+                                }
 
-                            // select those rows that have the search text in the rows
-                            else if (row.Cells[0].Value.ToString().ToLower().Equals(searchValueText) ||
-                                row.Cells[1].Value.ToString().ToLower().Equals(searchValueText) ||
-                                row.Cells[3].Value.ToString().ToLower().Equals(searchValueText))
-                            {
-                                row.Selected = true;
+                                // select those rows that have the search text in the rows
+                                if (row.Cells[0].Value.ToString().ToLower().Equals(searchValueText)
+                                    || row.Cells[1].Value.ToString().ToLower().Equals(searchValueText)
+                                    || row.Cells[3].Value.ToString().ToLower().Equals(searchValueText))
+                                {
+                                    row.Selected = true;
+                                }
                             }
                         }
                     }
@@ -611,25 +621,31 @@
                     this.songDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
                     try
                     {
-                        // loop through all SongView table rows
+                        // loop through all AlbumView table rows except for the last (it's full of nulls)
+                        var count = this.songDataGridView.RowCount;
                         foreach (DataGridViewRow row in this.songDataGridView.Rows)
                         {
-                            // skip rows that have bad data in them
-                            if (row.Cells[0].Value.Equals(string.Empty) || row.Cells[0].Value.Equals(null) ||
-                                row.Cells[1].Value.Equals(string.Empty) || row.Cells[1].Value.Equals(null) ||
-                                row.Cells[3].Value.Equals(string.Empty) || row.Cells[3].Value.Equals(null) ||
-                                row.Cells[6].Value.Equals(string.Empty) || row.Cells[6].Value.Equals(null))
+                            // Search in ArtistName, SongTitle, GenreName and AlbumTitle for searchValueText
+                            if (--count > 0)
                             {
-                                row.Selected = false;
-                            }
 
-                            // select those rows that have the search text in the rows
-                            else if (row.Cells[0].Value.ToString().Equals(searchValueText) ||
-                                row.Cells[1].Value.ToString().Equals(searchValueText) ||
-                                row.Cells[3].Value.ToString().Equals(searchValueText) ||
-                                row.Cells[6].Value.ToString().Equals(searchValueText))
-                            {
-                                row.Selected = true;
+                                // if the row contains bad data, move on to the next row
+                                if (row.Cells[0].Value.Equals(string.Empty) || row.Cells[0].Value.Equals(null) ||
+                                    row.Cells[1].Value.Equals(string.Empty) || row.Cells[1].Value.Equals(null) ||
+                                    row.Cells[3].Value.Equals(string.Empty) || row.Cells[3].Value.Equals(null) ||
+                                    row.Cells[6].Value.Equals(string.Empty) || row.Cells[6].Value.Equals(null))
+                                {
+                                    continue;
+                                }
+
+                                // select those rows that have the search text in the rows
+                                if (row.Cells[0].Value.ToString().Equals(searchValueText) ||
+                                    row.Cells[1].Value.ToString().Equals(searchValueText) ||
+                                    row.Cells[3].Value.ToString().Equals(searchValueText) ||
+                                    row.Cells[6].Value.ToString().Equals(searchValueText))
+                                {
+                                    row.Selected = true;
+                                }
                             }
                         }
                     }
